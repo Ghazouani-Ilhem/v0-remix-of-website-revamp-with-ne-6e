@@ -115,10 +115,10 @@ export function ProjectsSection() {
           <div className="lg:col-span-4">
             <div className="fixed-content sticky top-24 fade-up-anim">
               <div className="site-heading mb-8">
-                <h4 className="sub-title text-orange-400 font-semibold text-base mb-4 tracking-wider uppercase">
+                <h4 className="sub-title text-orange-400 font-semibold text-sm mb-4 tracking-wider uppercase">
                   Latest Projects
                 </h4>
-                <h2 className="title text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                <h2 className="title text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
                   Proven solutions for{" "}
                   <span className="bg-gradient-to-r from-orange-400 to-teal-400 bg-clip-text text-transparent">
                     Fortune 500
@@ -128,10 +128,10 @@ export function ProjectsSection() {
               </div>
 
               <div className="project-fun-fact mb-8 p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
-                <div className="text-4xl font-bold bg-gradient-to-r from-orange-400 to-teal-400 bg-clip-text text-transparent mb-2 js-counter">
+                <div className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-teal-400 bg-clip-text text-transparent mb-2 js-counter">
                   500+
                 </div>
-                <h4 className="text-base text-slate-300 leading-relaxed">
+                <h4 className="text-sm text-slate-300 leading-relaxed">
                   Global clients including Shell, ExxonMobil, Siemens, and Rio Tinto trust our SIOTH® platform
                 </h4>
               </div>
@@ -204,16 +204,16 @@ export function ProjectsSection() {
 
                       <div className="p-8 flex flex-col justify-between bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm">
                         <div>
-                          <h3 className="text-xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-teal-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 leading-tight">
+                          <h3 className="text-lg font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-teal-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 leading-tight">
                             <Link href="/projects">{project.title}</Link>
                           </h3>
-                          <p className="text-slate-300 mb-6 text-sm leading-relaxed">{project.description}</p>
+                          <p className="text-slate-300 mb-6 text-xs leading-relaxed">{project.description}</p>
                         </div>
 
                         <div className="space-y-6">
                           <Link
                             href="/projects"
-                            className="inline-flex items-center text-orange-400 hover:text-white font-semibold text-sm group-hover:translate-x-2 transition-all duration-300 hover:bg-gradient-to-r hover:from-orange-500 hover:to-teal-500 hover:bg-clip-text hover:text-transparent"
+                            className="inline-flex items-center text-orange-400 hover:text-white font-semibold text-xs group-hover:translate-x-2 transition-all duration-300 hover:bg-gradient-to-r hover:from-orange-500 hover:to-teal-500 hover:bg-clip-text hover:text-transparent"
                           >
                             View Case Study
                             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -223,7 +223,7 @@ export function ProjectsSection() {
                             {project.tags.map((tag, tagIndex) => (
                               <span
                                 key={tagIndex}
-                                className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/10 backdrop-blur-sm text-slate-300 border border-white/20 hover:bg-gradient-to-r hover:from-orange-500/20 hover:to-teal-500/20 hover:border-orange-400/50 hover:text-white transition-all duration-300"
+                                className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-medium bg-white/10 backdrop-blur-sm text-slate-300 border border-white/20 hover:bg-gradient-to-r hover:from-orange-500/20 hover:to-teal-500/20 hover:border-orange-400/50 hover:text-white transition-all duration-300"
                               >
                                 <Tag className="w-3 h-3 mr-1" />
                                 {tag}
