@@ -3,91 +3,91 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Integration Objects Design System - Professional Industrial Theme */
+/* Integration Objects Corporate Design System */
 :root {
-  /* Integration Objects Brand Colors */
-  --background: oklch(0.99 0.002 240); /* Clean white */
-  --foreground: oklch(0.12 0.01 240); /* Rich charcoal */
-  --card: oklch(0.98 0.003 240); /* Subtle off-white */
-  --card-foreground: oklch(0.12 0.01 240);
+  /* Integration Objects Exact Brand Colors from website */
+  --background: oklch(0.99 0.002 240); /* Clean corporate white */
+  --foreground: oklch(0.15 0.01 240); /* Professional dark text */
+  --card: oklch(0.98 0.003 240); /* Subtle card background */
+  --card-foreground: oklch(0.15 0.01 240);
   --popover: oklch(0.99 0.002 240);
-  --popover-foreground: oklch(0.12 0.01 240);
+  --popover-foreground: oklch(0.15 0.01 240);
 
-  /* Updated to Integration Objects orange primary color */
-  --primary: oklch(0.65 0.18 35); /* Integration Objects Orange #FF6B35 */
+  /* Integration Objects Primary Orange #FF6B35 */
+  --primary: oklch(0.68 0.2 35); /* Exact Integration Objects orange */
   --primary-foreground: oklch(0.99 0.002 240);
 
-  /* Updated to Integration Objects teal secondary color */
-  --secondary: oklch(0.75 0.12 180); /* Integration Objects Teal #00CED1 */
+  /* Integration Objects Teal/Cyan #00CED1 */
+  --secondary: oklch(0.78 0.14 185); /* Exact Integration Objects teal */
   --secondary-foreground: oklch(0.99 0.002 240);
 
-  --muted: oklch(0.95 0.003 240); /* Subtle gray */
-  --muted-foreground: oklch(0.45 0.01 240); /* Medium gray */
+  --muted: oklch(0.96 0.003 240); /* Corporate gray */
+  --muted-foreground: oklch(0.5 0.01 240); /* Professional medium gray */
 
-  /* Updated accent to complement Integration Objects colors */
-  --accent: oklch(0.85 0.08 200); /* Light teal accent */
-  --accent-foreground: oklch(0.12 0.01 240);
+  /* Corporate accent color */
+  --accent: oklch(0.88 0.06 200); /* Light corporate teal */
+  --accent-foreground: oklch(0.15 0.01 240);
 
-  --destructive: oklch(0.55 0.18 15);
+  --destructive: oklch(0.58 0.18 15);
   --destructive-foreground: oklch(0.99 0.002 240);
-  --border: oklch(0.92 0.003 240); /* Soft border */
-  --input: oklch(0.97 0.003 240);
-  --ring: oklch(0.65 0.18 35 / 0.15);
+  --border: oklch(0.94 0.003 240); /* Clean corporate border */
+  --input: oklch(0.98 0.003 240);
+  --ring: oklch(0.68 0.2 35 / 0.12);
 
-  /* Updated chart colors to Integration Objects palette */
-  --chart-1: oklch(0.65 0.18 35); /* Primary orange */
-  --chart-2: oklch(0.75 0.12 180); /* Secondary teal */
-  --chart-3: oklch(0.85 0.08 200); /* Light teal */
-  --chart-4: oklch(0.55 0.15 220); /* Navy blue */
-  --chart-5: oklch(0.45 0.08 160); /* Dark teal */
+  /* Corporate chart colors using Integration Objects palette */
+  --chart-1: oklch(0.68 0.2 35); /* Primary orange */
+  --chart-2: oklch(0.78 0.14 185); /* Secondary teal */
+  --chart-3: oklch(0.88 0.06 200); /* Light teal */
+  --chart-4: oklch(0.25 0.05 240); /* Corporate navy */
+  --chart-5: oklch(0.48 0.08 160); /* Dark teal */
 
-  --radius: 0.75rem; /* Professional rounded corners */
+  --radius: 0.5rem; /* Corporate rounded corners - more conservative */
 
   /* Sidebar colors */
   --sidebar: oklch(0.98 0.003 240);
-  --sidebar-foreground: oklch(0.12 0.01 240);
-  --sidebar-primary: oklch(0.65 0.18 35);
+  --sidebar-foreground: oklch(0.15 0.01 240);
+  --sidebar-primary: oklch(0.68 0.2 35);
   --sidebar-primary-foreground: oklch(0.99 0.002 240);
-  --sidebar-accent: oklch(0.85 0.08 200);
-  --sidebar-accent-foreground: oklch(0.12 0.01 240);
-  --sidebar-border: oklch(0.92 0.003 240);
-  --sidebar-ring: oklch(0.65 0.18 35 / 0.15);
+  --sidebar-accent: oklch(0.88 0.06 200);
+  --sidebar-accent-foreground: oklch(0.15 0.01 240);
+  --sidebar-border: oklch(0.94 0.003 240);
+  --sidebar-ring: oklch(0.68 0.2 35 / 0.12);
 }
 
 .dark {
-  /* Updated dark theme to Integration Objects navy background */
-  --background: oklch(0.08 0.02 240); /* Integration Objects Dark Navy #1a1a2e */
-  --foreground: oklch(0.95 0.002 240);
-  --card: oklch(0.12 0.02 240);
-  --card-foreground: oklch(0.95 0.002 240);
-  --popover: oklch(0.08 0.02 240);
-  --popover-foreground: oklch(0.95 0.002 240);
-  --primary: oklch(0.7 0.2 35); /* Brighter orange for dark mode */
-  --primary-foreground: oklch(0.08 0.02 240);
-  --secondary: oklch(0.8 0.15 180); /* Bright teal for dark mode */
-  --secondary-foreground: oklch(0.08 0.02 240);
-  --muted: oklch(0.15 0.02 240);
-  --muted-foreground: oklch(0.65 0.002 240);
-  --accent: oklch(0.85 0.1 200); /* Bright teal accent */
-  --accent-foreground: oklch(0.08 0.02 240);
-  --destructive: oklch(0.65 0.18 15);
+  /* Integration Objects Corporate Navy Background #2B2D42 */
+  --background: oklch(0.18 0.03 240); /* Integration Objects corporate navy */
+  --foreground: oklch(0.96 0.002 240);
+  --card: oklch(0.22 0.03 240);
+  --card-foreground: oklch(0.96 0.002 240);
+  --popover: oklch(0.18 0.03 240);
+  --popover-foreground: oklch(0.96 0.002 240);
+  --primary: oklch(0.72 0.22 35); /* Brighter orange for dark mode */
+  --primary-foreground: oklch(0.18 0.03 240);
+  --secondary: oklch(0.82 0.16 185); /* Bright teal for dark mode */
+  --secondary-foreground: oklch(0.18 0.03 240);
+  --muted: oklch(0.25 0.03 240);
+  --muted-foreground: oklch(0.68 0.002 240);
+  --accent: oklch(0.88 0.08 200); /* Bright teal accent */
+  --accent-foreground: oklch(0.18 0.03 240);
+  --destructive: oklch(0.68 0.18 15);
   --destructive-foreground: oklch(0.99 0.002 240);
-  --border: oklch(0.18 0.02 240);
-  --input: oklch(0.12 0.02 240);
-  --ring: oklch(0.7 0.2 35 / 0.2);
-  --chart-1: oklch(0.7 0.2 35);
-  --chart-2: oklch(0.8 0.15 180);
-  --chart-3: oklch(0.85 0.1 200);
-  --chart-4: oklch(0.6 0.15 220);
-  --chart-5: oklch(0.5 0.1 160);
-  --sidebar: oklch(0.05 0.02 240);
-  --sidebar-foreground: oklch(0.95 0.002 240);
-  --sidebar-primary: oklch(0.7 0.2 35);
-  --sidebar-primary-foreground: oklch(0.08 0.02 240);
-  --sidebar-accent: oklch(0.12 0.02 240);
-  --sidebar-accent-foreground: oklch(0.95 0.002 240);
-  --sidebar-border: oklch(0.18 0.02 240);
-  --sidebar-ring: oklch(0.7 0.2 35 / 0.2);
+  --border: oklch(0.28 0.03 240);
+  --input: oklch(0.22 0.03 240);
+  --ring: oklch(0.72 0.22 35 / 0.15);
+  --chart-1: oklch(0.72 0.22 35);
+  --chart-2: oklch(0.82 0.16 185);
+  --chart-3: oklch(0.88 0.08 200);
+  --chart-4: oklch(0.65 0.15 220);
+  --chart-5: oklch(0.55 0.1 160);
+  --sidebar: oklch(0.15 0.03 240);
+  --sidebar-foreground: oklch(0.96 0.002 240);
+  --sidebar-primary: oklch(0.72 0.22 35);
+  --sidebar-primary-foreground: oklch(0.18 0.03 240);
+  --sidebar-accent: oklch(0.22 0.03 240);
+  --sidebar-accent-foreground: oklch(0.96 0.002 240);
+  --sidebar-border: oklch(0.28 0.03 240);
+  --sidebar-ring: oklch(0.72 0.22 35 / 0.15);
 }
 
 @theme inline {
@@ -138,11 +138,12 @@
   body {
     @apply bg-background text-foreground font-sans;
     overflow-x: hidden;
-    /* Enhanced typography for professional appearance */
-    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    /* Enhanced corporate typography for professional appearance */
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "case" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
   }
 
   .container {
@@ -155,11 +156,11 @@
   }
 }
 
-/* Updated animations to use Integration Objects colors */
+/* Updated animations to use exact Integration Objects colors */
 @keyframes io-fade-up {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -170,7 +171,7 @@
 @keyframes io-scale-in {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
@@ -181,7 +182,7 @@
 @keyframes io-slide-right {
   from {
     opacity: 0;
-    transform: translateX(-40px);
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
@@ -192,10 +193,10 @@
 @keyframes io-glow-pulse {
   0%,
   100% {
-    box-shadow: 0 0 30px rgba(255, 107, 53, 0.1);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.08);
   }
   50% {
-    box-shadow: 0 0 60px rgba(255, 107, 53, 0.2);
+    box-shadow: 0 0 40px rgba(255, 107, 53, 0.15);
   }
 }
 
@@ -205,10 +206,10 @@
     transform: translateY(0px) rotate(0deg);
   }
   33% {
-    transform: translateY(-10px) rotate(1deg);
+    transform: translateY(-8px) rotate(0.5deg);
   }
   66% {
-    transform: translateY(5px) rotate(-1deg);
+    transform: translateY(4px) rotate(-0.5deg);
   }
 }
 
@@ -231,37 +232,37 @@
   }
 }
 
-/* Integration Objects animation classes */
+/* Corporate Integration Objects animation classes */
 .animate-io-fade-up {
-  animation: io-fade-up 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: io-fade-up 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .animate-io-scale-in {
-  animation: io-scale-in 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: io-scale-in 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .animate-io-slide-right {
-  animation: io-slide-right 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: io-slide-right 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .animate-io-glow-pulse {
-  animation: io-glow-pulse 4s ease-in-out infinite;
+  animation: io-glow-pulse 3s ease-in-out infinite;
 }
 
 .animate-io-float {
-  animation: io-float 8s ease-in-out infinite;
+  animation: io-float 6s ease-in-out infinite;
 }
 
 .animate-io-spin-slow {
-  animation: io-spin-slow 20s linear infinite;
+  animation: io-spin-slow 15s linear infinite;
 }
 
 .animate-io-gradient-shift {
-  animation: io-gradient-shift 6s ease infinite;
+  animation: io-gradient-shift 4s ease infinite;
   background-size: 200% 200%;
 }
 
-/* Integration Objects gradient and glass effects */
+/* Corporate Integration Objects gradient effects using exact brand colors */
 .io-gradient-primary {
   background: linear-gradient(135deg, #ff6b35 0%, #ff8a65 100%);
 }
@@ -275,37 +276,38 @@
 }
 
 .io-gradient-text {
-  background: linear-gradient(135deg, #ff6b35, #00ced1, #20b2aa);
+  background: linear-gradient(135deg, #ff6b35, #00ced1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   background-size: 200% 200%;
 }
 
+/* Corporate glass morphism effects */
 .io-glass {
-  backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .io-glass-dark {
-  backdrop-filter: blur(20px);
-  background: rgba(26, 26, 46, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  background: rgba(43, 45, 66, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .io-glass-card {
-  backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 107, 53, 0.1);
-  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.1);
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(255, 107, 53, 0.08);
+  box-shadow: 0 4px 24px rgba(255, 107, 53, 0.06);
 }
 
-/* Enhanced card hover effects with Integration Objects colors */
+/* Enhanced corporate card hover effects */
 .io-card {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: rgba(255, 255, 255, 0.98);
-  border: 1px solid rgba(255, 107, 53, 0.08);
+  border: 1px solid rgba(255, 107, 53, 0.06);
   position: relative;
   overflow: hidden;
 }
@@ -317,8 +319,8 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.06), transparent);
+  transition: left 0.4s;
 }
 
 .io-card:hover::before {
@@ -326,19 +328,19 @@
 }
 
 .io-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 32px 64px -12px rgba(255, 107, 53, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -8px rgba(255, 107, 53, 0.12);
   background: rgba(255, 255, 255, 1);
-  border-color: rgba(255, 107, 53, 0.2);
+  border-color: rgba(255, 107, 53, 0.15);
 }
 
-/* Integration Objects button styles */
+/* Corporate Integration Objects button styles */
 .io-btn-primary {
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #ff6b35 0%, #ff8a65 100%);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 12px rgba(255, 107, 53, 0.2);
 }
 
 .io-btn-primary::before {
@@ -348,8 +350,8 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.4s;
 }
 
 .io-btn-primary:hover::before {
@@ -357,8 +359,8 @@
 }
 
 .io-btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 107, 53, 0.3);
 }
 
 .io-btn-secondary {
@@ -366,7 +368,7 @@
   background: transparent;
   border: 2px solid #00ced1;
   color: #00ced1;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
@@ -378,7 +380,7 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, #00ced1 0%, #20b2aa 100%);
-  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
 }
 
@@ -388,14 +390,14 @@
 
 .io-btn-secondary:hover {
   color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 16px 32px rgba(0, 206, 209, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 206, 209, 0.25);
 }
 
-/* Enhanced typography with Integration Objects styling */
+/* Corporate typography with Integration Objects styling */
 .io-heading {
   font-weight: 300;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   line-height: 1.1;
   background: linear-gradient(135deg, #ff6b35, #00ced1);
   -webkit-background-clip: text;
@@ -404,86 +406,87 @@
 }
 
 .io-heading-bold {
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
 .io-text {
-  line-height: 1.7;
-  color: rgba(31, 31, 31, 0.8);
+  line-height: 1.6;
+  color: rgba(31, 31, 31, 0.85);
+  letter-spacing: -0.005em;
 }
 
-/* Integration Objects geometric elements */
+/* Subtle corporate geometric elements */
 .io-geometric {
   position: absolute;
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(0, 206, 209, 0.03));
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.03), rgba(0, 206, 209, 0.02));
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(60px);
 }
 
 .io-geometric-1 {
-  width: 500px;
-  height: 500px;
-  top: -15%;
-  right: -15%;
-  animation: io-float 15s ease-in-out infinite;
+  width: 400px;
+  height: 400px;
+  top: -10%;
+  right: -10%;
+  animation: io-float 12s ease-in-out infinite;
 }
 
 .io-geometric-2 {
-  width: 400px;
-  height: 400px;
-  bottom: -10%;
-  left: -10%;
-  animation: io-float 20s ease-in-out infinite reverse;
+  width: 300px;
+  height: 300px;
+  bottom: -8%;
+  left: -8%;
+  animation: io-float 16s ease-in-out infinite reverse;
 }
 
 .io-geometric-3 {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: io-spin-slow 25s linear infinite;
+  animation: io-spin-slow 20s linear infinite;
 }
 
-/* Integration Objects shadows and effects */
+/* Corporate shadows and effects */
 .io-shadow-sm {
-  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.08);
+  box-shadow: 0 1px 6px rgba(255, 107, 53, 0.06);
 }
 
 .io-shadow-md {
-  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.12);
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.08);
 }
 
 .io-shadow-lg {
-  box-shadow: 0 16px 48px rgba(255, 107, 53, 0.15);
+  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.1);
 }
 
 .io-shadow-xl {
-  box-shadow: 0 32px 64px rgba(255, 107, 53, 0.2);
+  box-shadow: 0 16px 48px rgba(255, 107, 53, 0.12);
 }
 
 .io-glow {
-  box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
 }
 
-/* Integration Objects loading animation */
+/* Corporate loading animation */
 .io-loader {
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  border: 3px solid rgba(255, 107, 53, 0.3);
+  width: 32px;
+  height: 32px;
+  border: 2px solid rgba(255, 107, 53, 0.2);
   border-radius: 50%;
   border-top-color: #ff6b35;
   animation: io-spin-slow 1s ease-in-out infinite;
 }
 
-/* Integration Objects progress bars */
+/* Corporate progress bars */
 .io-progress {
   background: linear-gradient(90deg, #ff6b35 0%, #00ced1 50%, #20b2aa 100%);
   background-size: 200% 100%;
-  animation: io-gradient-shift 3s ease infinite;
+  animation: io-gradient-shift 2s ease infinite;
 }
 
 /* Enhanced responsive design */
@@ -491,31 +494,31 @@
   .io-geometric-1,
   .io-geometric-2,
   .io-geometric-3 {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
 
   .io-heading {
-    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
   }
 }
 
-/* Dark mode enhancements for Integration Objects theme */
+/* Dark mode enhancements for corporate theme */
 .dark .io-card {
-  background: rgba(26, 26, 46, 0.95);
-  border-color: rgba(255, 107, 53, 0.2);
+  background: rgba(43, 45, 66, 0.95);
+  border-color: rgba(255, 107, 53, 0.15);
 }
 
 .dark .io-card:hover {
-  background: rgba(26, 26, 46, 1);
-  box-shadow: 0 32px 64px -12px rgba(255, 107, 53, 0.3);
+  background: rgba(43, 45, 66, 1);
+  box-shadow: 0 20px 40px -8px rgba(255, 107, 53, 0.2);
 }
 
 .dark .io-text {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .dark .io-glass-card {
-  background: rgba(26, 26, 46, 0.9);
-  border-color: rgba(255, 107, 53, 0.2);
+  background: rgba(43, 45, 66, 0.9);
+  border-color: rgba(255, 107, 53, 0.15);
 }
