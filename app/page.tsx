@@ -2,6 +2,7 @@ import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { ServicesSection } from "@/components/services-section"
+import { UseCasesSection } from "@/components/use-cases-section"
 import { ProjectsSection } from "@/components/projects-section"
 import { TeamSection } from "@/components/team-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
@@ -18,6 +19,7 @@ export default function HomePage() {
           <HeroSection />
           <AboutSection />
           <ServicesSection />
+          <UseCasesSection />
           <ProjectsSection />
           <TeamSection />
           <TestimonialsSection />

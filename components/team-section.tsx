@@ -52,7 +52,7 @@ export function TeamSection() {
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h4 className="sub-title text-secondary font-semibold text-base mb-4">OPC UA Developers</h4>
+          <h4 className="sub-title text-secondary font-semibold text-base mb-4">Expert Team</h4>
           <h2 className="title text-3xl md:text-4xl font-bold text-foreground mb-6 split-text-right split-text-in-right">
             Meet our talent for <br /> intelligent solutions
           </h2>
