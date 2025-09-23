@@ -28,7 +28,7 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex h-16 lg:h-20 items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 lg:space-x-4 group flex-shrink-0">
+            <Link href="/" className="flex items-center group flex-shrink-0">
               <div className="h-10 w-10 lg:h-12 lg:w-12 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center elegant-shadow-sm group-hover:elegant-shadow-md transition-all duration-300 group-hover:scale-105 border border-white/20">
                 <img
                   src="https://integrationobjects.com/images/2023/04/logo.webp"
@@ -36,9 +36,6 @@ export function Header() {
                   className="h-8 w-8 lg:h-10 lg:w-10 object-contain"
                 />
               </div>
-              <span className="elegant-heading-bold text-lg sm:text-xl lg:text-2xl elegant-gradient-text group-hover:scale-105 transition-transform duration-300 truncate">
-                Integration Objects
-              </span>
             </Link>
 
             {/* Desktop Navigation */}
