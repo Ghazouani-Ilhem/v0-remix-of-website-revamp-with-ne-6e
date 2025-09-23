@@ -18,15 +18,15 @@
   --primary-foreground: oklch(0.99 0.002 240);
 
   /* Integration Objects Teal/Cyan #00CED1 */
-  --secondary: oklch(0.78 0.14 185); /* Exact Integration Objects teal */
+  --secondary: oklch(0.25 0.08 285); /* Exact Integration Objects blue #352561 */
   --secondary-foreground: oklch(0.99 0.002 240);
 
   --muted: oklch(0.96 0.003 240); /* Corporate gray */
   --muted-foreground: oklch(0.5 0.01 240); /* Professional medium gray */
 
   /* Corporate accent color */
-  --accent: oklch(0.88 0.06 200); /* Light corporate teal */
-  --accent-foreground: oklch(0.15 0.01 240);
+  --accent: oklch(0.35 0.1 285); /* Lighter version of IO blue */
+  --accent-foreground: oklch(0.99 0.002 240);
 
   --destructive: oklch(0.58 0.18 15);
   --destructive-foreground: oklch(0.99 0.002 240);
@@ -36,10 +36,10 @@
 
   /* Corporate chart colors using Integration Objects palette */
   --chart-1: oklch(0.68 0.2 35); /* Primary orange */
-  --chart-2: oklch(0.78 0.14 185); /* Secondary teal */
-  --chart-3: oklch(0.88 0.06 200); /* Light teal */
-  --chart-4: oklch(0.25 0.05 240); /* Corporate navy */
-  --chart-5: oklch(0.48 0.08 160); /* Dark teal */
+  --chart-2: oklch(0.25 0.08 285); /* Primary blue #352561 */
+  --chart-3: oklch(0.35 0.1 285); /* Light blue accent */
+  --chart-4: oklch(0.45 0.12 285); /* Medium blue */
+  --chart-5: oklch(0.55 0.15 285); /* Lighter blue */
 
   --radius: 0.5rem; /* Corporate rounded corners - more conservative */
 
@@ -48,45 +48,45 @@
   --sidebar-foreground: oklch(0.15 0.01 240);
   --sidebar-primary: oklch(0.68 0.2 35);
   --sidebar-primary-foreground: oklch(0.99 0.002 240);
-  --sidebar-accent: oklch(0.88 0.06 200);
-  --sidebar-accent-foreground: oklch(0.15 0.01 240);
+  --sidebar-accent: oklch(0.35 0.1 285);
+  --sidebar-accent-foreground: oklch(0.99 0.002 240);
   --sidebar-border: oklch(0.94 0.003 240);
   --sidebar-ring: oklch(0.68 0.2 35 / 0.12);
 }
 
 .dark {
   /* Integration Objects Corporate Navy Background #2B2D42 */
-  --background: oklch(0.18 0.03 240); /* Integration Objects corporate navy */
+  --background: oklch(0.15 0.05 285); /* Dark version of IO blue */
   --foreground: oklch(0.96 0.002 240);
-  --card: oklch(0.22 0.03 240);
+  --card: oklch(0.18 0.06 285);
   --card-foreground: oklch(0.96 0.002 240);
-  --popover: oklch(0.18 0.03 240);
+  --popover: oklch(0.15 0.05 285);
   --popover-foreground: oklch(0.96 0.002 240);
   --primary: oklch(0.72 0.22 35); /* Brighter orange for dark mode */
-  --primary-foreground: oklch(0.18 0.03 240);
-  --secondary: oklch(0.82 0.16 185); /* Bright teal for dark mode */
-  --secondary-foreground: oklch(0.18 0.03 240);
-  --muted: oklch(0.25 0.03 240);
+  --primary-foreground: oklch(0.15 0.05 285);
+  --secondary: oklch(0.35 0.1 285); /* Lighter IO blue for dark mode */
+  --secondary-foreground: oklch(0.96 0.002 240);
+  --muted: oklch(0.22 0.06 285);
   --muted-foreground: oklch(0.68 0.002 240);
-  --accent: oklch(0.88 0.08 200); /* Bright teal accent */
-  --accent-foreground: oklch(0.18 0.03 240);
+  --accent: oklch(0.45 0.12 285); /* Medium IO blue accent */
+  --accent-foreground: oklch(0.96 0.002 240);
   --destructive: oklch(0.68 0.18 15);
   --destructive-foreground: oklch(0.99 0.002 240);
-  --border: oklch(0.28 0.03 240);
-  --input: oklch(0.22 0.03 240);
+  --border: oklch(0.25 0.06 285);
+  --input: oklch(0.18 0.06 285);
   --ring: oklch(0.72 0.22 35 / 0.15);
   --chart-1: oklch(0.72 0.22 35);
-  --chart-2: oklch(0.82 0.16 185);
-  --chart-3: oklch(0.88 0.08 200);
-  --chart-4: oklch(0.65 0.15 220);
-  --chart-5: oklch(0.55 0.1 160);
-  --sidebar: oklch(0.15 0.03 240);
+  --chart-2: oklch(0.35 0.1 285);
+  --chart-3: oklch(0.45 0.12 285);
+  --chart-4: oklch(0.55 0.15 285);
+  --chart-5: oklch(0.65 0.18 285);
+  --sidebar: oklch(0.12 0.04 285);
   --sidebar-foreground: oklch(0.96 0.002 240);
   --sidebar-primary: oklch(0.72 0.22 35);
-  --sidebar-primary-foreground: oklch(0.18 0.03 240);
-  --sidebar-accent: oklch(0.22 0.03 240);
+  --sidebar-primary-foreground: oklch(0.15 0.05 285);
+  --sidebar-accent: oklch(0.18 0.06 285);
   --sidebar-accent-foreground: oklch(0.96 0.002 240);
-  --sidebar-border: oklch(0.28 0.03 240);
+  --sidebar-border: oklch(0.25 0.06 285);
   --sidebar-ring: oklch(0.72 0.22 35 / 0.15);
 }
 
@@ -433,15 +433,15 @@
 }
 
 .io-gradient-secondary {
-  background: linear-gradient(135deg, #00ced1 0%, #20b2aa 100%);
+  background: linear-gradient(135deg, #352561 0%, #4a3575 100%);
 }
 
 .io-gradient-accent {
-  background: linear-gradient(135deg, #ff6b35 0%, #00ced1 100%);
+  background: linear-gradient(135deg, #ff6b35 0%, #352561 100%);
 }
 
 .io-gradient-text {
-  background: linear-gradient(135deg, #ff6b35, #00ced1);
+  background: linear-gradient(135deg, #ff6b35, #352561);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -682,10 +682,10 @@
 .robok-btn-secondary {
   position: relative;
   background: transparent;
-  border: 2px solid #00ced1;
+  border: 2px solid #352561;
   border-radius: 12px;
   padding: 14px 30px;
-  color: #00ced1;
+  color: #352561;
   font-weight: 600;
   font-size: 16px;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -699,7 +699,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #00ced1 0%, #20b2aa 100%);
+  background: linear-gradient(135deg, #352561 0%, #4a3575 100%);
   transition: left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: -1;
 }
@@ -711,12 +711,12 @@
 .robok-btn-secondary:hover {
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 206, 209, 0.25);
+  box-shadow: 0 8px 20px rgba(53, 37, 97, 0.25);
 }
 
 /* Robok-style text effects */
 .robok-heading {
-  background: linear-gradient(135deg, #ff6b35, #00ced1);
+  background: linear-gradient(135deg, #ff6b35, #352561);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -726,7 +726,7 @@
 }
 
 .robok-shimmer-text {
-  background: linear-gradient(90deg, #ff6b35 0%, #00ced1 50%, #ff6b35 100%);
+  background: linear-gradient(90deg, #ff6b35 0%, #352561 50%, #ff6b35 100%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -739,7 +739,7 @@
   position: absolute;
   width: 200px;
   height: 200px;
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 206, 209, 0.05));
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(53, 37, 97, 0.05));
   border-radius: 50%;
   filter: blur(40px);
   animation: robok-float-gentle 8s ease-in-out infinite;
@@ -749,7 +749,7 @@
   position: absolute;
   width: 150px;
   height: 150px;
-  background: linear-gradient(45deg, rgba(0, 206, 209, 0.08), rgba(255, 107, 53, 0.04));
+  background: linear-gradient(45deg, rgba(53, 37, 97, 0.08), rgba(255, 107, 53, 0.04));
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   filter: blur(30px);
   animation: robok-float-gentle 12s ease-in-out infinite reverse;
@@ -759,7 +759,7 @@
   position: absolute;
   width: 100px;
   height: 100px;
-  border: 2px solid rgba(255, 107, 53, 0.1);
+  border: 2px solid rgba(53, 37, 97, 0.1);
   border-radius: 20px;
   transform: rotate(45deg);
   animation: io-spin-slow 20s linear infinite;
@@ -768,14 +768,14 @@
 /* Robok-style progress indicators */
 .robok-progress {
   height: 4px;
-  background: rgba(255, 107, 53, 0.1);
+  background: rgba(53, 37, 97, 0.1);
   border-radius: 2px;
   overflow: hidden;
 }
 
 .robok-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #ff6b35 0%, #00ced1 100%);
+  background: linear-gradient(90deg, #ff6b35 0%, #352561 100%);
   border-radius: 2px;
   transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;

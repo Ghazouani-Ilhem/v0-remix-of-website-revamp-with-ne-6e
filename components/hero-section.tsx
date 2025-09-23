@@ -101,12 +101,12 @@ export function HeroSection() {
   const currentSlideData = heroSlides[currentSlide]
 
   return (
-    <section className="relative overflow-hidden bg-[#1a1a2e] min-h-screen flex items-center">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#2A1B3D] via-[#1A1A2E] to-[#16213E] min-h-screen flex items-center">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out opacity-20"
         style={{ backgroundImage: `url('${currentSlideData.image}')` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e]/95 via-[#FF6B35]/20 to-[#00CED1]/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#2A1B3D]/98 via-[#1A1A2E]/95 to-[#16213E]/90" />
 
       <div className="absolute inset-0 opacity-30">
         <div className="robok-shape-1 top-10 left-10" />
@@ -141,11 +141,11 @@ export function HeroSection() {
               </div>
 
               <div className="space-y-6">
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white text-balance leading-tight animate-robok-text-reveal">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-balance leading-tight animate-robok-text-reveal">
                   <span className="robok-heading">{currentSlideData.title}</span>
                 </h1>
                 <p
-                  className="text-2xl sm:text-3xl lg:text-4xl text-[#00CED1] text-balance font-light animate-robok-slide-right"
+                  className="text-xl sm:text-2xl lg:text-2xl text-[#00CED1] text-balance font-light animate-robok-slide-right"
                   style={{ animationDelay: "0.2s" }}
                 >
                   {currentSlideData.subtitle}
@@ -153,7 +153,7 @@ export function HeroSection() {
               </div>
 
               <p
-                className="text-lg text-white/85 text-pretty max-w-2xl leading-relaxed animate-robok-fade-up"
+                className="text-base text-white/85 text-pretty max-w-2xl leading-relaxed animate-robok-fade-up"
                 style={{ animationDelay: "0.4s" }}
               >
                 {currentSlideData.description}
@@ -163,7 +163,7 @@ export function HeroSection() {
                 className="flex flex-col sm:flex-row gap-6 pt-8 animate-robok-scale-in"
                 style={{ animationDelay: "0.6s" }}
               >
-                <Button size="lg" asChild className="robok-btn-primary px-10 py-4 text-lg h-auto">
+                <Button size="lg" asChild className="robok-btn-primary px-10 py-4 text-base h-auto">
                   <Link href={currentSlideData.ctaLink}>
                     {currentSlideData.cta}
                     <ArrowRight className="ml-3 h-5 w-5" />
@@ -173,7 +173,7 @@ export function HeroSection() {
                   variant="outline"
                   size="lg"
                   asChild
-                  className="robok-btn-secondary px-10 py-4 text-lg h-auto bg-transparent"
+                  className="robok-btn-secondary px-10 py-4 text-base h-auto bg-transparent"
                 >
                   <Link href="/contact">Schedule Demo</Link>
                 </Button>
