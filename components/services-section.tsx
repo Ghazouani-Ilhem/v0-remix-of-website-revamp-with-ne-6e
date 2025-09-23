@@ -1,8 +1,7 @@
 "use client"
-
-import { Card, CardContent } from "@/components/ui/card"
 import { Cpu, Database, Network, Bot, BarChart3, Users } from "lucide-react"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 const services = [
   {
@@ -38,79 +37,115 @@ const services = [
 ]
 
 export function ServicesSection() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 },
+    )
+
+    const section = document.getElementById("services-section")
+    if (section) observer.observe(section)
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className="py-24 bg-background blurry-shape-half-right-bottom overflow-x-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="text-center mb-16">
-          <h4 className="sub-title text-secondary font-semibold text-sm mb-4">Services</h4>
-          <h2 className="title text-2xl md:text-3xl font-bold text-foreground mb-6 split-text-right split-text-in-right">
-            Industrial automation solutions for the digital transformation era
+    <section id="services-section" className="py-24 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="robok-shape-1 top-20 right-10" />
+        <div className="robok-shape-2 bottom-20 left-10" />
+        <div className="robok-shape-3 top-1/2 right-1/4" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+        <div className={`text-center mb-16 ${isVisible ? "animate-robok-fade-up" : "opacity-0"}`}>
+          <h4 className="sub-title text-secondary font-semibold text-sm mb-4 animate-robok-shimmer">Services</h4>
+          <h2
+            className="robok-heading text-2xl md:text-3xl font-bold mb-6 animate-robok-text-reveal"
+            style={{ animationDelay: "0.2s" }}
+          >
+            AI-optimized industrial automation solutions for innovative futures
           </h2>
         </div>
 
-        <div className="service-style-one-items fade-up-anim">
+        <div className="service-style-one-items">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
             <div
-              className="service-one-tags relative bg-primary text-white p-10 rounded-3xl overflow-hidden bg-cover bg-center hover:scale-105 transition-transform duration-300"
-              style={{ backgroundImage: "url('/industrial-automation-server-room-with-blue-lighti.jpg')" }}
+              className={`robok-gradient-card relative text-white overflow-hidden bg-cover bg-center group ${isVisible ? "animate-robok-scale-in" : "opacity-0"}`}
+              style={{
+                backgroundImage: "url('/industrial-automation-server-room-with-blue-lighti.jpg')",
+                animationDelay: "0.1s",
+              }}
             >
-              <div className="absolute inset-0 bg-primary/90" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-secondary/80" />
               <div className="curve-text relative z-10 text-center">
-                <div className="w-28 h-28 mx-auto mb-6 relative">
-                  <svg className="w-full h-full animate-spin-slow" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <path id="textPath" d="M 56,56 a 42,42 0 1,1 0,1 z" fill="none"></path>
-                    <text className="text-[10px] fill-white">
-                      <textPath href="#textPath">IT-OT Integration • SIOTH Platform • OPC Solutions • </textPath>
+                <div className="w-32 h-32 mx-auto mb-6 relative">
+                  <svg className="w-full h-full animate-io-spin-slow" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <path id="textPath" d="M 64,64 a 48,48 0 1,1 0,1 z" fill="none"></path>
+                    <text className="text-[10px] fill-white animate-robok-shimmer">
+                      <textPath href="#textPath">Automation & predictive maintenance • SIOTH Platform • </textPath>
                     </text>
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Network className="w-10 h-10 text-secondary" />
+                    <div className="robok-service-card bg-white/10 backdrop-blur-sm border border-white/20 p-4 rounded-2xl">
+                      <Network className="w-8 h-8 text-white animate-robok-pulse-glow" />
+                    </div>
                   </div>
                 </div>
+                <h4 className="text-lg font-bold mb-2 robok-shimmer-text">IT-OT Integration Excellence</h4>
+                <p className="text-white/90 text-sm">Seamless connectivity solutions</p>
               </div>
             </div>
 
             {services.map((service, index) => (
-              <Card
+              <div
                 key={index}
-                className="service-style-one-single group hover:shadow-xl transition-all duration-300 fade-up-anim hover:scale-105"
-                style={{ animationDelay: `${(index + 1) * 0.1}s` }}
+                className={`robok-service-card group ${isVisible ? "animate-robok-fade-up" : "opacity-0"}`}
+                style={{ animationDelay: `${(index + 2) * 0.1}s` }}
               >
-                <CardContent className="p-6">
-                  <div className="icon mb-6">
-                    <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <service.icon className="w-7 h-7 text-primary" />
-                    </div>
-                  </div>
-                  <h4 className="text-base font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                    <Link href="/services">{service.title}</Link>
-                  </h4>
-                  <p className="text-muted-foreground leading-relaxed text-xs">{service.description}</p>
-                </CardContent>
-              </Card>
+                <div className="icon-wrapper mx-auto">
+                  <service.icon className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-lg font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                  <Link href="/services">{service.title}</Link>
+                </h4>
+                <p className="text-muted-foreground leading-relaxed text-sm">{service.description}</p>
+              </div>
             ))}
 
             <div
-              className="community-card text-white p-6 rounded-3xl bg-cover bg-center relative overflow-hidden hover:scale-105 transition-transform duration-300"
-              style={{ backgroundImage: "url('/modern-industrial-iot-factory-with-connected-devic.jpg')" }}
+              className={`robok-gradient-card text-white relative overflow-hidden bg-cover bg-center ${isVisible ? "animate-robok-rotate-in" : "opacity-0"}`}
+              style={{
+                backgroundImage: "url('/modern-industrial-iot-factory-with-connected-devic.jpg')",
+                animationDelay: "0.7s",
+              }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 to-secondary/70" />
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 to-primary/70" />
               <div className="relative z-10">
-                <h4 className="text-lg font-bold mb-4">Industrial Automation Community</h4>
-                <p className="text-white/90 mb-6 text-xs">
-                  Join thousands of automation engineers and system integrators using Integration Objects solutions
-                  worldwide
+                <h4 className="text-xl font-bold mb-4 robok-shimmer-text">AI Community</h4>
+                <p className="text-white/90 mb-6 text-sm leading-relaxed">
+                  Dive into the automation scene and unleash your industrial potential!
                 </p>
                 <div className="info">
-                  <div className="multi-users flex -space-x-2 mb-4">
+                  <div className="multi-users flex -space-x-2 mb-4 animate-robok-float-gentle">
                     {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="w-8 h-8 bg-white/20 rounded-full border-2 border-white/30" />
+                      <div
+                        key={i}
+                        className="w-10 h-10 bg-white/20 rounded-full border-2 border-white/30 backdrop-blur-sm animate-robok-bounce-in"
+                        style={{ animationDelay: `${i * 0.1}s` }}
+                      />
                     ))}
-                    <div className="w-8 h-8 bg-white/10 rounded-full border-2 border-white/30 flex items-center justify-center">
-                      <Users className="w-3 h-3 text-white" />
+                    <div className="w-10 h-10 bg-white/10 rounded-full border-2 border-white/30 flex items-center justify-center backdrop-blur-sm">
+                      <Users className="w-4 h-4 text-white animate-robok-pulse-glow" />
                     </div>
                   </div>
-                  <h5 className="text-sm font-semibold">500+ Global Clients</h5>
+                  <h5 className="text-lg font-semibold robok-heading">Over 500+ Global Clients</h5>
                 </div>
               </div>
             </div>

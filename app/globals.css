@@ -232,6 +232,130 @@
   }
 }
 
+/* Robok-inspired enhancements for Integration Objects */
+
+/* Robok-style fade up animation with stagger */
+@keyframes robok-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes robok-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes robok-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes robok-slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes robok-rotate-in {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes robok-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes robok-pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 107, 53, 0.2);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes robok-float-gentle {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(0.5deg);
+  }
+}
+
+@keyframes robok-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes robok-text-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
 /* Corporate Integration Objects animation classes */
 .animate-io-fade-up {
   animation: io-fade-up 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -260,6 +384,47 @@
 .animate-io-gradient-shift {
   animation: io-gradient-shift 4s ease infinite;
   background-size: 200% 200%;
+}
+
+/* Robok animation classes */
+.animate-robok-fade-up {
+  animation: robok-fade-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-robok-scale-in {
+  animation: robok-scale-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-robok-slide-right {
+  animation: robok-slide-right 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-robok-slide-left {
+  animation: robok-slide-left 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-robok-rotate-in {
+  animation: robok-rotate-in 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-robok-bounce-in {
+  animation: robok-bounce-in 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-robok-pulse-glow {
+  animation: robok-pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-robok-float-gentle {
+  animation: robok-float-gentle 6s ease-in-out infinite;
+}
+
+.animate-robok-shimmer {
+  animation: robok-shimmer 2s linear infinite;
+}
+
+.animate-robok-text-reveal {
+  animation: robok-text-reveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Corporate Integration Objects gradient effects using exact brand colors */
@@ -334,120 +499,110 @@
   border-color: rgba(255, 107, 53, 0.15);
 }
 
-/* Corporate Integration Objects button styles */
-.io-btn-primary {
+/* Robok-style card enhancements */
+.robok-card {
   position: relative;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(255, 107, 53, 0.08);
+  border-radius: 16px;
+  padding: 40px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: hidden;
-  background: linear-gradient(135deg, #ff6b35 0%, #ff8a65 100%);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 12px rgba(255, 107, 53, 0.2);
+  backdrop-filter: blur(20px);
 }
 
-.io-btn-primary::before {
+.robok-card::before {
   content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-  transition: left 0.4s;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.05), transparent);
+  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.io-btn-primary:hover::before {
+.robok-card:hover::before {
   left: 100%;
 }
 
-.io-btn-primary:hover {
-  transform: translateY(-2px);
+.robok-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(255, 107, 53, 0.15);
+  border-color: rgba(255, 107, 53, 0.2);
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Robok-style gradient card */
+.robok-gradient-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(0, 206, 209, 0.05) 100%);
+  border: 1px solid rgba(255, 107, 53, 0.1);
+  border-radius: 20px;
+  padding: 50px;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.robok-gradient-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.03) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.robok-gradient-card:hover::after {
+  opacity: 1;
+}
+
+.robok-gradient-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -8px rgba(255, 107, 53, 0.12);
+  border-color: rgba(255, 107, 53, 0.2);
+}
+
+/* Robok-style service card with icon */
+.robok-service-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 107, 53, 0.08);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+}
+
+.robok-service-card .icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ff6b35, #ff8a65);
+  border-radius: 20px;
+  margin-bottom: 24px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.robok-service-card:hover .icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
   box-shadow: 0 12px 24px rgba(255, 107, 53, 0.3);
 }
 
-.io-btn-secondary {
-  position: relative;
-  background: transparent;
-  border: 2px solid #00ced1;
-  color: #00ced1;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
-
-.io-btn-secondary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #00ced1 0%, #20b2aa 100%);
-  transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: -1;
-}
-
-.io-btn-secondary:hover::before {
-  left: 0;
-}
-
-.io-btn-secondary:hover {
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 206, 209, 0.25);
-}
-
-/* Corporate typography with Integration Objects styling */
-.io-heading {
-  font-weight: 300;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-  background: linear-gradient(135deg, #ff6b35, #00ced1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.io-heading-bold {
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.io-text {
-  line-height: 1.6;
-  color: rgba(31, 31, 31, 0.85);
-  letter-spacing: -0.005em;
-}
-
-/* Subtle corporate geometric elements */
-.io-geometric {
-  position: absolute;
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.03), rgba(0, 206, 209, 0.02));
-  border-radius: 50%;
-  filter: blur(60px);
-}
-
-.io-geometric-1 {
-  width: 400px;
-  height: 400px;
-  top: -10%;
-  right: -10%;
-  animation: io-float 12s ease-in-out infinite;
-}
-
-.io-geometric-2 {
-  width: 300px;
-  height: 300px;
-  bottom: -8%;
-  left: -8%;
-  animation: io-float 16s ease-in-out infinite reverse;
-}
-
-.io-geometric-3 {
-  width: 250px;
-  height: 250px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: io-spin-slow 20s linear infinite;
+.robok-service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px -12px rgba(255, 107, 53, 0.15);
+  border-color: rgba(255, 107, 53, 0.2);
 }
 
 /* Corporate shadows and effects */
@@ -489,36 +644,201 @@
   animation: io-gradient-shift 2s ease infinite;
 }
 
-/* Enhanced responsive design */
-@media (max-width: 768px) {
-  .io-geometric-1,
-  .io-geometric-2,
-  .io-geometric-3 {
-    width: 150px;
-    height: 150px;
-  }
-
-  .io-heading {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-  }
+/* Robok-style button enhancements */
+.robok-btn-primary {
+  position: relative;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8a65 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.2);
 }
 
-/* Dark mode enhancements for corporate theme */
-.dark .io-card {
+.robok-btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.robok-btn-primary:hover::before {
+  left: 100%;
+}
+
+.robok-btn-primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(255, 107, 53, 0.35);
+}
+
+.robok-btn-secondary {
+  position: relative;
+  background: transparent;
+  border: 2px solid #00ced1;
+  border-radius: 12px;
+  padding: 14px 30px;
+  color: #00ced1;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+.robok-btn-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #00ced1 0%, #20b2aa 100%);
+  transition: left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1;
+}
+
+.robok-btn-secondary:hover::before {
+  left: 0;
+}
+
+.robok-btn-secondary:hover {
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 206, 209, 0.25);
+}
+
+/* Robok-style text effects */
+.robok-heading {
+  background: linear-gradient(135deg, #ff6b35, #00ced1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.robok-shimmer-text {
+  background: linear-gradient(90deg, #ff6b35 0%, #00ced1 50%, #ff6b35 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: robok-shimmer 3s ease-in-out infinite;
+}
+
+/* Robok-style geometric shapes */
+.robok-shape-1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 206, 209, 0.05));
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: robok-float-gentle 8s ease-in-out infinite;
+}
+
+.robok-shape-2 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, rgba(0, 206, 209, 0.08), rgba(255, 107, 53, 0.04));
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  filter: blur(30px);
+  animation: robok-float-gentle 12s ease-in-out infinite reverse;
+}
+
+.robok-shape-3 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(255, 107, 53, 0.1);
+  border-radius: 20px;
+  transform: rotate(45deg);
+  animation: io-spin-slow 20s linear infinite;
+}
+
+/* Robok-style progress indicators */
+.robok-progress {
+  height: 4px;
+  background: rgba(255, 107, 53, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.robok-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b35 0%, #00ced1 100%);
+  border-radius: 2px;
+  transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.robok-progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: robok-shimmer 2s linear infinite;
+}
+
+/* Dark mode enhancements for robok theme */
+.dark .robok-card {
   background: rgba(43, 45, 66, 0.95);
   border-color: rgba(255, 107, 53, 0.15);
 }
 
-.dark .io-card:hover {
+.dark .robok-card:hover {
   background: rgba(43, 45, 66, 1);
-  box-shadow: 0 20px 40px -8px rgba(255, 107, 53, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(255, 107, 53, 0.2);
 }
 
-.dark .io-text {
-  color: rgba(255, 255, 255, 0.85);
+.dark .robok-gradient-card {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(0, 206, 209, 0.08) 100%);
+  border-color: rgba(255, 107, 53, 0.15);
 }
 
-.dark .io-glass-card {
+.dark .robok-service-card {
   background: rgba(43, 45, 66, 0.9);
   border-color: rgba(255, 107, 53, 0.15);
+}
+
+/* Responsive adjustments for robok theme */
+@media (max-width: 768px) {
+  .robok-card,
+  .robok-gradient-card,
+  .robok-service-card {
+    padding: 24px;
+  }
+
+  .robok-service-card .icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 16px;
+  }
+
+  .robok-shape-1 {
+    width: 120px;
+    height: 120px;
+  }
+
+  .robok-shape-2 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .robok-shape-3 {
+    width: 60px;
+    height: 60px;
+  }
 }

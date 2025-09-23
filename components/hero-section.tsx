@@ -108,9 +108,12 @@ export function HeroSection() {
       />
       <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e]/95 via-[#FF6B35]/20 to-[#00CED1]/30" />
 
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-30">
+        <div className="robok-shape-1 top-10 left-10" />
+        <div className="robok-shape-2 top-1/3 right-20" />
+        <div className="robok-shape-3 bottom-20 left-1/4" />
         <div
-          className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-[#FF6B35]/30 to-[#00CED1]/30 blur-3xl animate-pulse"
+          className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-[#FF6B35]/30 to-[#00CED1]/30 blur-3xl animate-robok-pulse-glow"
           style={{
             left: `${20 + mousePosition.x * 0.1}%`,
             top: `${10 + mousePosition.y * 0.1}%`,
@@ -118,28 +121,12 @@ export function HeroSection() {
           }}
         />
         <div
-          className="absolute w-64 h-64 rounded-full bg-gradient-to-r from-[#00CED1]/40 to-[#FF6B35]/20 blur-2xl animate-pulse"
+          className="absolute w-64 h-64 rounded-full bg-gradient-to-r from-[#00CED1]/40 to-[#FF6B35]/20 blur-2xl animate-robok-float-gentle"
           style={{
             right: `${15 + mousePosition.x * 0.05}%`,
             bottom: `${20 + mousePosition.y * 0.08}%`,
             transform: "translate(50%, 50%)",
             animationDelay: "2s",
-          }}
-        />
-        <div
-          className="absolute w-32 h-32 bg-[#FF6B35]/30 rotate-45 animate-spin"
-          style={{
-            left: `${70 + mousePosition.x * 0.03}%`,
-            top: `${30 + mousePosition.y * 0.05}%`,
-            animationDuration: "20s",
-          }}
-        />
-        <div
-          className="absolute w-24 h-24 border-2 border-[#00CED1]/40 rounded-full animate-ping"
-          style={{
-            right: `${25 + mousePosition.x * 0.02}%`,
-            top: `${60 + mousePosition.y * 0.04}%`,
-            animationDuration: "3s",
           }}
         />
       </div>
@@ -148,32 +135,35 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-12 gap-16 items-center py-24">
           <div className={`lg:col-span-7 space-y-12 ${isVisible ? "animate-robok-fade-up" : "opacity-0"}`}>
             <div className="space-y-8">
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium border border-[#FF6B35]/30 shadow-lg shadow-[#FF6B35]/20">
-                <div className="w-2 h-2 bg-[#FF6B35] rounded-full animate-pulse shadow-lg shadow-[#FF6B35]/50" />
-                {currentSlideData.badge}
+              <div className="inline-flex items-center gap-3 px-6 py-3 robok-card text-sm font-medium shadow-lg">
+                <div className="w-2 h-2 bg-[#FF6B35] rounded-full animate-robok-pulse-glow shadow-lg shadow-[#FF6B35]/50" />
+                <span className="robok-shimmer-text">{currentSlideData.badge}</span>
               </div>
 
               <div className="space-y-6">
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white text-balance leading-tight">
-                  <span className="bg-gradient-to-r from-white via-[#00CED1] to-white bg-clip-text text-transparent animate-pulse">
-                    {currentSlideData.title}
-                  </span>
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white text-balance leading-tight animate-robok-text-reveal">
+                  <span className="robok-heading">{currentSlideData.title}</span>
                 </h1>
-                <p className="text-2xl sm:text-3xl lg:text-4xl text-[#00CED1] text-balance font-light">
+                <p
+                  className="text-2xl sm:text-3xl lg:text-4xl text-[#00CED1] text-balance font-light animate-robok-slide-right"
+                  style={{ animationDelay: "0.2s" }}
+                >
                   {currentSlideData.subtitle}
                 </p>
               </div>
 
-              <p className="text-lg text-white/85 text-pretty max-w-2xl leading-relaxed">
+              <p
+                className="text-lg text-white/85 text-pretty max-w-2xl leading-relaxed animate-robok-fade-up"
+                style={{ animationDelay: "0.4s" }}
+              >
                 {currentSlideData.description}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-6 pt-8">
-                <Button
-                  size="lg"
-                  asChild
-                  className="bg-gradient-to-r from-[#FF6B35] to-[#FF6B35]/80 hover:from-[#FF6B35]/90 hover:to-[#FF6B35] px-10 py-4 text-white font-medium rounded-lg text-lg h-auto shadow-lg shadow-[#FF6B35]/30 hover:shadow-xl hover:shadow-[#FF6B35]/40 transition-all duration-300 hover:scale-105"
-                >
+              <div
+                className="flex flex-col sm:flex-row gap-6 pt-8 animate-robok-scale-in"
+                style={{ animationDelay: "0.6s" }}
+              >
+                <Button size="lg" asChild className="robok-btn-primary px-10 py-4 text-lg h-auto">
                   <Link href={currentSlideData.ctaLink}>
                     {currentSlideData.cta}
                     <ArrowRight className="ml-3 h-5 w-5" />
@@ -183,7 +173,7 @@ export function HeroSection() {
                   variant="outline"
                   size="lg"
                   asChild
-                  className="px-10 py-4 rounded-lg text-lg h-auto bg-transparent border-[#00CED1]/50 text-[#00CED1] hover:bg-[#00CED1]/10 hover:border-[#00CED1] hover:text-[#00CED1] transition-all duration-300 hover:scale-105"
+                  className="robok-btn-secondary px-10 py-4 text-lg h-auto bg-transparent"
                 >
                   <Link href="/contact">Schedule Demo</Link>
                 </Button>
@@ -203,7 +193,7 @@ export function HeroSection() {
                     onClick={() => goToSlide(index)}
                     className={`w-12 h-1 rounded-full transition-all duration-300 ${
                       index === currentSlide
-                        ? "bg-[#FF6B35] shadow-lg shadow-[#FF6B35]/50"
+                        ? "bg-[#FF6B35] shadow-lg shadow-[#FF6B35]/50 animate-robok-pulse-glow"
                         : "bg-white/30 hover:bg-[#00CED1]/50"
                     }`}
                   />
@@ -213,38 +203,41 @@ export function HeroSection() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={toggleAutoPlay}
-                  className="p-3 rounded-lg bg-white/10 backdrop-blur-md hover:bg-[#FF6B35]/20 transition-all duration-300 border border-white/20"
+                  className="p-3 rounded-lg robok-card hover:animate-robok-bounce-in transition-all duration-300"
                 >
-                  {isAutoPlaying ? <Pause className="h-4 w-4 text-white" /> : <Play className="h-4 w-4 text-white" />}
+                  {isAutoPlaying ? (
+                    <Pause className="h-4 w-4 text-foreground" />
+                  ) : (
+                    <Play className="h-4 w-4 text-foreground" />
+                  )}
                 </button>
                 <button
                   onClick={prevSlide}
-                  className="p-3 rounded-lg bg-white/10 backdrop-blur-md hover:bg-[#00CED1]/20 transition-all duration-300 border border-white/20"
+                  className="p-3 rounded-lg robok-card hover:animate-robok-bounce-in transition-all duration-300"
                 >
-                  <ChevronLeft className="h-4 w-4 text-white" />
+                  <ChevronLeft className="h-4 w-4 text-foreground" />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="p-3 rounded-lg bg-white/10 backdrop-blur-md hover:bg-[#00CED1]/20 transition-all duration-300 border border-white/20"
+                  className="p-3 rounded-lg robok-card hover:animate-robok-bounce-in transition-all duration-300"
                 >
-                  <ChevronRight className="h-4 w-4 text-white" />
+                  <ChevronRight className="h-4 w-4 text-foreground" />
                 </button>
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-xl">
+            <div className="robok-gradient-card shadow-xl animate-robok-float-gentle">
               <p className="text-white/70 text-sm mb-6 text-center font-medium">Trusted by industry leaders</p>
               <div className="grid grid-cols-3 gap-4">
                 {brandPartners.map((brand, index) => (
                   <div
                     key={brand.name}
-                    className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center justify-center h-14 border border-white/10 hover:border-[#FF6B35]/30 hover:bg-[#FF6B35]/10 transition-all duration-300 group"
+                    className="robok-card p-4 flex items-center justify-center h-14 hover:animate-robok-bounce-in group"
                     style={{
                       animationDelay: `${index * 0.2}s`,
-                      animation: "float 6s ease-in-out infinite",
                     }}
                   >
-                    <span className="text-white/90 text-xs font-bold group-hover:text-[#FF6B35] transition-colors duration-300">
+                    <span className="text-foreground/90 text-xs font-bold group-hover:text-[#FF6B35] transition-colors duration-300">
                       {brand.logo}
                     </span>
                   </div>
@@ -256,9 +249,9 @@ export function HeroSection() {
       </div>
 
       {isAutoPlaying && (
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20">
+        <div className="absolute bottom-0 left-0 w-full robok-progress">
           <div
-            className="h-full bg-gradient-to-r from-[#FF6B35] to-[#00CED1] transition-all duration-100 ease-linear"
+            className="robok-progress-bar"
             style={{
               width: `${((Date.now() % 8000) / 8000) * 100}%`,
               animation: "progress 8s linear infinite",
