@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Elegant Professional Design System - Inspired by luxury tech brands */
+/* Enhanced Design System - Inspired by Robok AI Theme */
 :root {
   /* Sophisticated Neutral Palette */
   --background: oklch(0.99 0.002 240); /* Warm white */
@@ -13,80 +13,81 @@
   --popover: oklch(0.99 0.002 240);
   --popover-foreground: oklch(0.12 0.01 240);
 
-  /* Refined Primary - Deep sophisticated blue */
-  --primary: oklch(0.18 0.06 240); /* #0f1419 - Deep navy */
+  /* Enhanced primary with robok-inspired purple-blue gradient */
+  --primary: oklch(0.25 0.15 260); /* Deep purple-blue inspired by robok */
   --primary-foreground: oklch(0.99 0.002 240);
 
-  /* Elegant Secondary - Warm copper accent */
-  --secondary: oklch(0.65 0.12 35); /* #d4763a - Refined copper */
+  /* Robok-inspired secondary with cyan accent */
+  --secondary: oklch(0.65 0.12 200); /* Cyan-blue accent from robok */
   --secondary-foreground: oklch(0.99 0.002 240);
 
   --muted: oklch(0.95 0.003 240); /* Subtle gray */
   --muted-foreground: oklch(0.45 0.01 240); /* Medium gray */
 
-  /* Sophisticated Accent - Warm gold */
-  --accent: oklch(0.72 0.08 65); /* #c9a96e - Elegant gold */
+  /* Robok-inspired accent color */
+  --accent: oklch(0.72 0.15 280); /* Purple accent from robok */
   --accent-foreground: oklch(0.12 0.01 240);
 
   --destructive: oklch(0.55 0.18 15);
   --destructive-foreground: oklch(0.99 0.002 240);
   --border: oklch(0.92 0.003 240); /* Soft border */
   --input: oklch(0.97 0.003 240);
-  --ring: oklch(0.18 0.06 240 / 0.15);
+  --ring: oklch(0.25 0.15 260 / 0.15);
 
-  /* Chart colors - sophisticated palette */
-  --chart-1: oklch(0.18 0.06 240);
-  --chart-2: oklch(0.65 0.12 35);
-  --chart-3: oklch(0.72 0.08 65);
-  --chart-4: oklch(0.35 0.08 180);
-  --chart-5: oklch(0.25 0.06 280);
+  /* Robok-inspired chart colors */
+  --chart-1: oklch(0.25 0.15 260); /* Primary purple-blue */
+  --chart-2: oklch(0.65 0.12 200); /* Secondary cyan */
+  --chart-3: oklch(0.72 0.15 280); /* Accent purple */
+  --chart-4: oklch(0.45 0.12 320); /* Complementary pink */
+  --chart-5: oklch(0.35 0.08 180); /* Teal accent */
 
-  --radius: 0.5rem; /* More refined radius */
+  --radius: 0.75rem; /* Increased radius for robok aesthetic */
 
   /* Sidebar colors */
   --sidebar: oklch(0.98 0.003 240);
   --sidebar-foreground: oklch(0.12 0.01 240);
-  --sidebar-primary: oklch(0.18 0.06 240);
+  --sidebar-primary: oklch(0.25 0.15 260);
   --sidebar-primary-foreground: oklch(0.99 0.002 240);
-  --sidebar-accent: oklch(0.72 0.08 65);
+  --sidebar-accent: oklch(0.72 0.15 280);
   --sidebar-accent-foreground: oklch(0.12 0.01 240);
   --sidebar-border: oklch(0.92 0.003 240);
-  --sidebar-ring: oklch(0.18 0.06 240 / 0.15);
+  --sidebar-ring: oklch(0.25 0.15 260 / 0.15);
 }
 
 .dark {
-  --background: oklch(0.05 0.01 240); /* Rich dark */
+  /* Enhanced dark theme inspired by robok */
+  --background: oklch(0.08 0.01 260); /* Rich dark with purple undertone */
   --foreground: oklch(0.95 0.002 240);
-  --card: oklch(0.08 0.01 240);
+  --card: oklch(0.12 0.01 260);
   --card-foreground: oklch(0.95 0.002 240);
-  --popover: oklch(0.05 0.01 240);
+  --popover: oklch(0.08 0.01 260);
   --popover-foreground: oklch(0.95 0.002 240);
-  --primary: oklch(0.25 0.08 240); /* Lighter for dark mode */
+  --primary: oklch(0.45 0.18 260); /* Brighter purple for dark mode */
   --primary-foreground: oklch(0.99 0.002 240);
-  --secondary: oklch(0.65 0.12 35);
-  --secondary-foreground: oklch(0.05 0.01 240);
-  --muted: oklch(0.12 0.01 240);
+  --secondary: oklch(0.65 0.15 200); /* Bright cyan for dark mode */
+  --secondary-foreground: oklch(0.08 0.01 260);
+  --muted: oklch(0.15 0.01 260);
   --muted-foreground: oklch(0.65 0.002 240);
-  --accent: oklch(0.72 0.08 65);
-  --accent-foreground: oklch(0.05 0.01 240);
+  --accent: oklch(0.72 0.18 280); /* Bright purple accent */
+  --accent-foreground: oklch(0.08 0.01 260);
   --destructive: oklch(0.65 0.18 15);
   --destructive-foreground: oklch(0.99 0.002 240);
-  --border: oklch(0.15 0.01 240);
-  --input: oklch(0.08 0.01 240);
-  --ring: oklch(0.25 0.08 240 / 0.2);
-  --chart-1: oklch(0.25 0.08 240);
-  --chart-2: oklch(0.65 0.12 35);
-  --chart-3: oklch(0.72 0.08 65);
-  --chart-4: oklch(0.45 0.1 180);
-  --chart-5: oklch(0.35 0.08 280);
-  --sidebar: oklch(0.03 0.01 240);
+  --border: oklch(0.18 0.01 260);
+  --input: oklch(0.12 0.01 260);
+  --ring: oklch(0.45 0.18 260 / 0.2);
+  --chart-1: oklch(0.45 0.18 260);
+  --chart-2: oklch(0.65 0.15 200);
+  --chart-3: oklch(0.72 0.18 280);
+  --chart-4: oklch(0.55 0.15 320);
+  --chart-5: oklch(0.45 0.12 180);
+  --sidebar: oklch(0.05 0.01 260);
   --sidebar-foreground: oklch(0.95 0.002 240);
-  --sidebar-primary: oklch(0.25 0.08 240);
+  --sidebar-primary: oklch(0.45 0.18 260);
   --sidebar-primary-foreground: oklch(0.99 0.002 240);
-  --sidebar-accent: oklch(0.08 0.01 240);
+  --sidebar-accent: oklch(0.12 0.01 260);
   --sidebar-accent-foreground: oklch(0.95 0.002 240);
-  --sidebar-border: oklch(0.15 0.01 240);
-  --sidebar-ring: oklch(0.25 0.08 240 / 0.2);
+  --sidebar-border: oklch(0.18 0.01 260);
+  --sidebar-ring: oklch(0.45 0.18 260 / 0.2);
 }
 
 @theme inline {
@@ -154,11 +155,11 @@
   }
 }
 
-/* Elegant animations replacing robok animations */
-@keyframes elegant-fade-up {
+/* Enhanced animations inspired by robok theme */
+@keyframes robok-fade-up {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -166,10 +167,10 @@
   }
 }
 
-@keyframes elegant-scale {
+@keyframes robok-scale-in {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
@@ -177,10 +178,10 @@
   }
 }
 
-@keyframes elegant-slide-right {
+@keyframes robok-slide-right {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-40px);
   }
   to {
     opacity: 1;
@@ -188,189 +189,333 @@
   }
 }
 
-@keyframes elegant-glow {
+@keyframes robok-glow-pulse {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(212, 118, 58, 0.1);
+    box-shadow: 0 0 30px rgba(116, 118, 255, 0.1);
   }
   50% {
-    box-shadow: 0 0 40px rgba(212, 118, 58, 0.2);
+    box-shadow: 0 0 60px rgba(116, 118, 255, 0.2);
   }
 }
 
-@keyframes elegant-float {
+@keyframes robok-float {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+@keyframes robok-spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes robok-gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
   }
   50% {
-    transform: translateY(-8px);
+    background-position: 100% 50%;
   }
 }
 
-.animate-elegant-fade-up {
-  animation: elegant-fade-up 0.8s ease-out;
+/* Robok-inspired animation classes */
+.animate-robok-fade-up {
+  animation: robok-fade-up 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.animate-elegant-scale {
-  animation: elegant-scale 0.6s ease-out;
+.animate-robok-scale-in {
+  animation: robok-scale-in 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.animate-elegant-slide-right {
-  animation: elegant-slide-right 0.8s ease-out;
+.animate-robok-slide-right {
+  animation: robok-slide-right 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.animate-elegant-glow {
-  animation: elegant-glow 4s ease-in-out infinite;
+.animate-robok-glow-pulse {
+  animation: robok-glow-pulse 4s ease-in-out infinite;
 }
 
-.animate-elegant-float {
-  animation: elegant-float 6s ease-in-out infinite;
+.animate-robok-float {
+  animation: robok-float 8s ease-in-out infinite;
 }
 
-/* Sophisticated gradient and glass effects */
-.elegant-gradient-primary {
-  background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
+.animate-robok-spin-slow {
+  animation: robok-spin-slow 20s linear infinite;
 }
 
-.elegant-gradient-secondary {
-  background: linear-gradient(135deg, #d4763a 0%, #e8955f 100%);
+.animate-robok-gradient-shift {
+  animation: robok-gradient-shift 6s ease infinite;
+  background-size: 200% 200%;
 }
 
-.elegant-gradient-text {
-  background: linear-gradient(135deg, #0f1419, #d4763a);
+/* Robok-inspired gradient and glass effects */
+.robok-gradient-primary {
+  background: linear-gradient(135deg, #7476ff 0%, #89c7fe 100%);
+}
+
+.robok-gradient-secondary {
+  background: linear-gradient(135deg, #89c7fe 0%, #45d0bd 100%);
+}
+
+.robok-gradient-accent {
+  background: linear-gradient(135deg, #7476ff 0%, #b794f6 100%);
+}
+
+.robok-gradient-text {
+  background: linear-gradient(135deg, #7476ff, #89c7fe, #45d0bd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+}
+
+.robok-glass {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.robok-glass-dark {
+  backdrop-filter: blur(20px);
+  background: rgba(31, 31, 31, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.robok-glass-card {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(116, 118, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(116, 118, 255, 0.1);
+}
+
+/* Enhanced card hover effects inspired by robok */
+.robok-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(116, 118, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.robok-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(116, 118, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.robok-card:hover::before {
+  left: 100%;
+}
+
+.robok-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 32px 64px -12px rgba(116, 118, 255, 0.2);
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(116, 118, 255, 0.2);
+}
+
+/* Robok-inspired button styles */
+.robok-btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #7476ff 0%, #89c7fe 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(116, 118, 255, 0.3);
+}
+
+.robok-btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.robok-btn-primary:hover::before {
+  left: 100%;
+}
+
+.robok-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(116, 118, 255, 0.4);
+}
+
+.robok-btn-secondary {
+  position: relative;
+  background: transparent;
+  border: 2px solid #7476ff;
+  color: #7476ff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.robok-btn-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #7476ff 0%, #89c7fe 100%);
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.robok-btn-secondary:hover::before {
+  left: 0;
+}
+
+.robok-btn-secondary:hover {
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(116, 118, 255, 0.3);
+}
+
+/* Enhanced typography with robok styling */
+.robok-heading {
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #7476ff, #89c7fe);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.elegant-glass {
-  backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.elegant-glass-dark {
-  backdrop-filter: blur(20px);
-  background: rgba(15, 20, 25, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Premium card hover effects */
-.elegant-card {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.98);
-  border: 1px solid rgba(15, 20, 25, 0.08);
-}
-
-.elegant-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 32px 64px -12px rgba(15, 20, 25, 0.15);
-  background: rgba(255, 255, 255, 1);
-}
-
-/* Sophisticated button styles */
-.elegant-btn-primary {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
-  transition: all 0.3s ease;
-}
-
-.elegant-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 32px -8px rgba(15, 20, 25, 0.3);
-}
-
-.elegant-btn-secondary {
-  position: relative;
-  background: transparent;
-  border: 2px solid #d4763a;
-  color: #d4763a;
-  transition: all 0.3s ease;
-}
-
-.elegant-btn-secondary:hover {
-  background: #d4763a;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 16px 32px -8px rgba(212, 118, 58, 0.3);
-}
-
-/* Typography enhancements */
-.elegant-heading {
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.elegant-heading-bold {
-  font-weight: 600;
+.robok-heading-bold {
+  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.1;
 }
 
-.elegant-text {
-  line-height: 1.6;
-  color: rgba(15, 20, 25, 0.8);
+.robok-text {
+  line-height: 1.7;
+  color: rgba(31, 31, 31, 0.8);
 }
 
-/* Subtle geometric elements */
-.elegant-geometric {
+/* Robok-inspired geometric elements */
+.robok-geometric {
   position: absolute;
-  background: linear-gradient(135deg, rgba(212, 118, 58, 0.03), rgba(15, 20, 25, 0.02));
+  background: linear-gradient(135deg, rgba(116, 118, 255, 0.05), rgba(137, 199, 254, 0.03));
   border-radius: 50%;
-  filter: blur(60px);
+  filter: blur(80px);
 }
 
-.elegant-geometric-1 {
+.robok-geometric-1 {
+  width: 500px;
+  height: 500px;
+  top: -15%;
+  right: -15%;
+  animation: robok-float 15s ease-in-out infinite;
+}
+
+.robok-geometric-2 {
   width: 400px;
   height: 400px;
-  top: -10%;
-  right: -10%;
-  animation: elegant-float 12s ease-in-out infinite;
+  bottom: -10%;
+  left: -10%;
+  animation: robok-float 20s ease-in-out infinite reverse;
 }
 
-.elegant-geometric-2 {
+.robok-geometric-3 {
   width: 300px;
   height: 300px;
-  bottom: -5%;
-  left: -5%;
-  animation: elegant-float 15s ease-in-out infinite reverse;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: robok-spin-slow 25s linear infinite;
 }
 
-/* Professional grid system */
-.elegant-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* Robok-inspired shadows and effects */
+.robok-shadow-sm {
+  box-shadow: 0 2px 8px rgba(116, 118, 255, 0.08);
 }
 
-.elegant-grid-2 {
-  display: grid;
-  gap: 3rem;
-  grid-template-columns: repeat(2, 1fr);
+.robok-shadow-md {
+  box-shadow: 0 8px 24px rgba(116, 118, 255, 0.12);
 }
 
+.robok-shadow-lg {
+  box-shadow: 0 16px 48px rgba(116, 118, 255, 0.15);
+}
+
+.robok-shadow-xl {
+  box-shadow: 0 32px 64px rgba(116, 118, 255, 0.2);
+}
+
+.robok-glow {
+  box-shadow: 0 0 30px rgba(116, 118, 255, 0.3);
+}
+
+/* Robok-inspired loading animation */
+.robok-loader {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(116, 118, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #7476ff;
+  animation: robok-spin-slow 1s ease-in-out infinite;
+}
+
+/* Robok-inspired progress bars */
+.robok-progress {
+  background: linear-gradient(90deg, #7476ff 0%, #89c7fe 50%, #45d0bd 100%);
+  background-size: 200% 100%;
+  animation: robok-gradient-shift 3s ease infinite;
+}
+
+/* Enhanced responsive design */
 @media (max-width: 768px) {
-  .elegant-grid-2 {
-    grid-template-columns: 1fr;
+  .robok-geometric-1,
+  .robok-geometric-2,
+  .robok-geometric-3 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .robok-heading {
+    font-size: clamp(1.5rem, 4vw, 3rem);
   }
 }
 
-/* Refined shadows */
-.elegant-shadow-sm {
-  box-shadow: 0 2px 8px rgba(15, 20, 25, 0.08);
+/* Dark mode enhancements for robok theme */
+.dark .robok-card {
+  background: rgba(31, 31, 31, 0.95);
+  border-color: rgba(116, 118, 255, 0.2);
 }
 
-.elegant-shadow-md {
-  box-shadow: 0 8px 24px rgba(15, 20, 25, 0.12);
+.dark .robok-card:hover {
+  background: rgba(31, 31, 31, 1);
+  box-shadow: 0 32px 64px -12px rgba(116, 118, 255, 0.3);
 }
 
-.elegant-shadow-lg {
-  box-shadow: 0 16px 48px rgba(15, 20, 25, 0.15);
+.dark .robok-text {
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.elegant-shadow-xl {
-  box-shadow: 0 32px 64px rgba(15, 20, 25, 0.2);
+.dark .robok-glass-card {
+  background: rgba(31, 31, 31, 0.9);
+  border-color: rgba(116, 118, 255, 0.2);
 }
