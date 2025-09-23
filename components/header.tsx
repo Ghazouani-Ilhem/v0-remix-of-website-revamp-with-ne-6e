@@ -21,40 +21,41 @@ export function Header() {
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "robok-glass border-b border-border/50 shadow-lg" : "bg-transparent border-b border-transparent"
+        isScrolled
+          ? "elegant-glass border-b border-border/50 elegant-shadow-md"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="h-12 w-12 rounded-xl robok-gradient-primary flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 animate-robok-glow">
+            <Link href="/" className="flex items-center space-x-4 group">
+              <div className="h-12 w-12 rounded-lg elegant-gradient-primary flex items-center justify-center elegant-shadow-sm group-hover:elegant-shadow-md transition-all duration-300 group-hover:scale-105">
                 <span className="text-primary-foreground font-bold text-xl">IO</span>
               </div>
-              <span className="font-bold text-2xl robok-gradient-text group-hover:scale-105 transition-transform duration-300">
+              <span className="elegant-heading-bold text-2xl elegant-gradient-text group-hover:scale-105 transition-transform duration-300">
                 Integration Objects
               </span>
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-2">
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-foreground hover:text-primary transition-all duration-300 font-medium px-4 py-3 rounded-xl hover:bg-primary/10">
+              <DropdownMenuTrigger className="flex items-center space-x-2 text-foreground hover:text-primary transition-all duration-300 font-medium px-6 py-3 rounded-lg hover:bg-primary/5">
                 <span>IT-OT Integration</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="robok-glass border-border/50 shadow-xl">
-                <DropdownMenuItem className="hover:bg-primary/10 transition-colors rounded-lg">
-                  <Zap className="w-4 h-4 mr-2 text-primary" />
+              <DropdownMenuContent className="elegant-glass border-border/50 elegant-shadow-lg">
+                <DropdownMenuItem className="hover:bg-primary/5 transition-colors rounded-lg">
+                  <Zap className="w-4 h-4 mr-3 text-primary" />
                   OPC UA Solutions
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-primary/10 transition-colors rounded-lg">
-                  <Zap className="w-4 h-4 mr-2 text-primary" />
+                <DropdownMenuItem className="hover:bg-primary/5 transition-colors rounded-lg">
+                  <Zap className="w-4 h-4 mr-3 text-primary" />
                   Industrial Connectivity
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-primary/10 transition-colors rounded-lg">
-                  <Zap className="w-4 h-4 mr-2 text-primary" />
+                <DropdownMenuItem className="hover:bg-primary/5 transition-colors rounded-lg">
+                  <Zap className="w-4 h-4 mr-3 text-primary" />
                   Data Integration
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -62,13 +63,13 @@ export function Header() {
 
             <Link
               href="/ai"
-              className="text-foreground hover:text-primary transition-all duration-300 font-medium px-4 py-3 rounded-xl hover:bg-primary/10"
+              className="text-foreground hover:text-primary transition-all duration-300 font-medium px-6 py-3 rounded-lg hover:bg-primary/5"
             >
               AI Solutions
             </Link>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-foreground hover:text-primary transition-all duration-300 font-medium px-4 py-3 rounded-xl hover:bg-primary/10">
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-foreground hover:text-primary transition-all duration-300 font-medium px-6 py-3 rounded-lg hover:bg-primary/10">
                 <span>OPC Products</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
@@ -90,36 +91,36 @@ export function Header() {
 
             <Link
               href="/resources"
-              className="text-foreground hover:text-primary transition-all duration-300 font-medium px-4 py-3 rounded-lg hover:bg-primary/10"
+              className="text-foreground hover:text-primary transition-all duration-300 font-medium px-6 py-3 rounded-lg hover:bg-primary/5"
             >
               Resources
             </Link>
 
             <Link
               href="/contact"
-              className="text-foreground hover:text-primary transition-all duration-300 font-medium px-4 py-3 rounded-lg hover:bg-primary/10"
+              className="text-foreground hover:text-primary transition-all duration-300 font-medium px-6 py-3 rounded-lg hover:bg-primary/5"
             >
               Contact
             </Link>
 
             <Link
               href="/about"
-              className="text-foreground hover:text-primary transition-all duration-300 font-medium px-4 py-3 rounded-lg hover:bg-primary/10"
+              className="text-foreground hover:text-primary transition-all duration-300 font-medium px-6 py-3 rounded-lg hover:bg-primary/5"
             >
               About Us
             </Link>
           </nav>
 
-          <div className="hidden lg:flex items-center space-x-3">
+          <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/login"
-              className="text-foreground hover:text-primary transition-all duration-300 font-medium px-4 py-2 rounded-xl hover:bg-primary/10"
+              className="text-foreground hover:text-primary transition-all duration-300 font-medium px-4 py-2 rounded-lg hover:bg-primary/5"
             >
               Login
             </Link>
             <Link
               href="/register"
-              className="text-primary hover:text-primary/80 transition-all duration-300 font-semibold px-4 py-2 rounded-xl hover:bg-primary/10"
+              className="text-primary hover:text-primary/80 transition-all duration-300 font-semibold px-4 py-2 rounded-lg hover:bg-primary/5"
             >
               Register
             </Link>
@@ -127,18 +128,15 @@ export function Header() {
             <Button
               variant="outline"
               asChild
-              className="robok-glass hover:bg-primary/10 transition-all duration-300 border-border/50 bg-transparent rounded-xl"
+              className="elegant-btn-secondary px-6 py-2 rounded-lg border-2 bg-transparent"
             >
               <Link href="/ask-question">
                 <MessageCircle className="w-4 h-4 mr-2" />
-                Ask Us a Question
+                Ask Question
               </Link>
             </Button>
 
-            <Button
-              asChild
-              className="robok-gradient-primary shadow-lg hover:shadow-xl transition-all duration-300 animate-robok-glow rounded-xl"
-            >
+            <Button asChild className="elegant-btn-primary px-6 py-2 rounded-lg">
               <Link href="/download">
                 <Download className="w-4 h-4 mr-2" />
                 Download SIOTH
