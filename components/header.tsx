@@ -25,20 +25,20 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 elegant-glass border-b border-border/50 elegant-shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-20 items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex h-16 lg:h-20 items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-4 group">
-              <div className="h-12 w-12 rounded-lg elegant-gradient-primary flex items-center justify-center elegant-shadow-sm group-hover:elegant-shadow-md transition-all duration-300 group-hover:scale-105">
-                <span className="text-primary-foreground font-bold text-xl">IO</span>
+            <Link href="/" className="flex items-center space-x-3 lg:space-x-4 group flex-shrink-0">
+              <div className="h-10 w-10 lg:h-12 lg:w-12 rounded-lg elegant-gradient-primary flex items-center justify-center elegant-shadow-sm group-hover:elegant-shadow-md transition-all duration-300 group-hover:scale-105">
+                <span className="text-primary-foreground font-bold text-lg lg:text-xl">IO</span>
               </div>
-              <span className="elegant-heading-bold text-2xl elegant-gradient-text group-hover:scale-105 transition-transform duration-300">
+              <span className="elegant-heading-bold text-lg sm:text-xl lg:text-2xl elegant-gradient-text group-hover:scale-105 transition-transform duration-300 truncate">
                 Integration Objects
               </span>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-2">
+            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2 flex-1 justify-center max-w-4xl">
               {/* IT-OT Integration */}
               <div className="nav-item group relative">
                 <button className="nav-button px-6 py-3 text-foreground hover:text-primary transition-all duration-300 font-medium rounded-lg hover:bg-primary/5 uppercase tracking-wide text-sm">
@@ -793,28 +793,30 @@ export function Header() {
             </nav>
 
             {/* CTA and Mobile Menu Button */}
-            <div className="flex items-center space-x-4">
-              <div className="hidden lg:flex items-center space-x-4">
+            <div className="flex items-center space-x-2 lg:space-x-4 flex-shrink-0">
+              <div className="hidden lg:flex items-center space-x-2 xl:space-x-4">
                 <Link
                   href="/login"
-                  className="text-foreground hover:text-primary transition-all duration-300 font-medium px-4 py-2 rounded-lg hover:bg-primary/5"
+                  className="text-foreground hover:text-primary transition-all duration-300 font-medium px-3 xl:px-4 py-2 rounded-lg hover:bg-primary/5 text-sm"
                 >
                   Login
                 </Link>
                 <Button
                   variant="outline"
                   asChild
-                  className="elegant-btn-secondary px-6 py-2 rounded-lg border-2 bg-transparent"
+                  className="elegant-btn-secondary px-4 xl:px-6 py-2 rounded-lg border-2 bg-transparent text-sm"
                 >
                   <Link href="/ask-question">
                     <MessageCircle className="w-4 h-4 mr-2" />
-                    Ask Question
+                    <span className="hidden xl:inline">Ask Question</span>
+                    <span className="xl:hidden">Ask</span>
                   </Link>
                 </Button>
-                <Button asChild className="elegant-btn-primary px-6 py-2 rounded-lg">
+                <Button asChild className="elegant-btn-primary px-4 xl:px-6 py-2 rounded-lg text-sm">
                   <Link href="/download">
                     <Download className="w-4 h-4 mr-2" />
-                    Download SIOTH
+                    <span className="hidden xl:inline">Download SIOTH</span>
+                    <span className="xl:hidden">Download</span>
                   </Link>
                 </Button>
               </div>
