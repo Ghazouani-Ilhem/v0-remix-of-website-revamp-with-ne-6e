@@ -370,6 +370,109 @@
   }
 }
 
+/* Enhanced robok animations with more dynamic effects */
+@keyframes robok-section-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(80px) scale(0.95);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes robok-stagger-up {
+  from {
+    opacity: 0;
+    transform: translateY(60px) rotateX(15deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes robok-magnetic-hover {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+  }
+  100% {
+    transform: translateY(-12px) scale(1.05);
+  }
+}
+
+@keyframes robok-parallax-float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-5px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-30px) translateX(8px) rotate(1deg);
+  }
+}
+
+@keyframes robok-glow-expand {
+  0% {
+    box-shadow: 0 0 20px rgba(53, 37, 97, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(53, 37, 97, 0.2), 0 0 100px rgba(255, 107, 53, 0.1);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(53, 37, 97, 0.15);
+    transform: scale(1);
+  }
+}
+
+@keyframes robok-morphing-border {
+  0%,
+  100% {
+    border-radius: 20px;
+    transform: rotate(0deg);
+  }
+  25% {
+    border-radius: 30px 10px 20px 40px;
+    transform: rotate(1deg);
+  }
+  50% {
+    border-radius: 10px 30px 40px 20px;
+    transform: rotate(-1deg);
+  }
+  75% {
+    border-radius: 40px 20px 10px 30px;
+    transform: rotate(0.5deg);
+  }
+}
+
+@keyframes robok-data-stream {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.3;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.8;
+  }
+  100% {
+    background-position: 200% 50%;
+    opacity: 0.3;
+  }
+}
+
 /* Corporate Integration Objects animation classes */
 .animate-io-fade-up {
   animation: io-fade-up 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -398,6 +501,44 @@
 .animate-io-gradient-shift {
   animation: io-gradient-shift 4s ease infinite;
   background-size: 200% 200%;
+}
+
+/* Enhanced animation classes with more sophisticated effects */
+.animate-robok-section-reveal {
+  animation: robok-section-reveal 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-robok-stagger-up {
+  animation: robok-stagger-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-robok-magnetic-hover {
+  animation: robok-magnetic-hover 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-robok-parallax-float {
+  animation: robok-parallax-float 8s ease-in-out infinite;
+}
+
+.animate-robok-glow-expand {
+  animation: robok-glow-expand 4s ease-in-out infinite;
+}
+
+.animate-robok-morphing-border {
+  animation: robok-morphing-border 6s ease-in-out infinite;
+}
+
+.animate-robok-data-stream {
+  animation: robok-data-stream 3s linear infinite;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(53, 37, 97, 0.1) 25%,
+    rgba(255, 107, 53, 0.2) 50%,
+    rgba(53, 37, 97, 0.1) 75%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
 }
 
 /* Robok animation classes */
@@ -619,6 +760,139 @@
   border-color: rgba(255, 107, 53, 0.2);
 }
 
+/* Enhanced robok geometric shapes with more dynamic positioning */
+.robok-shape-enhanced-1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(53, 37, 97, 0.15) 0%, rgba(255, 107, 53, 0.05) 50%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: robok-parallax-float 12s ease-in-out infinite;
+}
+
+.robok-shape-enhanced-2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, rgba(255, 107, 53, 0.1), rgba(53, 37, 97, 0.08));
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  filter: blur(40px);
+  animation: robok-morphing-border 10s ease-in-out infinite;
+}
+
+.robok-shape-enhanced-3 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 3px solid rgba(53, 37, 97, 0.2);
+  border-radius: 25px;
+  transform: rotate(45deg);
+  animation: robok-glow-expand 8s ease-in-out infinite;
+}
+
+/* Enhanced card interactions with magnetic hover effects */
+.robok-card-enhanced {
+  position: relative;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(53, 37, 97, 0.08);
+  border-radius: 24px;
+  padding: 48px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  cursor: pointer;
+}
+
+.robok-card-enhanced::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(53, 37, 97, 0.05), transparent);
+  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.robok-card-enhanced::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #352561, #ff6b35, #352561);
+  border-radius: 26px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.robok-card-enhanced:hover::before {
+  left: 100%;
+}
+
+.robok-card-enhanced:hover::after {
+  opacity: 1;
+}
+
+.robok-card-enhanced:hover {
+  transform: translateY(-16px) scale(1.03);
+  box-shadow: 0 30px 60px -12px rgba(53, 37, 97, 0.2);
+  border-color: transparent;
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Enhanced section transitions with data stream effects */
+.robok-section-transition {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(53, 37, 97, 0.02) 0%,
+    rgba(255, 107, 53, 0.01) 50%,
+    rgba(53, 37, 97, 0.02) 100%
+  );
+}
+
+.robok-section-transition::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(53, 37, 97, 0.3) 25%,
+    rgba(255, 107, 53, 0.6) 50%,
+    rgba(53, 37, 97, 0.3) 75%,
+    transparent 100%
+  );
+  animation: robok-data-stream 4s linear infinite;
+}
+
+.robok-section-transition::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(53, 37, 97, 0.4) 25%,
+    rgba(255, 107, 53, 0.6) 50%,
+    rgba(53, 37, 97, 0.4) 75%,
+    transparent 100%
+  );
+  animation: robok-pulse-glow 3s ease-in-out infinite;
+}
+
 /* Corporate shadows and effects */
 .io-shadow-sm {
   box-shadow: 0 1px 6px rgba(255, 107, 53, 0.06);
@@ -656,154 +930,6 @@
   background: linear-gradient(90deg, #ff6b35 0%, #00ced1 50%, #20b2aa 100%);
   background-size: 200% 100%;
   animation: io-gradient-shift 2s ease infinite;
-}
-
-/* Robok-style button enhancements */
-.robok-btn-primary {
-  position: relative;
-  background: linear-gradient(135deg, #ff6b35 0%, #ff8a65 100%);
-  border: none;
-  border-radius: 12px;
-  padding: 16px 32px;
-  color: white;
-  font-weight: 600;
-  font-size: 16px;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.2);
-}
-
-.robok-btn-primary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.robok-btn-primary:hover::before {
-  left: 100%;
-}
-
-.robok-btn-primary:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 28px rgba(255, 107, 53, 0.35);
-}
-
-.robok-btn-secondary {
-  position: relative;
-  background: transparent;
-  border: 2px solid #352561;
-  border-radius: 12px;
-  padding: 14px 30px;
-  color: #352561;
-  font-weight: 600;
-  font-size: 16px;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  overflow: hidden;
-}
-
-.robok-btn-secondary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #352561 0%, #4a3575 100%);
-  transition: left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  z-index: -1;
-}
-
-.robok-btn-secondary:hover::before {
-  left: 0;
-}
-
-.robok-btn-secondary:hover {
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(53, 37, 97, 0.25);
-}
-
-/* Robok-style text effects */
-.robok-heading {
-  background: linear-gradient(135deg, #ff6b35, #352561);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.robok-shimmer-text {
-  background: linear-gradient(90deg, #ff6b35 0%, #352561 50%, #ff6b35 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: robok-shimmer 3s ease-in-out infinite;
-}
-
-/* Robok-style geometric shapes */
-.robok-shape-1 {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(53, 37, 97, 0.05));
-  border-radius: 50%;
-  filter: blur(40px);
-  animation: robok-float-gentle 8s ease-in-out infinite;
-}
-
-.robok-shape-2 {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background: linear-gradient(45deg, rgba(53, 37, 97, 0.08), rgba(255, 107, 53, 0.04));
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  filter: blur(30px);
-  animation: robok-float-gentle 12s ease-in-out infinite reverse;
-}
-
-.robok-shape-3 {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border: 2px solid rgba(53, 37, 97, 0.1);
-  border-radius: 20px;
-  transform: rotate(45deg);
-  animation: io-spin-slow 20s linear infinite;
-}
-
-/* Robok-style progress indicators */
-.robok-progress {
-  height: 4px;
-  background: rgba(53, 37, 97, 0.1);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.robok-progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #ff6b35 0%, #352561 100%);
-  border-radius: 2px;
-  transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-}
-
-.robok-progress-bar::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: robok-shimmer 2s linear infinite;
 }
 
 /* Dark mode enhancements for robok theme */

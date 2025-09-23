@@ -56,26 +56,33 @@ export function ServicesSection() {
   }, [])
 
   return (
-    <section id="services-section" className="py-24 bg-background relative overflow-hidden">
+    <section id="services-section" className="py-32 bg-background relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="robok-shape-1 top-20 right-10" />
-        <div className="robok-shape-2 bottom-20 left-10" />
-        <div className="robok-shape-3 top-1/2 right-1/4" />
+        <div className="robok-shape-enhanced-1 top-20 right-10 opacity-60" />
+        <div className="robok-shape-enhanced-2 bottom-20 left-10 opacity-40" />
+        <div className="robok-shape-enhanced-3 top-1/2 right-1/4 opacity-50" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#352561]/2 via-transparent to-[#FF6B35]/2 animate-robok-data-stream" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-        <div className={`text-center mb-16 ${isVisible ? "animate-robok-fade-up" : "opacity-0"}`}>
-          <h4 className="sub-title text-secondary font-semibold text-sm mb-4 animate-robok-shimmer">Services</h4>
+        <div className={`text-center mb-20 ${isVisible ? "animate-robok-section-reveal" : "opacity-0"}`}>
+          <h4 className="sub-title text-[#352561] font-semibold text-sm mb-6 animate-robok-shimmer">Services</h4>
           <h2
-            className="robok-heading text-2xl md:text-3xl font-bold mb-6 animate-robok-text-reveal"
+            className="robok-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-8 animate-robok-text-reveal"
             style={{ animationDelay: "0.2s" }}
           >
             AI-optimized industrial automation solutions for innovative futures
           </h2>
+          <p
+            className="text-lg text-muted-foreground max-w-3xl mx-auto animate-robok-stagger-up"
+            style={{ animationDelay: "0.4s" }}
+          >
+            Transforming industrial operations with cutting-edge technology and seamless integration
+          </p>
         </div>
 
         <div className="service-style-one-items">
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
             <div
               className={`robok-gradient-card relative text-white overflow-hidden bg-cover bg-center group ${isVisible ? "animate-robok-scale-in" : "opacity-0"}`}
               style={{
@@ -83,39 +90,41 @@ export function ServicesSection() {
                 animationDelay: "0.1s",
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-secondary/80" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#352561]/95 to-[#FF6B35]/85" />
               <div className="curve-text relative z-10 text-center">
-                <div className="w-32 h-32 mx-auto mb-6 relative">
+                <div className="w-36 h-36 mx-auto mb-8 relative">
                   <svg className="w-full h-full animate-io-spin-slow" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <path id="textPath" d="M 64,64 a 48,48 0 1,1 0,1 z" fill="none"></path>
-                    <text className="text-[10px] fill-white animate-robok-shimmer">
+                    <path id="textPath" d="M 72,72 a 56,56 0 1,1 0,1 z" fill="none"></path>
+                    <text className="text-[11px] fill-white animate-robok-shimmer">
                       <textPath href="#textPath">Automation & predictive maintenance • SIOTH Platform • </textPath>
                     </text>
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="robok-service-card bg-white/10 backdrop-blur-sm border border-white/20 p-4 rounded-2xl">
-                      <Network className="w-8 h-8 text-white animate-robok-pulse-glow" />
+                    <div className="robok-service-card bg-white/15 backdrop-blur-sm border border-white/25 p-5 rounded-3xl animate-robok-glow-expand">
+                      <Network className="w-10 h-10 text-white animate-robok-pulse-glow" />
                     </div>
                   </div>
                 </div>
-                <h4 className="text-lg font-bold mb-2 robok-shimmer-text">IT-OT Integration Excellence</h4>
-                <p className="text-white/90 text-sm">Seamless connectivity solutions</p>
+                <h4 className="text-xl font-bold mb-3 robok-shimmer-text">IT-OT Integration Excellence</h4>
+                <p className="text-white/90 text-sm leading-relaxed">Seamless connectivity solutions for the future</p>
               </div>
             </div>
 
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`robok-service-card group ${isVisible ? "animate-robok-fade-up" : "opacity-0"}`}
-                style={{ animationDelay: `${(index + 2) * 0.1}s` }}
+                className={`robok-card-enhanced group ${isVisible ? "animate-robok-stagger-up" : "opacity-0"}`}
+                style={{ animationDelay: `${(index + 2) * 0.15}s` }}
               >
-                <div className="icon-wrapper mx-auto">
-                  <service.icon className="w-8 h-8 text-white" />
+                <div className="icon-wrapper mx-auto mb-6">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#352561] to-[#FF6B35] rounded-2xl flex items-center justify-center group-hover:animate-robok-magnetic-hover transition-all duration-300">
+                    <service.icon className="w-10 h-10 text-white" />
+                  </div>
                 </div>
-                <h4 className="text-lg font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                <h4 className="text-xl font-bold text-foreground mb-5 group-hover:text-[#352561] transition-colors duration-300">
                   <Link href="/services">{service.title}</Link>
                 </h4>
-                <p className="text-muted-foreground leading-relaxed text-sm">{service.description}</p>
+                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
               </div>
             ))}
 
@@ -123,29 +132,29 @@ export function ServicesSection() {
               className={`robok-gradient-card text-white relative overflow-hidden bg-cover bg-center ${isVisible ? "animate-robok-rotate-in" : "opacity-0"}`}
               style={{
                 backgroundImage: "url('/modern-industrial-iot-factory-with-connected-devic.jpg')",
-                animationDelay: "0.7s",
+                animationDelay: "0.8s",
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 to-primary/70" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B35]/90 to-[#352561]/80" />
               <div className="relative z-10">
-                <h4 className="text-xl font-bold mb-4 robok-shimmer-text">AI Community</h4>
-                <p className="text-white/90 mb-6 text-sm leading-relaxed">
-                  Dive into the automation scene and unleash your industrial potential!
+                <h4 className="text-2xl font-bold mb-6 robok-shimmer-text">AI Community</h4>
+                <p className="text-white/90 mb-8 leading-relaxed">
+                  Dive into the automation scene and unleash your industrial potential with our global network!
                 </p>
                 <div className="info">
-                  <div className="multi-users flex -space-x-2 mb-4 animate-robok-float-gentle">
+                  <div className="multi-users flex -space-x-3 mb-6 animate-robok-float-gentle">
                     {[1, 2, 3, 4].map((i) => (
                       <div
                         key={i}
-                        className="w-10 h-10 bg-white/20 rounded-full border-2 border-white/30 backdrop-blur-sm animate-robok-bounce-in"
+                        className="w-12 h-12 bg-white/25 rounded-full border-3 border-white/40 backdrop-blur-sm animate-robok-bounce-in"
                         style={{ animationDelay: `${i * 0.1}s` }}
                       />
                     ))}
-                    <div className="w-10 h-10 bg-white/10 rounded-full border-2 border-white/30 flex items-center justify-center backdrop-blur-sm">
-                      <Users className="w-4 h-4 text-white animate-robok-pulse-glow" />
+                    <div className="w-12 h-12 bg-white/15 rounded-full border-3 border-white/40 flex items-center justify-center backdrop-blur-sm">
+                      <Users className="w-5 h-5 text-white animate-robok-pulse-glow" />
                     </div>
                   </div>
-                  <h5 className="text-lg font-semibold robok-heading">Over 500+ Global Clients</h5>
+                  <h5 className="text-xl font-semibold robok-heading">Over 500+ Global Clients</h5>
                 </div>
               </div>
             </div>
