@@ -473,6 +473,50 @@
   }
 }
 
+/* Enhanced vertical slider animations and styles */
+@keyframes robok-vertical-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(100px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes robok-vertical-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes robok-progress-fill {
+  from {
+    height: 0%;
+  }
+  to {
+    height: var(--progress-height);
+  }
+}
+
+@keyframes robok-magnetic-pull {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+  }
+  100% {
+    transform: translateY(-12px) scale(1.05);
+  }
+}
+
 /* Corporate Integration Objects animation classes */
 .animate-io-fade-up {
   animation: io-fade-up 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -582,7 +626,24 @@
   animation: robok-text-reveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Corporate Integration Objects gradient effects using exact brand colors */
+/* Enhanced vertical slider classes */
+.animate-robok-vertical-slide-in {
+  animation: robok-vertical-slide-in 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-robok-vertical-fade-up {
+  animation: robok-vertical-fade-up 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-robok-progress-fill {
+  animation: robok-progress-fill 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-robok-magnetic-pull {
+  animation: robok-magnetic-pull 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Corporate gradient effects using exact brand colors */
 .io-gradient-primary {
   background: linear-gradient(135deg, #ff6b35 0%, #ff8a65 100%);
 }
@@ -731,7 +792,7 @@
   border-radius: 20px;
   padding: 40px;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: hidden;
   backdrop-filter: blur(16px);
 }
@@ -760,137 +821,140 @@
   border-color: rgba(255, 107, 53, 0.2);
 }
 
-/* Enhanced robok geometric shapes with more dynamic positioning */
-.robok-shape-enhanced-1 {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(53, 37, 97, 0.15) 0%, rgba(255, 107, 53, 0.05) 50%, transparent 100%);
-  border-radius: 50%;
-  filter: blur(60px);
-  animation: robok-parallax-float 12s ease-in-out infinite;
-}
-
-.robok-shape-enhanced-2 {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(45deg, rgba(255, 107, 53, 0.1), rgba(53, 37, 97, 0.08));
-  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  filter: blur(40px);
-  animation: robok-morphing-border 10s ease-in-out infinite;
-}
-
-.robok-shape-enhanced-3 {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  border: 3px solid rgba(53, 37, 97, 0.2);
-  border-radius: 25px;
-  transform: rotate(45deg);
-  animation: robok-glow-expand 8s ease-in-out infinite;
-}
-
-/* Enhanced card interactions with magnetic hover effects */
-.robok-card-enhanced {
-  position: relative;
-  background: rgba(255, 255, 255, 0.98);
-  border: 1px solid rgba(53, 37, 97, 0.08);
+/* Enhanced project card for vertical layout */
+.robok-vertical-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 107, 53, 0.1);
   border-radius: 24px;
-  padding: 48px;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  overflow: hidden;
+  padding: 3rem;
   backdrop-filter: blur(20px);
-  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
 }
 
-.robok-card-enhanced::before {
+.robok-vertical-card::before {
   content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(53, 37, 97, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.05), transparent);
   transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.robok-card-enhanced::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #352561, #ff6b35, #352561);
-  border-radius: 26px;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 0.4s ease;
-}
-
-.robok-card-enhanced:hover::before {
+.robok-vertical-card:hover::before {
   left: 100%;
 }
 
-.robok-card-enhanced:hover::after {
-  opacity: 1;
+.robok-vertical-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(255, 107, 53, 0.3);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.robok-card-enhanced:hover {
-  transform: translateY(-16px) scale(1.03);
-  box-shadow: 0 30px 60px -12px rgba(53, 37, 97, 0.2);
-  border-color: transparent;
-  background: rgba(255, 255, 255, 1);
+/* Typography enhancements for vertical layout */
+.robok-vertical-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
 }
 
-/* Enhanced section transitions with data stream effects */
-.robok-section-transition {
+.robok-vertical-subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.robok-vertical-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+}
+
+/* Vertical slider specific styles */
+.robok-vertical-slider {
   position: relative;
-  height: 120px;
+  height: 100vh;
   overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    rgba(53, 37, 97, 0.02) 0%,
-    rgba(255, 107, 53, 0.01) 50%,
-    rgba(53, 37, 97, 0.02) 100%
-  );
 }
 
-.robok-section-transition::before {
-  content: "";
-  position: absolute;
+.robok-project-item {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.robok-project-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.robok-project-item.inactive {
+  opacity: 0.3;
+  transform: translateY(50px);
+}
+
+.robok-vertical-nav {
+  position: fixed;
+  right: 2rem;
   top: 50%;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(53, 37, 97, 0.3) 25%,
-    rgba(255, 107, 53, 0.6) 50%,
-    rgba(53, 37, 97, 0.3) 75%,
-    transparent 100%
-  );
-  animation: robok-data-stream 4s linear infinite;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.robok-section-transition::after {
-  content: "";
-  position: absolute;
+.robok-nav-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 107, 53, 0.3);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.robok-nav-dot.active {
+  background: #ff6b35;
+  border-color: #ff6b35;
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+}
+
+.robok-nav-dot:hover {
+  transform: scale(1.2);
+  border-color: #ff6b35;
+}
+
+.robok-progress-bar {
+  position: fixed;
+  left: 0;
   top: 0;
-  left: 50%;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(53, 37, 97, 0.4) 25%,
-    rgba(255, 107, 53, 0.6) 50%,
-    rgba(53, 37, 97, 0.4) 75%,
-    transparent 100%
-  );
-  animation: robok-pulse-glow 3s ease-in-out infinite;
+  width: 4px;
+  height: 100vh;
+  background: rgba(255, 107, 53, 0.1);
+  z-index: 50;
+}
+
+.robok-progress-fill {
+  width: 100%;
+  background: linear-gradient(180deg, #ff6b35 0%, #352561 100%);
+  transition: height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Corporate shadows and effects */
@@ -980,5 +1044,17 @@
   .robok-shape-3 {
     width: 60px;
     height: 60px;
+  }
+
+  .robok-vertical-nav {
+    right: 1rem;
+  }
+
+  .robok-vertical-card {
+    padding: 2rem;
+  }
+
+  .robok-vertical-title {
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 }
