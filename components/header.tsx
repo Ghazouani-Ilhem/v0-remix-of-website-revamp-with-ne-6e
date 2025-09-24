@@ -29,7 +29,7 @@ export function Header() {
           <div className="flex h-16 lg:h-20 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center group flex-shrink-0">
-              <div className="h-10 w-10 lg:h-12 lg:w-12 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center elegant-shadow-sm group-hover:elegant-shadow-md transition-all duration-300 group-hover:scale-105 border border-white/20">
+              <div className="h-10 w-10 lg:h-12 lg:w-12 rounded-lg bg-white/20 flex items-center justify-center elegant-shadow-sm group-hover:elegant-shadow-md transition-all duration-300 group-hover:scale-105 border border-white/30">
                 <img
                   src="https://integrationobjects.com/images/2023/04/logo.webp"
                   alt="Integration Objects Logo"
@@ -836,7 +836,7 @@ export function Header() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
-          <div className="fixed inset-0 bg-background/80 backdrop-blur-sm" onClick={() => setIsMenuOpen(false)} />
+          <div className="fixed inset-0 bg-background/90" onClick={() => setIsMenuOpen(false)} />
           <div className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-background border-l border-border elegant-shadow-xl overflow-y-auto">
             <div className="flex justify-between items-center p-6 border-b border-border">
               <h2 className="text-xl font-bold text-primary">Menu</h2>

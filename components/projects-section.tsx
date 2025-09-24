@@ -73,7 +73,7 @@ export function ProjectsSection() {
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className={`sticky top-20 z-20 text-center mb-20 ${isVisible ? "animate-io-fade-up" : "opacity-0"}`}>
-          <div className="bg-background/80 backdrop-blur-xl rounded-3xl p-12 border border-border/50 shadow-2xl">
+          <div className="bg-background/95 rounded-3xl p-12 border border-border/50 shadow-2xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               <span className="text-sm font-medium text-primary tracking-wide uppercase">Featured Projects</span>
@@ -91,7 +91,7 @@ export function ProjectsSection() {
             </p>
 
             <div className="mt-8 inline-block">
-              <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg">
+              <div className="bg-card/95 border border-border/50 rounded-2xl p-6 shadow-lg">
                 <div className="flex items-center justify-center gap-8">
                   <div className="text-center">
                     <div className="text-3xl font-bold mb-2">
@@ -129,7 +129,7 @@ export function ProjectsSection() {
                   zIndex: projects.length - index,
                 }}
               >
-                <div className="bg-card/90 backdrop-blur-xl border border-border/50 rounded-3xl p-8 lg:p-12 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-primary/20">
+                <div className="bg-card/95 border border-border/50 rounded-3xl p-8 lg:p-12 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-primary/20">
                   <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className={`relative overflow-hidden rounded-2xl ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                       <div
@@ -139,13 +139,13 @@ export function ProjectsSection() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
                       <div className="absolute top-6 left-6">
-                        <span className="px-4 py-2 bg-background/90 backdrop-blur-sm rounded-full text-sm font-semibold text-foreground border border-border/50">
+                        <span className="px-4 py-2 bg-background/95 rounded-full text-sm font-semibold text-foreground border border-border/50">
                           {project.category}
                         </span>
                       </div>
 
                       <div className="absolute top-6 right-6">
-                        <span className="px-3 py-1 bg-primary/20 backdrop-blur-sm rounded-full text-xs font-medium text-white border border-primary/30">
+                        <span className="px-3 py-1 bg-primary/30 rounded-full text-xs font-medium text-white border border-primary/40">
                           {project.year}
                         </span>
                       </div>
