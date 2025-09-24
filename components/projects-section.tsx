@@ -44,7 +44,6 @@ const projects = [
 
 export function ProjectsSection() {
   const [isVisible, setIsVisible] = useState(false)
-  const [scrollProgress, setScrollProgress] = useState(0)
   const sectionRef = useRef<HTMLElement>(null)
   const projectRefs = useRef<(HTMLDivElement | null)[]>([])
 
@@ -58,25 +57,6 @@ export function ProjectsSection() {
 
     if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
-  }, [])
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return
-
-      const sectionRect = sectionRef.current.getBoundingClientRect()
-      const sectionTop = sectionRect.top
-      const sectionHeight = sectionRect.height
-      const viewportHeight = window.innerHeight
-
-      const progress = Math.max(0, Math.min(1, (viewportHeight - sectionTop) / (sectionHeight + viewportHeight)))
-
-      setScrollProgress(progress)
-    }
-
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll() // Initial call
-    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
@@ -134,10 +114,9 @@ export function ProjectsSection() {
 
         <div className="relative">
           {projects.map((project, index) => {
-            // Calculate stacking position based on scroll progress
-            const stackOffset = Math.max(0, scrollProgress * projects.length - index) * 100
-            const scale = Math.max(0.8, 1 - stackOffset / 500)
-            const opacity = Math.max(0.3, 1 - stackOffset / 300)
+            const stackOffset = index * 20
+            const scale = 1 - index * 0.05
+            const opacity = 1 - index * 0.1
 
             return (
               <div
