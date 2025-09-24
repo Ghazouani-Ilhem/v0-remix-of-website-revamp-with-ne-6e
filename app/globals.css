@@ -3,9 +3,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Integration Objects Corporate Design System */
+/* Corporate Design System - Neutral Professional Colors */
 :root {
-  /* Integration Objects Exact Brand Colors from website */
+  /* Professional Corporate Colors */
   --background: oklch(0.99 0.002 240); /* Clean corporate white */
   --foreground: oklch(0.15 0.01 240); /* Professional dark text */
   --card: oklch(0.98 0.003 240); /* Subtle card background */
@@ -13,81 +13,81 @@
   --popover: oklch(0.99 0.002 240);
   --popover-foreground: oklch(0.15 0.01 240);
 
-  /* Integration Objects Primary Orange #FF6B35 */
-  --primary: oklch(0.68 0.2 35); /* Exact Integration Objects orange */
+  /* Professional corporate blue */
+  --primary: oklch(0.35 0.12 285); /* Professional corporate blue */
   --primary-foreground: oklch(0.99 0.002 240);
 
-  /* Integration Objects Teal/Cyan #00CED1 */
-  --secondary: oklch(0.25 0.08 285); /* Exact Integration Objects blue #352561 */
+  /* Corporate Navy Blue */
+  --secondary: oklch(0.25 0.08 285); /* Corporate navy blue #352561 */
   --secondary-foreground: oklch(0.99 0.002 240);
 
   --muted: oklch(0.96 0.003 240); /* Corporate gray */
   --muted-foreground: oklch(0.5 0.01 240); /* Professional medium gray */
 
   /* Corporate accent color */
-  --accent: oklch(0.35 0.1 285); /* Lighter version of IO blue */
+  --accent: oklch(0.45 0.1 285); /* Lighter corporate blue */
   --accent-foreground: oklch(0.99 0.002 240);
 
   --destructive: oklch(0.58 0.18 15);
   --destructive-foreground: oklch(0.99 0.002 240);
   --border: oklch(0.94 0.003 240); /* Clean corporate border */
   --input: oklch(0.98 0.003 240);
-  --ring: oklch(0.68 0.2 35 / 0.12);
+  --ring: oklch(0.35 0.12 285 / 0.12);
 
-  /* Corporate chart colors using Integration Objects palette */
-  --chart-1: oklch(0.68 0.2 35); /* Primary orange */
-  --chart-2: oklch(0.25 0.08 285); /* Primary blue #352561 */
-  --chart-3: oklch(0.35 0.1 285); /* Light blue accent */
-  --chart-4: oklch(0.45 0.12 285); /* Medium blue */
-  --chart-5: oklch(0.55 0.15 285); /* Lighter blue */
+  /* Corporate chart colors using professional blue palette */
+  --chart-1: oklch(0.35 0.12 285); /* Primary blue */
+  --chart-2: oklch(0.25 0.08 285); /* Navy blue */
+  --chart-3: oklch(0.45 0.1 285); /* Light blue accent */
+  --chart-4: oklch(0.55 0.12 285); /* Medium blue */
+  --chart-5: oklch(0.65 0.15 285); /* Lighter blue */
 
   --radius: 0.5rem; /* Corporate rounded corners - more conservative */
 
   /* Sidebar colors */
   --sidebar: oklch(0.98 0.003 240);
   --sidebar-foreground: oklch(0.15 0.01 240);
-  --sidebar-primary: oklch(0.68 0.2 35);
+  --sidebar-primary: oklch(0.35 0.12 285);
   --sidebar-primary-foreground: oklch(0.99 0.002 240);
-  --sidebar-accent: oklch(0.35 0.1 285);
+  --sidebar-accent: oklch(0.45 0.1 285);
   --sidebar-accent-foreground: oklch(0.99 0.002 240);
   --sidebar-border: oklch(0.94 0.003 240);
-  --sidebar-ring: oklch(0.68 0.2 35 / 0.12);
+  --sidebar-ring: oklch(0.35 0.12 285 / 0.12);
 }
 
 .dark {
-  /* Integration Objects Corporate Navy Background #2B2D42 */
-  --background: oklch(0.15 0.05 285); /* Dark version of IO blue */
+  /* Corporate Navy Background */
+  --background: oklch(0.15 0.05 285); /* Dark version of corporate blue */
   --foreground: oklch(0.96 0.002 240);
   --card: oklch(0.18 0.06 285);
   --card-foreground: oklch(0.96 0.002 240);
   --popover: oklch(0.15 0.05 285);
   --popover-foreground: oklch(0.96 0.002 240);
-  --primary: oklch(0.72 0.22 35); /* Brighter orange for dark mode */
+  --primary: oklch(0.45 0.15 285); /* Brighter blue for dark mode */
   --primary-foreground: oklch(0.15 0.05 285);
-  --secondary: oklch(0.35 0.1 285); /* Lighter IO blue for dark mode */
+  --secondary: oklch(0.35 0.1 285); /* Lighter corporate blue for dark mode */
   --secondary-foreground: oklch(0.96 0.002 240);
   --muted: oklch(0.22 0.06 285);
   --muted-foreground: oklch(0.68 0.002 240);
-  --accent: oklch(0.45 0.12 285); /* Medium IO blue accent */
+  --accent: oklch(0.55 0.12 285); /* Medium corporate blue accent */
   --accent-foreground: oklch(0.96 0.002 240);
   --destructive: oklch(0.68 0.18 15);
   --destructive-foreground: oklch(0.99 0.002 240);
   --border: oklch(0.25 0.06 285);
   --input: oklch(0.18 0.06 285);
-  --ring: oklch(0.72 0.22 35 / 0.15);
-  --chart-1: oklch(0.72 0.22 35);
+  --ring: oklch(0.45 0.15 285 / 0.15);
+  --chart-1: oklch(0.45 0.15 285);
   --chart-2: oklch(0.35 0.1 285);
-  --chart-3: oklch(0.45 0.12 285);
-  --chart-4: oklch(0.55 0.15 285);
-  --chart-5: oklch(0.65 0.18 285);
+  --chart-3: oklch(0.55 0.12 285);
+  --chart-4: oklch(0.65 0.15 285);
+  --chart-5: oklch(0.75 0.18 285);
   --sidebar: oklch(0.12 0.04 285);
   --sidebar-foreground: oklch(0.96 0.002 240);
-  --sidebar-primary: oklch(0.72 0.22 35);
+  --sidebar-primary: oklch(0.45 0.15 285);
   --sidebar-primary-foreground: oklch(0.15 0.05 285);
   --sidebar-accent: oklch(0.18 0.06 285);
   --sidebar-accent-foreground: oklch(0.96 0.002 240);
   --sidebar-border: oklch(0.25 0.06 285);
-  --sidebar-ring: oklch(0.72 0.22 35 / 0.15);
+  --sidebar-ring: oklch(0.45 0.15 285 / 0.15);
 }
 
 @theme inline {
@@ -207,10 +207,10 @@
 @keyframes io-glow-pulse {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(255, 107, 53, 0.08);
+    box-shadow: 0 0 20px rgba(53, 37, 97, 0.08);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255, 107, 53, 0.15);
+    box-shadow: 0 0 40px rgba(53, 37, 97, 0.15);
   }
 }
 
@@ -325,11 +325,11 @@
 @keyframes robok-pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(255, 107, 53, 0.1);
+    box-shadow: 0 0 20px rgba(53, 37, 97, 0.1);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255, 107, 53, 0.2);
+    box-shadow: 0 0 40px rgba(53, 37, 97, 0.2);
     transform: scale(1.02);
   }
 }
@@ -429,7 +429,7 @@
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 60px rgba(53, 37, 97, 0.2), 0 0 100px rgba(255, 107, 53, 0.1);
+    box-shadow: 0 0 60px rgba(53, 37, 97, 0.2), 0 0 100px rgba(53, 37, 97, 0.1);
     transform: scale(1.05);
   }
   100% {
@@ -574,11 +574,12 @@
 
 .animate-robok-data-stream {
   animation: robok-data-stream 3s linear infinite;
+  /* Replaced orange gradient with professional blue gradient */
   background: linear-gradient(
     90deg,
     transparent 0%,
     rgba(53, 37, 97, 0.1) 25%,
-    rgba(255, 107, 53, 0.2) 50%,
+    rgba(53, 37, 97, 0.2) 50%,
     rgba(53, 37, 97, 0.1) 75%,
     transparent 100%
   );
@@ -645,7 +646,7 @@
 
 /* Corporate gradient effects using exact brand colors */
 .io-gradient-primary {
-  background: linear-gradient(135deg, #ff6b35 0%, #ff8a65 100%);
+  background: linear-gradient(135deg, #352561 0%, #4a3575 100%);
 }
 
 .io-gradient-secondary {
@@ -653,11 +654,11 @@
 }
 
 .io-gradient-accent {
-  background: linear-gradient(135deg, #ff6b35 0%, #352561 100%);
+  background: linear-gradient(135deg, #352561 0%, #4a3575 100%);
 }
 
 .io-gradient-text {
-  background: linear-gradient(135deg, #ff6b35, #352561);
+  background: linear-gradient(135deg, #352561, #4a3575);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -680,15 +681,15 @@
 .io-glass-card {
   backdrop-filter: blur(16px);
   background: rgba(255, 255, 255, 0.97);
-  border: 1px solid rgba(255, 107, 53, 0.08);
-  box-shadow: 0 4px 24px rgba(255, 107, 53, 0.06);
+  border: 1px solid rgba(53, 37, 97, 0.08);
+  box-shadow: 0 4px 24px rgba(53, 37, 97, 0.06);
 }
 
 /* Enhanced corporate card hover effects */
 .io-card {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: rgba(255, 255, 255, 0.98);
-  border: 1px solid rgba(255, 107, 53, 0.06);
+  border: 1px solid rgba(53, 37, 97, 0.06);
   position: relative;
   overflow: hidden;
 }
@@ -700,7 +701,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.06), transparent);
+  background: linear-gradient(90deg, transparent, rgba(53, 37, 97, 0.06), transparent);
   transition: left 0.4s;
 }
 
@@ -710,16 +711,16 @@
 
 .io-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px -8px rgba(255, 107, 53, 0.12);
+  box-shadow: 0 20px 40px -8px rgba(53, 37, 97, 0.12);
   background: rgba(255, 255, 255, 1);
-  border-color: rgba(255, 107, 53, 0.15);
+  border-color: rgba(53, 37, 97, 0.15);
 }
 
 /* Robok-style card enhancements */
 .robok-card {
   position: relative;
   background: rgba(255, 255, 255, 0.98);
-  border: 1px solid rgba(255, 107, 53, 0.08);
+  border: 1px solid rgba(53, 37, 97, 0.08);
   border-radius: 16px;
   padding: 40px;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -734,7 +735,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(53, 37, 97, 0.05), transparent);
   transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -744,16 +745,16 @@
 
 .robok-card:hover {
   transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 25px 50px -12px rgba(255, 107, 53, 0.15);
-  border-color: rgba(255, 107, 53, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(53, 37, 97, 0.15);
+  border-color: rgba(53, 37, 97, 0.2);
   background: rgba(255, 255, 255, 1);
 }
 
 /* Robok-style gradient card */
 .robok-gradient-card {
   position: relative;
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(0, 206, 209, 0.05) 100%);
-  border: 1px solid rgba(255, 107, 53, 0.1);
+  background: linear-gradient(135deg, rgba(53, 37, 97, 0.05) 0%, rgba(53, 37, 97, 0.03) 100%);
+  border: 1px solid rgba(53, 37, 97, 0.1);
   border-radius: 20px;
   padding: 50px;
   overflow: hidden;
@@ -768,7 +769,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 107, 53, 0.03) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(53, 37, 97, 0.03) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -780,15 +781,15 @@
 
 .robok-gradient-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px -8px rgba(255, 107, 53, 0.12);
-  border-color: rgba(255, 107, 53, 0.2);
+  box-shadow: 0 20px 40px -8px rgba(53, 37, 97, 0.12);
+  border-color: rgba(53, 37, 97, 0.2);
 }
 
 /* Robok-style service card with icon */
 .robok-service-card {
   position: relative;
   background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 107, 53, 0.08);
+  border: 1px solid rgba(53, 37, 97, 0.08);
   border-radius: 20px;
   padding: 40px;
   text-align: center;
@@ -804,7 +805,7 @@
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #ff6b35, #ff8a65);
+  background: linear-gradient(135deg, #352561, #4a3575);
   border-radius: 20px;
   margin-bottom: 24px;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -812,19 +813,19 @@
 
 .robok-service-card:hover .icon-wrapper {
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 12px 24px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 12px 24px rgba(53, 37, 97, 0.3);
 }
 
 .robok-service-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 25px 50px -12px rgba(255, 107, 53, 0.15);
-  border-color: rgba(255, 107, 53, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(53, 37, 97, 0.15);
+  border-color: rgba(53, 37, 97, 0.2);
 }
 
 /* Enhanced project card for vertical layout */
 .robok-vertical-card {
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 107, 53, 0.1);
+  border: 1px solid rgba(53, 37, 97, 0.1);
   border-radius: 24px;
   padding: 3rem;
   backdrop-filter: blur(20px);
@@ -840,7 +841,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(53, 37, 97, 0.05), transparent);
   transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -850,7 +851,7 @@
 
 .robok-vertical-card:hover {
   transform: translateY(-8px) scale(1.02);
-  border-color: rgba(255, 107, 53, 0.3);
+  border-color: rgba(53, 37, 97, 0.3);
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -923,7 +924,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 107, 53, 0.3);
+  border: 2px solid rgba(53, 37, 97, 0.3);
   background: transparent;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -931,14 +932,14 @@
 }
 
 .robok-nav-dot.active {
-  background: #ff6b35;
-  border-color: #ff6b35;
-  box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+  background: #352561;
+  border-color: #352561;
+  box-shadow: 0 0 20px rgba(53, 37, 97, 0.4);
 }
 
 .robok-nav-dot:hover {
   transform: scale(1.2);
-  border-color: #ff6b35;
+  border-color: #352561;
 }
 
 .robok-progress-bar {
@@ -947,35 +948,35 @@
   top: 0;
   width: 4px;
   height: 100vh;
-  background: rgba(255, 107, 53, 0.1);
+  background: rgba(53, 37, 97, 0.1);
   z-index: 50;
 }
 
 .robok-progress-fill {
   width: 100%;
-  background: linear-gradient(180deg, #ff6b35 0%, #352561 100%);
+  background: linear-gradient(180deg, #352561 0%, #4a3575 50%, #5a4585 100%);
   transition: height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Corporate shadows and effects */
 .io-shadow-sm {
-  box-shadow: 0 1px 6px rgba(255, 107, 53, 0.06);
+  box-shadow: 0 1px 6px rgba(53, 37, 97, 0.06);
 }
 
 .io-shadow-md {
-  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.08);
+  box-shadow: 0 4px 16px rgba(53, 37, 97, 0.08);
 }
 
 .io-shadow-lg {
-  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.1);
+  box-shadow: 0 8px 32px rgba(53, 37, 97, 0.1);
 }
 
 .io-shadow-xl {
-  box-shadow: 0 16px 48px rgba(255, 107, 53, 0.12);
+  box-shadow: 0 16px 48px rgba(53, 37, 97, 0.12);
 }
 
 .io-glow {
-  box-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
+  box-shadow: 0 0 20px rgba(53, 37, 97, 0.2);
 }
 
 /* Corporate loading animation */
@@ -983,15 +984,15 @@
   display: inline-block;
   width: 32px;
   height: 32px;
-  border: 2px solid rgba(255, 107, 53, 0.2);
+  border: 2px solid rgba(53, 37, 97, 0.2);
   border-radius: 50%;
-  border-top-color: #ff6b35;
+  border-top-color: #352561;
   animation: io-spin-slow 1s ease-in-out infinite;
 }
 
 /* Corporate progress bars */
 .io-progress {
-  background: linear-gradient(90deg, #ff6b35 0%, #00ced1 50%, #20b2aa 100%);
+  background: linear-gradient(90deg, #352561 0%, #4a3575 50%, #5a4585 100%);
   background-size: 200% 100%;
   animation: io-gradient-shift 2s ease infinite;
 }
@@ -999,22 +1000,22 @@
 /* Dark mode enhancements for robok theme */
 .dark .robok-card {
   background: rgba(43, 45, 66, 0.95);
-  border-color: rgba(255, 107, 53, 0.15);
+  border-color: rgba(53, 37, 97, 0.15);
 }
 
 .dark .robok-card:hover {
   background: rgba(43, 45, 66, 1);
-  box-shadow: 0 25px 50px -12px rgba(255, 107, 53, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(53, 37, 97, 0.2);
 }
 
 .dark .robok-gradient-card {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(0, 206, 209, 0.08) 100%);
-  border-color: rgba(255, 107, 53, 0.15);
+  background: linear-gradient(135deg, rgba(53, 37, 97, 0.08) 0%, rgba(53, 37, 97, 0.05) 100%);
+  border-color: rgba(53, 37, 97, 0.15);
 }
 
 .dark .robok-service-card {
   background: rgba(43, 45, 66, 0.9);
-  border-color: rgba(255, 107, 53, 0.15);
+  border-color: rgba(53, 37, 97, 0.15);
 }
 
 /* Responsive adjustments for robok theme */
