@@ -1,5 +1,5 @@
 "use client"
-import { ArrowRight, ExternalLink, ChevronUp, ChevronDown } from "lucide-react"
+import { ArrowRight, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState, useRef } from "react"
 
@@ -44,21 +44,14 @@ const projects = [
 
 export function ProjectsSection() {
   const [isVisible, setIsVisible] = useState(false)
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isSliderVisible, setIsSliderVisible] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
   const sectionRef = useRef<HTMLElement>(null)
   const projectRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          setIsSliderVisible(true)
-        } else {
-          setIsSliderVisible(false)
-        }
+        setIsVisible(entry.isIntersecting)
       },
       { threshold: 0.1 },
     )
@@ -69,257 +62,168 @@ export function ProjectsSection() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current || !isSliderVisible) return
+      if (!sectionRef.current) return
 
       const sectionRect = sectionRef.current.getBoundingClientRect()
       const sectionTop = sectionRect.top
       const sectionHeight = sectionRect.height
       const viewportHeight = window.innerHeight
 
-      const scrollProgress = Math.max(
-        0,
-        Math.min(1, (viewportHeight / 2 - sectionTop) / (sectionHeight - viewportHeight / 2)),
-      )
+      const progress = Math.max(0, Math.min(1, (viewportHeight - sectionTop) / (sectionHeight + viewportHeight)))
 
-      const slideIndex = Math.floor(scrollProgress * projects.length)
-      const clampedIndex = Math.max(0, Math.min(projects.length - 1, slideIndex))
-
-      if (clampedIndex !== currentSlide) {
-        setCurrentSlide(clampedIndex)
-      }
+      setScrollProgress(progress)
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll() // Initial call
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [currentSlide, isSliderVisible])
-
-  const navigateToSlide = (index: number) => {
-    setCurrentSlide(index)
-    if (projectRefs.current[index]) {
-      projectRefs.current[index]?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      })
-    }
-  }
-
-  const nextSlide = () => {
-    const next = (currentSlide + 1) % projects.length
-    navigateToSlide(next)
-  }
-
-  const prevSlide = () => {
-    const prev = (currentSlide - 1 + projects.length) % projects.length
-    navigateToSlide(prev)
-  }
+  }, [])
 
   return (
     <section
       ref={sectionRef}
       id="projects-section"
-      className="relative py-32 bg-gradient-to-br from-background via-background to-muted/20 overflow-hidden"
+      className="relative bg-gradient-to-br from-background via-background to-muted/20 overflow-hidden"
+      style={{ height: `${100 + projects.length * 50}vh` }} // Extended height for scroll effect
     >
-      <div
-        className={`fixed right-8 top-1/2 transform -translate-y-1/2 z-50 transition-all duration-500 ${
-          isSliderVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 pointer-events-none"
-        }`}
-      >
-        <div className="bg-card/90 backdrop-blur-xl border border-border/50 rounded-2xl p-4 shadow-2xl">
-          <button
-            onClick={prevSlide}
-            className="w-10 h-10 flex items-center justify-center rounded-xl bg-muted/50 hover:bg-primary/20 transition-all duration-300 mb-2 group"
-            disabled={currentSlide === 0}
-          >
-            <ChevronUp className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-          </button>
-
-          <div className="space-y-3 my-4">
-            {projects.map((project, index) => (
-              <button
-                key={project.id}
-                onClick={() => navigateToSlide(index)}
-                className={`group relative block w-12 h-16 rounded-xl transition-all duration-300 ${
-                  index === currentSlide
-                    ? "bg-primary/20 border-2 border-primary shadow-lg"
-                    : "bg-muted/30 border border-border/50 hover:bg-muted/50"
-                }`}
-              >
-                <div className="absolute inset-1 rounded-lg overflow-hidden">
-                  <div
-                    className="w-full h-full bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-                    style={{ backgroundImage: `url('${project.image}')` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                </div>
-
-                {index === currentSlide && (
-                  <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-1 h-8 bg-primary rounded-full" />
-                )}
-
-                <div
-                  className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 bg-card/95 backdrop-blur-sm border border-border/50 rounded-lg shadow-lg whitespace-nowrap transition-all duration-300 ${
-                    index === currentSlide ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2 pointer-events-none"
-                  }`}
-                >
-                  <div className="text-xs font-semibold text-foreground">{project.title}</div>
-                  <div className="text-xs text-muted-foreground">{project.category}</div>
-                  <div className="absolute left-full top-1/2 transform -translate-y-1/2 border-4 border-transparent border-l-card/95" />
-                </div>
-              </button>
-            ))}
-          </div>
-
-          <button
-            onClick={nextSlide}
-            className="w-10 h-10 flex items-center justify-center rounded-xl bg-muted/50 hover:bg-primary/20 transition-all duration-300 mt-2 group"
-            disabled={currentSlide === projects.length - 1}
-          >
-            <ChevronDown className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-          </button>
-
-          <div className="mt-4 pt-4 border-t border-border/50">
-            <div className="text-xs text-center text-muted-foreground font-medium">
-              {currentSlide + 1} / {projects.length}
-            </div>
-            <div className="mt-2 w-full bg-muted/30 rounded-full h-1">
-              <div
-                className="bg-primary h-1 rounded-full transition-all duration-500"
-                style={{ width: `${((currentSlide + 1) / projects.length) * 100}%` }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/3 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        <div className={`text-center mb-20 ${isVisible ? "animate-io-fade-up" : "opacity-0"}`}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-sm font-medium text-primary tracking-wide uppercase">Featured Projects</span>
-          </div>
+        <div className={`sticky top-20 z-20 text-center mb-20 ${isVisible ? "animate-io-fade-up" : "opacity-0"}`}>
+          <div className="bg-background/80 backdrop-blur-xl rounded-3xl p-12 border border-border/50 shadow-2xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <span className="text-sm font-medium text-primary tracking-wide uppercase">Featured Projects</span>
+            </div>
 
-          <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
-            Innovation Through
-            <br />
-            <span className="io-gradient-text">Intelligent Solutions</span>
-          </h2>
+            <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
+              Innovation Through
+              <br />
+              <span className="io-gradient-text">Intelligent Solutions</span>
+            </h2>
 
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Transforming industrial operations with cutting-edge technology solutions that deliver measurable results
-            and sustainable growth.
-          </p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Transforming industrial operations with cutting-edge technology solutions that deliver measurable results
+              and sustainable growth.
+            </p>
 
-          <div className="mt-12 inline-block">
-            <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center justify-center gap-8">
-                <div className="text-center">
-                  <div className="text-4xl font-bold mb-2">
-                    <span className="io-gradient-text">2,650+</span>
+            <div className="mt-8 inline-block">
+              <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg">
+                <div className="flex items-center justify-center gap-8">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold mb-2">
+                      <span className="io-gradient-text">2,650+</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground font-medium">Industrial Systems</p>
                   </div>
-                  <p className="text-sm text-muted-foreground font-medium">Industrial Systems Optimized</p>
-                </div>
-                <div className="w-px h-12 bg-border" />
-                <div className="text-center">
-                  <div className="text-4xl font-bold mb-2">
-                    <span className="io-gradient-text">99.9%</span>
+                  <div className="w-px h-12 bg-border" />
+                  <div className="text-center">
+                    <div className="text-3xl font-bold mb-2">
+                      <span className="io-gradient-text">99.9%</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground font-medium">System Uptime</p>
                   </div>
-                  <p className="text-sm text-muted-foreground font-medium">Average System Uptime</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="space-y-16">
-          {projects.map((project, index) => (
-            <div
-              key={project.id}
-              ref={(el) => (projectRefs.current[index] = el)}
-              className={`group ${isVisible ? "animate-io-fade-up" : "opacity-0"} ${
-                index === currentSlide ? "ring-2 ring-primary/20 ring-offset-4 ring-offset-background" : ""
-              }`}
-              style={{ animationDelay: `${index * 0.2}s` }}
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
-            >
-              <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-3xl p-8 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-primary/20">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                  <div className={`relative overflow-hidden rounded-2xl ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                    <div
-                      className="aspect-[4/3] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                      style={{ backgroundImage: `url('${project.image}')` }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        <div className="relative">
+          {projects.map((project, index) => {
+            // Calculate stacking position based on scroll progress
+            const stackOffset = Math.max(0, scrollProgress * projects.length - index) * 100
+            const scale = Math.max(0.8, 1 - stackOffset / 500)
+            const opacity = Math.max(0.3, 1 - stackOffset / 300)
 
-                    <div className="absolute top-6 left-6">
-                      <span className="px-4 py-2 bg-background/90 backdrop-blur-sm rounded-full text-sm font-semibold text-foreground border border-border/50">
-                        {project.category}
-                      </span>
-                    </div>
+            return (
+              <div
+                key={project.id}
+                ref={(el) => (projectRefs.current[index] = el)}
+                className="sticky top-40 mb-8"
+                style={{
+                  transform: `translateY(${stackOffset}px) scale(${scale})`,
+                  opacity: opacity,
+                  zIndex: projects.length - index,
+                }}
+              >
+                <div className="bg-card/90 backdrop-blur-xl border border-border/50 rounded-3xl p-8 lg:p-12 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-primary/20">
+                  <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className={`relative overflow-hidden rounded-2xl ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                      <div
+                        className="aspect-[4/3] bg-cover bg-center transition-transform duration-700 hover:scale-105"
+                        style={{ backgroundImage: `url('${project.image}')` }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
-                    <div className="absolute top-6 right-6">
-                      <span className="px-3 py-1 bg-primary/20 backdrop-blur-sm rounded-full text-xs font-medium text-white border border-primary/30">
-                        {project.year}
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-6 left-6">
-                      <div className="text-3xl font-bold text-white mb-1">{project.metrics}</div>
-                      <div className="text-white/80 text-sm font-medium">{project.subtitle}</div>
-                    </div>
-                  </div>
-
-                  <div className={`space-y-8 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                    <div>
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-1 h-8 bg-primary rounded-full" />
-                        <span className="text-primary font-semibold text-sm tracking-wider uppercase">
-                          {project.subtitle}
+                      <div className="absolute top-6 left-6">
+                        <span className="px-4 py-2 bg-background/90 backdrop-blur-sm rounded-full text-sm font-semibold text-foreground border border-border/50">
+                          {project.category}
                         </span>
                       </div>
 
-                      <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 leading-tight">
-                        {project.title}
-                      </h3>
-
-                      <p className="text-muted-foreground text-lg leading-relaxed">{project.description}</p>
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Link
-                        href="/projects"
-                        className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 group/btn"
-                      >
-                        Explore Project
-                        <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
-                      </Link>
-
-                      <button className="inline-flex items-center justify-center px-8 py-4 border border-border rounded-xl font-semibold text-foreground hover:bg-muted/50 transition-all duration-300 group/btn">
-                        View Case Study
-                        <ExternalLink className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
-
-                    <div className="flex flex-wrap gap-3">
-                      {project.tags.map((tag, tagIndex) => (
-                        <span
-                          key={tagIndex}
-                          className="inline-flex items-center px-4 py-2 bg-muted/50 border border-border/50 rounded-full text-sm font-medium text-foreground hover:bg-muted transition-colors"
-                        >
-                          {tag}
+                      <div className="absolute top-6 right-6">
+                        <span className="px-3 py-1 bg-primary/20 backdrop-blur-sm rounded-full text-xs font-medium text-white border border-primary/30">
+                          {project.year}
                         </span>
-                      ))}
+                      </div>
+
+                      <div className="absolute bottom-6 left-6">
+                        <div className="text-3xl font-bold text-white mb-1">{project.metrics}</div>
+                        <div className="text-white/80 text-sm font-medium">{project.subtitle}</div>
+                      </div>
+                    </div>
+
+                    <div className={`space-y-8 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                      <div>
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-1 h-8 bg-primary rounded-full" />
+                          <span className="text-primary font-semibold text-sm tracking-wider uppercase">
+                            {project.subtitle}
+                          </span>
+                        </div>
+
+                        <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 leading-tight">
+                          {project.title}
+                        </h3>
+
+                        <p className="text-muted-foreground text-lg leading-relaxed">{project.description}</p>
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Link
+                          href="/projects"
+                          className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 group/btn"
+                        >
+                          Explore Project
+                          <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
+                        </Link>
+
+                        <button className="inline-flex items-center justify-center px-8 py-4 border border-border rounded-xl font-semibold text-foreground hover:bg-muted/50 transition-all duration-300 group/btn">
+                          View Case Study
+                          <ExternalLink className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </button>
+                      </div>
+
+                      <div className="flex flex-wrap gap-3">
+                        {project.tags.map((tag, tagIndex) => (
+                          <span
+                            key={tagIndex}
+                            className="inline-flex items-center px-4 py-2 bg-muted/50 border border-border/50 rounded-full text-sm font-medium text-foreground hover:bg-muted transition-colors"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div
