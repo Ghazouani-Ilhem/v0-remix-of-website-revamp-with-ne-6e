@@ -1,5 +1,5 @@
 "use client"
-import { ArrowRight, ExternalLink } from "lucide-react"
+import { ArrowRight, ExternalLink, ChevronUp, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState, useRef } from "react"
 
@@ -45,13 +45,19 @@ const projects = [
 export function ProjectsSection() {
   const [isVisible, setIsVisible] = useState(false)
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isSliderVisible, setIsSliderVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
+          setIsSliderVisible(true)
+        } else {
+          setIsSliderVisible(false)
         }
       },
       { threshold: 0.1 },
@@ -61,12 +67,130 @@ export function ProjectsSection() {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current || !isSliderVisible) return
+
+      const sectionRect = sectionRef.current.getBoundingClientRect()
+      const sectionTop = sectionRect.top
+      const sectionHeight = sectionRect.height
+      const viewportHeight = window.innerHeight
+
+      const scrollProgress = Math.max(
+        0,
+        Math.min(1, (viewportHeight / 2 - sectionTop) / (sectionHeight - viewportHeight / 2)),
+      )
+
+      const slideIndex = Math.floor(scrollProgress * projects.length)
+      const clampedIndex = Math.max(0, Math.min(projects.length - 1, slideIndex))
+
+      if (clampedIndex !== currentSlide) {
+        setCurrentSlide(clampedIndex)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [currentSlide, isSliderVisible])
+
+  const navigateToSlide = (index: number) => {
+    setCurrentSlide(index)
+    if (projectRefs.current[index]) {
+      projectRefs.current[index]?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      })
+    }
+  }
+
+  const nextSlide = () => {
+    const next = (currentSlide + 1) % projects.length
+    navigateToSlide(next)
+  }
+
+  const prevSlide = () => {
+    const prev = (currentSlide - 1 + projects.length) % projects.length
+    navigateToSlide(prev)
+  }
+
   return (
     <section
       ref={sectionRef}
       id="projects-section"
       className="relative py-32 bg-gradient-to-br from-background via-background to-muted/20 overflow-hidden"
     >
+      <div
+        className={`fixed right-8 top-1/2 transform -translate-y-1/2 z-50 transition-all duration-500 ${
+          isSliderVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 pointer-events-none"
+        }`}
+      >
+        <div className="bg-card/90 backdrop-blur-xl border border-border/50 rounded-2xl p-4 shadow-2xl">
+          <button
+            onClick={prevSlide}
+            className="w-10 h-10 flex items-center justify-center rounded-xl bg-muted/50 hover:bg-primary/20 transition-all duration-300 mb-2 group"
+            disabled={currentSlide === 0}
+          >
+            <ChevronUp className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+          </button>
+
+          <div className="space-y-3 my-4">
+            {projects.map((project, index) => (
+              <button
+                key={project.id}
+                onClick={() => navigateToSlide(index)}
+                className={`group relative block w-12 h-16 rounded-xl transition-all duration-300 ${
+                  index === currentSlide
+                    ? "bg-primary/20 border-2 border-primary shadow-lg"
+                    : "bg-muted/30 border border-border/50 hover:bg-muted/50"
+                }`}
+              >
+                <div className="absolute inset-1 rounded-lg overflow-hidden">
+                  <div
+                    className="w-full h-full bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+                    style={{ backgroundImage: `url('${project.image}')` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                </div>
+
+                {index === currentSlide && (
+                  <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-1 h-8 bg-primary rounded-full" />
+                )}
+
+                <div
+                  className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 bg-card/95 backdrop-blur-sm border border-border/50 rounded-lg shadow-lg whitespace-nowrap transition-all duration-300 ${
+                    index === currentSlide ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2 pointer-events-none"
+                  }`}
+                >
+                  <div className="text-xs font-semibold text-foreground">{project.title}</div>
+                  <div className="text-xs text-muted-foreground">{project.category}</div>
+                  <div className="absolute left-full top-1/2 transform -translate-y-1/2 border-4 border-transparent border-l-card/95" />
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={nextSlide}
+            className="w-10 h-10 flex items-center justify-center rounded-xl bg-muted/50 hover:bg-primary/20 transition-all duration-300 mt-2 group"
+            disabled={currentSlide === projects.length - 1}
+          >
+            <ChevronDown className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+          </button>
+
+          <div className="mt-4 pt-4 border-t border-border/50">
+            <div className="text-xs text-center text-muted-foreground font-medium">
+              {currentSlide + 1} / {projects.length}
+            </div>
+            <div className="mt-2 w-full bg-muted/30 rounded-full h-1">
+              <div
+                className="bg-primary h-1 rounded-full transition-all duration-500"
+                style={{ width: `${((currentSlide + 1) / projects.length) * 100}%` }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/3 rounded-full blur-3xl" />
@@ -115,7 +239,10 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`group ${isVisible ? "animate-io-fade-up" : "opacity-0"}`}
+              ref={(el) => (projectRefs.current[index] = el)}
+              className={`group ${isVisible ? "animate-io-fade-up" : "opacity-0"} ${
+                index === currentSlide ? "ring-2 ring-primary/20 ring-offset-4 ring-offset-background" : ""
+              }`}
               style={{ animationDelay: `${index * 0.2}s` }}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
