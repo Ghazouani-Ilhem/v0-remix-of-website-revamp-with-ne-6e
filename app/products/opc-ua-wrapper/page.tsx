@@ -16,7 +16,6 @@ import {
   Shield,
   Zap,
   Settings,
-  Database,
   Network,
   Clock,
   Users,
@@ -523,13 +522,12 @@ export default function OPCUAWrapperPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">Architecture Overview</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Understanding how OPC UA Wrapper seamlessly bridges OPC Classic and OPC UA technologies with bidirectional
-              communication architecture.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Bidirectional bridge between OPC Classic and OPC UA technologies.
             </p>
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-12">
             <div className="relative">
               <div className="bg-gradient-to-br from-background to-muted/50 rounded-2xl p-8 border border-border/50">
                 <div className="text-center mb-8">
@@ -540,212 +538,76 @@ export default function OPCUAWrapperPage() {
                   />
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-8 mt-12">
-                  {/* OPC Classic Clients */}
+                <div className="grid lg:grid-cols-2 gap-8 mt-8">
                   <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-primary text-center mb-6">OPC Classic Clients</h3>
+                    <h3 className="text-lg font-bold text-foreground mb-4">Communication Flow</h3>
                     <div className="space-y-3">
-                      <Card className="elegant-card bg-primary/5 border-primary/20">
-                        <CardContent className="p-4 text-center">
-                          <Database className="w-6 h-6 text-primary mx-auto mb-2" />
-                          <div className="font-semibold text-sm">OPC DA Client</div>
-                          <div className="text-xs text-muted-foreground">Data Access</div>
-                        </CardContent>
-                      </Card>
-                      <Card className="elegant-card bg-primary/5 border-primary/20">
-                        <CardContent className="p-4 text-center">
-                          <Clock className="w-6 h-6 text-primary mx-auto mb-2" />
-                          <div className="font-semibold text-sm">OPC HDA Client</div>
-                          <div className="text-xs text-muted-foreground">Historical Data</div>
-                        </CardContent>
-                      </Card>
-                      <Card className="elegant-card bg-primary/5 border-primary/20">
-                        <CardContent className="p-4 text-center">
-                          <Activity className="w-6 h-6 text-primary mx-auto mb-2" />
-                          <div className="font-semibold text-sm">OPC AE Client</div>
-                          <div className="text-xs text-muted-foreground">Alarms & Events</div>
-                        </CardContent>
-                      </Card>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <ArrowRight className="w-3 h-3 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-semibold mb-1 text-primary">OPC UA to OPC Proxy</h4>
+                          <p className="text-xs text-muted-foreground">
+                            Enables OPC Classic clients to connect to OPC UA servers.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <ArrowRight className="w-3 h-3 text-secondary" />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-semibold mb-1 text-secondary">OPC to OPC UA Wrapper</h4>
+                          <p className="text-xs text-muted-foreground">
+                            Allows OPC UA clients to connect to OPC Classic servers.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Network className="w-3 h-3 text-accent" />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-semibold mb-1 text-accent">HTTP/UA TCP Protocol</h4>
+                          <p className="text-xs text-muted-foreground">
+                            Secure communication with authentication and encryption.
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Central Wrapper */}
                   <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-secondary text-center mb-6">OPC UA Wrapper</h3>
-                    <Card className="elegant-card bg-gradient-to-r from-secondary/10 to-primary/10 border-secondary/30">
-                      <CardContent className="p-6 text-center">
-                        <div className="grid grid-cols-2 gap-4 mb-4">
-                          <div className="bg-primary/20 rounded-lg p-3">
-                            <ArrowRight className="w-5 h-5 text-primary mx-auto mb-1" />
-                            <div className="text-xs font-semibold">OPC UA to OPC Proxy</div>
-                          </div>
-                          <div className="bg-secondary/20 rounded-lg p-3">
-                            <ArrowRight className="w-5 h-5 text-secondary mx-auto mb-1" />
-                            <div className="text-xs font-semibold">OPC to OPC UA Wrapper</div>
-                          </div>
-                        </div>
-                        <div className="font-bold text-lg mb-2">Bidirectional Bridge</div>
-                        <div className="text-sm text-muted-foreground mb-3">HTTP/UA TCP Communication</div>
-                        <Badge variant="secondary" className="text-xs">
-                          Protocol Translation
-                        </Badge>
-                      </CardContent>
-                    </Card>
-                  </div>
+                    <h3 className="text-lg font-bold text-foreground mb-4">Key Benefits</h3>
+                    <div className="grid gap-2">
+                      <div className="flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                        <span className="text-sm">Bidirectional Communication</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Gauge className="w-4 h-4 text-blue-500" />
+                        <span className="text-sm">Seamless Integration</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Shield className="w-4 h-4 text-purple-500" />
+                        <span className="text-sm">Enterprise Security</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Settings className="w-4 h-4 text-orange-500" />
+                        <span className="text-sm">Easy Configuration</span>
+                      </div>
+                    </div>
 
-                  {/* OPC UA Clients & Servers */}
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-accent text-center mb-6">OPC UA & Servers</h3>
-                    <div className="space-y-3">
-                      <Card className="elegant-card bg-accent/5 border-accent/20">
-                        <CardContent className="p-4 text-center">
-                          <Globe className="w-6 h-6 text-accent mx-auto mb-2" />
-                          <div className="font-semibold text-sm">OPC UA Client</div>
-                          <div className="text-xs text-muted-foreground">Modern Applications</div>
-                        </CardContent>
-                      </Card>
-                      <Card className="elegant-card bg-accent/5 border-accent/20">
-                        <CardContent className="p-4 text-center">
-                          <Network className="w-6 h-6 text-accent mx-auto mb-2" />
-                          <div className="font-semibold text-sm">OPC UA Server</div>
-                          <div className="text-xs text-muted-foreground">Unified Architecture</div>
-                        </CardContent>
-                      </Card>
-                      <Card className="elegant-card bg-primary/5 border-primary/20">
-                        <CardContent className="p-4 text-center">
-                          <Database className="w-6 h-6 text-primary mx-auto mb-2" />
-                          <div className="font-semibold text-sm">OPC Classic Servers</div>
-                          <div className="text-xs text-muted-foreground">DA, HDA, AE</div>
-                        </CardContent>
-                      </Card>
+                    <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg p-4 border border-primary/10 mt-4">
+                      <h4 className="text-sm font-semibold text-primary mb-1">Migration Strategy</h4>
+                      <p className="text-xs text-muted-foreground">
+                        Deploy for gradual migration with flexible migration paths.
+                      </p>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-12">
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-6">Communication Flow</h3>
-                  <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <ArrowRight className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-semibold mb-2 text-primary">Left Side: OPC UA to OPC Proxy</h4>
-                        <p className="text-muted-foreground">
-                          Enables OPC Classic clients (DA, HDA, AE) to connect to OPC UA servers. The proxy translates
-                          OPC Classic requests into OPC UA calls, allowing legacy clients to access modern OPC UA data
-                          sources.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <ArrowRight className="w-4 h-4 text-secondary" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-semibold mb-2 text-secondary">Right Side: OPC to OPC UA Wrapper</h4>
-                        <p className="text-muted-foreground">
-                          Allows OPC UA clients to connect to OPC Classic servers. The wrapper exposes OPC Classic data
-                          (DA, HDA, AE) through modern OPC UA interfaces, enabling new applications to access legacy
-                          systems.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <Network className="w-4 h-4 text-accent" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-semibold mb-2 text-accent">HTTP/UA TCP Protocol</h4>
-                        <p className="text-muted-foreground">
-                          All communications use secure HTTP/UA TCP protocols, ensuring reliable data transmission with
-                          built-in security features including authentication and encryption.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <Button className="elegant-btn-primary">
-                  <FileText className="w-4 h-4 mr-2" />
-                  Download Architecture Guide
-                </Button>
-              </div>
-
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-foreground mb-6">Key Benefits</h3>
-
-                <div className="grid gap-4">
-                  <Card className="elegant-card">
-                    <CardContent className="p-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-green-500/10 rounded-full flex items-center justify-center">
-                          <CheckCircle className="w-4 h-4 text-green-500" />
-                        </div>
-                        <div>
-                          <div className="font-semibold">Bidirectional Communication</div>
-                          <div className="text-sm text-muted-foreground">Support for both migration directions</div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="elegant-card">
-                    <CardContent className="p-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-blue-500/10 rounded-full flex items-center justify-center">
-                          <Gauge className="w-4 h-4 text-blue-500" />
-                        </div>
-                        <div>
-                          <div className="font-semibold">Seamless Integration</div>
-                          <div className="text-sm text-muted-foreground">No changes required to existing systems</div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="elegant-card">
-                    <CardContent className="p-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-purple-500/10 rounded-full flex items-center justify-center">
-                          <Shield className="w-4 h-4 text-purple-500" />
-                        </div>
-                        <div>
-                          <div className="font-semibold">Enterprise Security</div>
-                          <div className="text-sm text-muted-foreground">Built-in authentication and encryption</div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="elegant-card">
-                    <CardContent className="p-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-orange-500/10 rounded-full flex items-center justify-center">
-                          <Settings className="w-4 h-4 text-orange-500" />
-                        </div>
-                        <div>
-                          <div className="font-semibold">Easy Configuration</div>
-                          <div className="text-sm text-muted-foreground">Intuitive setup and management</div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg p-6 border border-primary/10">
-                  <h4 className="font-semibold text-primary mb-2">Migration Strategy</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Deploy the wrapper to enable gradual migration. Use the proxy for legacy clients accessing OPC UA
-                    servers, and the wrapper for OPC UA clients accessing legacy servers. This allows for flexible
-                    migration paths.
-                  </p>
                 </div>
               </div>
             </div>
