@@ -113,7 +113,7 @@ export function HeroSection() {
         <div className="robok-shape-2 top-1/3 right-20" />
         <div className="robok-shape-3 bottom-20 left-1/4" />
         <div
-          className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-[#FF6B35]/30 to-[#FF8C42]/30 blur-3xl animate-robok-pulse-glow"
+          className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-[#352561]/30 to-[#4a3575]/30 blur-3xl animate-robok-pulse-glow"
           style={{
             left: `${20 + mousePosition.x * 0.1}%`,
             top: `${10 + mousePosition.y * 0.1}%`,
@@ -121,7 +121,7 @@ export function HeroSection() {
           }}
         />
         <div
-          className="absolute w-64 h-64 rounded-full bg-gradient-to-r from-[#FF9A56]/40 to-[#FF6B35]/20 blur-2xl animate-robok-float-gentle"
+          className="absolute w-64 h-64 rounded-full bg-gradient-to-r from-[#5d4689]/40 to-[#352561]/20 blur-2xl animate-robok-float-gentle"
           style={{
             right: `${15 + mousePosition.x * 0.05}%`,
             bottom: `${20 + mousePosition.y * 0.08}%`,
@@ -136,7 +136,7 @@ export function HeroSection() {
           <div className={`lg:col-span-7 space-y-8 lg:space-y-12 ${isVisible ? "animate-robok-fade-up" : "opacity-0"}`}>
             <div className="space-y-6 lg:space-y-8">
               <div className="inline-flex items-center gap-3 px-4 py-2 lg:px-6 lg:py-3 robok-card text-xs sm:text-sm font-medium shadow-lg">
-                <div className="w-2 h-2 bg-[#FF6B35] rounded-full animate-robok-pulse-glow shadow-lg shadow-[#FF6B35]/50" />
+                <div className="w-2 h-2 bg-[#352561] rounded-full animate-robok-pulse-glow shadow-lg shadow-[#352561]/50" />
                 <span className="robok-shimmer-text">{currentSlideData.badge}</span>
               </div>
 
@@ -145,7 +145,7 @@ export function HeroSection() {
                   <span className="robok-heading">{currentSlideData.title}</span>
                 </h1>
                 <p
-                  className="text-lg sm:text-xl lg:text-xl text-[#FF8C42] text-balance font-light animate-robok-slide-right"
+                  className="text-lg sm:text-xl lg:text-xl text-[#4a3575] text-balance font-light animate-robok-slide-right"
                   style={{ animationDelay: "0.2s" }}
                 >
                   {currentSlideData.subtitle}
@@ -166,7 +166,7 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   asChild
-                  className="robok-btn-primary px-6 sm:px-8 lg:px-10 py-3 lg:py-4 text-sm sm:text-base h-auto"
+                  className="robok-btn-primary px-6 sm:px-8 lg:px-10 py-3 lg:py-4 text-sm sm:text-base h-auto bg-[#352561] shadow-lg shadow-[#352561]/50 animate-robok-pulse-glow"
                 >
                   <Link href={currentSlideData.ctaLink}>
                     {currentSlideData.cta}
@@ -177,7 +177,7 @@ export function HeroSection() {
                   variant="outline"
                   size="lg"
                   asChild
-                  className="robok-btn-secondary px-6 sm:px-8 lg:px-10 py-3 lg:py-4 text-sm sm:text-base h-auto bg-transparent"
+                  className="robok-btn-secondary px-6 sm:px-8 lg:px-10 py-3 lg:py-4 text-sm sm:text-base h-auto bg-transparent hover:bg-[#4a3575]/50"
                 >
                   <Link href="/contact">Schedule Demo</Link>
                 </Button>
@@ -197,8 +197,8 @@ export function HeroSection() {
                     onClick={() => goToSlide(index)}
                     className={`w-12 h-1 rounded-full transition-all duration-300 ${
                       index === currentSlide
-                        ? "bg-[#FF6B35] shadow-lg shadow-[#FF6B35]/50 animate-robok-pulse-glow"
-                        : "bg-white/30 hover:bg-[#FF8C42]/50"
+                        ? "bg-[#352561] shadow-lg shadow-[#352561]/50 animate-robok-pulse-glow"
+                        : "bg-white/30 hover:bg-[#4a3575]/50"
                     }`}
                   />
                 ))}
@@ -241,7 +241,7 @@ export function HeroSection() {
                       animationDelay: `${index * 0.2}s`,
                     }}
                   >
-                    <span className="text-foreground/90 text-xs font-bold group-hover:text-[#FF6B35] transition-colors duration-300">
+                    <span className="text-foreground/90 text-xs font-bold group-hover:text-[#352561] transition-colors duration-300">
                       {brand.logo}
                     </span>
                   </div>

@@ -61,7 +61,7 @@ export function ServicesSection() {
         <div className="robok-shape-enhanced-1 top-20 right-10 opacity-60" />
         <div className="robok-shape-enhanced-2 bottom-20 left-10 opacity-40" />
         <div className="robok-shape-enhanced-3 top-1/2 right-1/4 opacity-50" />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#352561]/2 via-transparent to-[#FF6B35]/2 animate-robok-data-stream" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#352561]/2 via-transparent to-[#4a3575]/2 animate-robok-data-stream" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
@@ -90,7 +90,7 @@ export function ServicesSection() {
                 animationDelay: "0.1s",
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#352561]/95 to-[#FF6B35]/85" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#352561]/95 to-[#4a3575]/85" />
               <div className="curve-text relative z-10 text-center">
                 <div className="w-36 h-36 mx-auto mb-8 relative">
                   <svg className="w-full h-full animate-io-spin-slow" xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -117,7 +117,7 @@ export function ServicesSection() {
                 style={{ animationDelay: `${(index + 2) * 0.15}s` }}
               >
                 <div className="icon-wrapper mx-auto mb-6">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#352561] to-[#FF6B35] rounded-2xl flex items-center justify-center group-hover:animate-robok-magnetic-hover transition-all duration-300">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#352561] to-[#4a3575] rounded-2xl flex items-center justify-center group-hover:animate-robok-magnetic-hover transition-all duration-300">
                     <service.icon className="w-10 h-10 text-white" />
                   </div>
                 </div>
@@ -135,7 +135,7 @@ export function ServicesSection() {
                 animationDelay: "0.8s",
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B35]/90 to-[#352561]/80" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#4a3575]/90 to-[#352561]/80" />
               <div className="relative z-10">
                 <h4 className="text-2xl font-bold mb-6 robok-shimmer-text">AI Community</h4>
                 <p className="text-white/90 mb-8 leading-relaxed">
