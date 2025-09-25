@@ -113,7 +113,7 @@ export function HeroSection() {
         <div className="robok-shape-2 top-1/3 right-20" />
         <div className="robok-shape-3 bottom-20 left-1/4" />
         <div
-          className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-[#FF6B35]/30 to-[#00CED1]/30 blur-3xl animate-robok-pulse-glow"
+          className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-[#FF6B35]/30 to-[#FF8C42]/30 blur-3xl animate-robok-pulse-glow"
           style={{
             left: `${20 + mousePosition.x * 0.1}%`,
             top: `${10 + mousePosition.y * 0.1}%`,
@@ -121,7 +121,7 @@ export function HeroSection() {
           }}
         />
         <div
-          className="absolute w-64 h-64 rounded-full bg-gradient-to-r from-[#00CED1]/40 to-[#FF6B35]/20 blur-2xl animate-robok-float-gentle"
+          className="absolute w-64 h-64 rounded-full bg-gradient-to-r from-[#FF9A56]/40 to-[#FF6B35]/20 blur-2xl animate-robok-float-gentle"
           style={{
             right: `${15 + mousePosition.x * 0.05}%`,
             bottom: `${20 + mousePosition.y * 0.08}%`,
@@ -145,7 +145,7 @@ export function HeroSection() {
                   <span className="robok-heading">{currentSlideData.title}</span>
                 </h1>
                 <p
-                  className="text-lg sm:text-xl lg:text-xl text-[#00CED1] text-balance font-light animate-robok-slide-right"
+                  className="text-lg sm:text-xl lg:text-xl text-[#FF8C42] text-balance font-light animate-robok-slide-right"
                   style={{ animationDelay: "0.2s" }}
                 >
                   {currentSlideData.subtitle}
@@ -198,7 +198,7 @@ export function HeroSection() {
                     className={`w-12 h-1 rounded-full transition-all duration-300 ${
                       index === currentSlide
                         ? "bg-[#FF6B35] shadow-lg shadow-[#FF6B35]/50 animate-robok-pulse-glow"
-                        : "bg-white/30 hover:bg-[#00CED1]/50"
+                        : "bg-white/30 hover:bg-[#FF8C42]/50"
                     }`}
                   />
                 ))}
@@ -251,18 +251,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-
-      {isAutoPlaying && (
-        <div className="absolute bottom-0 left-0 w-full robok-progress">
-          <div
-            className="robok-progress-bar"
-            style={{
-              width: `${((Date.now() % 8000) / 8000) * 100}%`,
-              animation: "progress 8s linear infinite",
-            }}
-          />
-        </div>
-      )}
 
       <style jsx>{`
         @keyframes float {

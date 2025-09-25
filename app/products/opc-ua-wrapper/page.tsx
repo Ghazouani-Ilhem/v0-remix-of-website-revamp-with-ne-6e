@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { Header } from "@/components/header"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -30,6 +31,9 @@ import {
   Lock,
   Cpu,
   BarChart3,
+  Gauge,
+  TrendingUp,
+  Activity,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -188,64 +192,153 @@ export default function OPCUAWrapperPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5"></div>
+      {/* Header Component for Navigation */}
+      <Header />
+
+      {/* Enhanced Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-secondary/10 rounded-full blur-lg animate-bounce"></div>
+          <div
+            className="absolute bottom-20 left-1/4 w-40 h-40 bg-accent/10 rounded-full blur-2xl animate-pulse"
+            style={{ animationDelay: "1s" }}
+          ></div>
+        </div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge variant="secondary" className="px-4 py-2 text-sm font-medium">
+              <div className="space-y-6">
+                {/* Enhanced Badge with Animation */}
+                <Badge
+                  variant="secondary"
+                  className="px-6 py-3 text-sm font-medium animate-pulse bg-primary/10 text-primary border-primary/20"
+                >
+                  <div className="w-2 h-2 bg-primary rounded-full mr-2 animate-ping"></div>
                   OPC Migration Solution
                 </Badge>
-                <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
-                  OPC UA <span className="text-primary">Wrapper</span>
+
+                {/* Enhanced Title with Gradient Text */}
+                <h1 className="text-4xl lg:text-7xl font-bold leading-tight">
+                  <span className="bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent">
+                    OPC UA
+                  </span>{" "}
+                  <span className="text-primary animate-pulse">Wrapper</span>
                 </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                  Bridge the gap between OPC Classic and OPC UA with our seamless migration solution. Enable modern
-                  connectivity while preserving your existing infrastructure investments.
+
+                {/* Enhanced Subtitle */}
+                <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl font-light">
+                  Bridge the gap between <span className="text-primary font-semibold">OPC Classic</span> and{" "}
+                  <span className="text-secondary font-semibold">OPC UA</span> with our seamless migration solution.
+                </p>
+
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                  Enable modern connectivity while preserving your existing infrastructure investments.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="elegant-btn-primary px-8 py-4 text-lg">
-                  <Download className="w-5 h-5 mr-2" />
+                <Button size="lg" className="elegant-btn-primary px-8 py-4 text-lg group">
+                  <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                   Download Free Trial
                 </Button>
-                <Button variant="outline" size="lg" className="elegant-btn-secondary px-8 py-4 text-lg bg-transparent">
-                  <Play className="w-5 h-5 mr-2" />
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="elegant-btn-secondary px-8 py-4 text-lg bg-transparent group"
+                >
+                  <Play className="w-5 h-5 mr-2 group-hover:animate-pulse" />
                   Watch Demo
                 </Button>
               </div>
 
+              {/* Enhanced Stats with Animations and Icons */}
               <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border/50">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">99.9%</div>
-                  <div className="text-sm text-muted-foreground">Uptime</div>
+                <div className="text-center group">
+                  <div className="flex items-center justify-center mb-2">
+                    <Activity className="w-6 h-6 text-green-500 mr-2 group-hover:animate-pulse" />
+                    <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">
+                      99.9%
+                    </div>
+                  </div>
+                  <div className="text-sm text-muted-foreground">Uptime Guarantee</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">&lt;10ms</div>
-                  <div className="text-sm text-muted-foreground">Latency</div>
+                <div className="text-center group">
+                  <div className="flex items-center justify-center mb-2">
+                    <Gauge className="w-6 h-6 text-blue-500 mr-2 group-hover:animate-spin" />
+                    <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">
+                      &lt;10ms
+                    </div>
+                  </div>
+                  <div className="text-sm text-muted-foreground">Ultra-Low Latency</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">1000+</div>
-                  <div className="text-sm text-muted-foreground">Deployments</div>
+                <div className="text-center group">
+                  <div className="flex items-center justify-center mb-2">
+                    <TrendingUp className="w-6 h-6 text-purple-500 mr-2 group-hover:animate-bounce" />
+                    <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">
+                      1000+
+                    </div>
+                  </div>
+                  <div className="text-sm text-muted-foreground">Global Deployments</div>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="relative bg-gradient-to-br from-muted/30 to-muted/10 rounded-2xl p-8 border border-border/50">
+              {/* Enhanced Image Container with Multiple Layers */}
+              <div className="relative bg-gradient-to-br from-muted/30 to-muted/10 rounded-2xl p-8 border border-border/50 overflow-hidden">
+                {/* Animated Background Pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-4 left-4 w-8 h-8 border-2 border-primary rounded-full animate-ping"></div>
+                  <div
+                    className="absolute top-12 right-8 w-6 h-6 border-2 border-secondary rounded-full animate-pulse"
+                    style={{ animationDelay: "0.5s" }}
+                  ></div>
+                  <div
+                    className="absolute bottom-8 left-12 w-10 h-10 border-2 border-accent rounded-full animate-bounce"
+                    style={{ animationDelay: "1s" }}
+                  ></div>
+                </div>
+
                 <img
                   src="/opc-ua-wrapper-architecture-diagram-showing-connec.jpg"
                   alt="OPC UA Wrapper Architecture"
-                  className="w-full h-auto rounded-lg"
+                  className="w-full h-auto rounded-lg relative z-10 hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 right-4">
-                  <Badge className="bg-green-500/10 text-green-600 border-green-500/20">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                    Live Demo
+
+                {/* Enhanced Live Demo Badge */}
+                <div className="absolute top-4 right-4 z-20">
+                  <Badge className="bg-green-500/20 text-green-600 border-green-500/30 animate-pulse">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-ping"></div>
+                    Live Demo Available
                   </Badge>
+                </div>
+
+                {/* Added Floating Feature Badges */}
+                <div className="absolute -bottom-4 -left-4 z-20">
+                  <div
+                    className="bg-background/90 backdrop-blur-sm border border-border rounded-lg p-3 shadow-lg animate-bounce"
+                    style={{ animationDelay: "2s" }}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <Shield className="w-4 h-4 text-primary" />
+                      <span className="text-xs font-medium">Enterprise Security</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute -top-4 -right-4 z-20">
+                  <div
+                    className="bg-background/90 backdrop-blur-sm border border-border rounded-lg p-3 shadow-lg animate-bounce"
+                    style={{ animationDelay: "1.5s" }}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <Zap className="w-4 h-4 text-secondary" />
+                      <span className="text-xs font-medium">High Performance</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
