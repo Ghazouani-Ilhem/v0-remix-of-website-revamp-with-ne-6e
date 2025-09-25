@@ -31,6 +31,7 @@ import {
   Gauge,
   TrendingUp,
   Activity,
+  Cpu,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -193,124 +194,153 @@ export default function OPCUAWrapperPage() {
       <Header />
 
       <section className="relative pt-24 pb-32 overflow-hidden">
-        {/* Enhanced gradient background with better color transitions */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+        {/* Enhanced dark gradient background with multiple layers */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-secondary/15 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.02)_50%,transparent_75%)]"></div>
         </div>
 
-        {/* Improved animated background elements with better positioning */}
+        {/* Floating geometric elements inspired by Suseio */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-primary/8 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 bg-secondary/8 rounded-full blur-lg animate-bounce"></div>
+          <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-secondary/10 rounded-full blur-lg animate-bounce"></div>
           <div
-            className="absolute bottom-20 left-1/4 w-40 h-40 bg-accent/8 rounded-full blur-2xl animate-pulse"
+            className="absolute bottom-20 left-1/4 w-40 h-40 bg-accent/10 rounded-full blur-2xl animate-pulse"
             style={{ animationDelay: "1s" }}
           ></div>
+
+          {/* Hexagonal floating elements */}
           <div
-            className="absolute top-1/2 right-1/3 w-16 h-16 bg-primary/6 rounded-full blur-md animate-pulse"
+            className="absolute top-32 right-1/3 w-16 h-16 bg-primary/5 transform rotate-45 animate-spin"
+            style={{ animationDuration: "20s" }}
+          ></div>
+          <div
+            className="absolute bottom-32 left-1/3 w-12 h-12 bg-secondary/5 transform rotate-12 animate-pulse"
             style={{ animationDelay: "2s" }}
           ></div>
+
+          {/* Circuit-like lines */}
+          <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+          <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary/15 to-transparent"></div>
+        </div>
+
+        {/* Vertical text element inspired by Suseio */}
+        <div className="absolute left-8 top-1/2 transform -translate-y-1/2 -rotate-90 hidden lg:block">
+          <div className="flex items-center space-x-4 text-primary/60 text-sm font-medium tracking-widest">
+            <div className="w-8 h-px bg-primary/40"></div>
+            <span>INDUSTRIAL AUTOMATION</span>
+            <div className="w-2 h-2 bg-primary/60 rounded-full animate-ping"></div>
+          </div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-10">
               <div className="space-y-8">
-                {/* Enhanced badge with better styling */}
-                <Badge
-                  variant="secondary"
-                  className="px-6 py-3 text-sm font-medium bg-primary/10 text-primary border-primary/20 hover:bg-primary/15 transition-colors"
-                >
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-ping"></div>
-                  Industry-Leading OPC Migration Solution
-                </Badge>
+                {/* Enhanced badge with futuristic styling */}
+                <div className="flex items-center space-x-4">
+                  <Badge className="px-6 py-3 text-sm font-medium bg-primary/20 text-primary border border-primary/30 backdrop-blur-sm hover:bg-primary/25 transition-all">
+                    <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-ping"></div>
+                    <Cpu className="w-4 h-4 mr-2" />
+                    INDUSTRIAL OPC TECHNOLOGY
+                  </Badge>
+                </div>
 
-                {/* Improved title with better gradient and spacing */}
-                <div className="space-y-4">
-                  <h1 className="text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
-                    <span className="bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent">
+                {/* Futuristic title with enhanced typography */}
+                <div className="space-y-6">
+                  <h1 className="text-6xl lg:text-8xl font-black leading-none tracking-tight">
+                    <span className="bg-gradient-to-r from-white via-primary to-secondary bg-clip-text text-transparent">
                       OPC UA
                     </span>
                     <br />
-                    <span className="text-primary">Wrapper</span>
+                    <span className="text-primary glow-text">Wrapper</span>
                   </h1>
 
-                  <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-32 h-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-full"></div>
+                    <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                  </div>
                 </div>
 
-                {/* Enhanced subtitle with better spacing */}
+                {/* Enhanced subtitle with better visual hierarchy */}
                 <div className="space-y-6">
-                  <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl font-light">
-                    Bridge the gap between <span className="text-primary font-semibold">OPC Classic</span> and{" "}
-                    <span className="text-secondary font-semibold">OPC UA</span> with our seamless migration solution.
+                  <p className="text-2xl lg:text-3xl text-slate-300 leading-relaxed max-w-2xl font-light">
+                    Bridge the gap between <span className="text-primary font-semibold glow-text">OPC Classic</span> and{" "}
+                    <span className="text-secondary font-semibold glow-text">OPC UA</span> with our seamless migration
+                    solution.
                   </p>
 
-                  <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                  <p className="text-lg text-slate-400 leading-relaxed max-w-2xl">
                     Enable modern connectivity while preserving your existing infrastructure investments with zero
                     downtime.
                   </p>
                 </div>
               </div>
 
+              {/* Enhanced CTA buttons with futuristic styling */}
               <div className="flex flex-col sm:flex-row gap-6">
                 <Button
                   size="lg"
-                  className="elegant-btn-primary px-10 py-5 text-lg font-semibold group shadow-lg hover:shadow-xl transition-all"
+                  className="px-12 py-6 text-lg font-bold bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white border-0 shadow-2xl hover:shadow-primary/25 transition-all duration-300 group relative overflow-hidden"
                 >
-                  <Download className="w-5 h-5 mr-3 group-hover:animate-bounce" />
-                  Download Free Trial
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <Download className="w-6 h-6 mr-3 group-hover:animate-bounce relative z-10" />
+                  <span className="relative z-10">Download Free Trial</span>
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="elegant-btn-secondary px-10 py-5 text-lg font-semibold bg-transparent group border-2 hover:bg-primary/5"
+                  className="px-12 py-6 text-lg font-bold bg-transparent border-2 border-primary/50 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300 group backdrop-blur-sm"
                 >
-                  <Play className="w-5 h-5 mr-3 group-hover:animate-pulse" />
+                  <Play className="w-6 h-6 mr-3 group-hover:animate-pulse" />
                   Watch Demo
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-8 pt-12 border-t border-border/30">
+              {/* Enhanced stats with futuristic design */}
+              <div className="grid grid-cols-3 gap-8 pt-12 border-t border-primary/20">
                 <div className="text-center group cursor-pointer">
-                  <div className="flex items-center justify-center mb-3">
-                    <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-green-500/20 transition-colors">
-                      <Activity className="w-6 h-6 text-green-500 group-hover:animate-pulse" />
+                  <div className="relative">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500/20 to-green-600/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform border border-green-500/20">
+                      <Activity className="w-8 h-8 text-green-400 group-hover:animate-pulse" />
                     </div>
-                    <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">
+                    <div className="text-4xl font-black text-white group-hover:scale-110 transition-transform glow-text">
                       99.9%
                     </div>
+                    <div className="text-sm text-slate-400 font-medium mt-2">Uptime Guarantee</div>
                   </div>
-                  <div className="text-sm text-muted-foreground font-medium">Uptime Guarantee</div>
                 </div>
                 <div className="text-center group cursor-pointer">
-                  <div className="flex items-center justify-center mb-3">
-                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-500/20 transition-colors">
-                      <Gauge className="w-6 h-6 text-blue-500 group-hover:animate-spin" />
+                  <div className="relative">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform border border-blue-500/20">
+                      <Gauge className="w-8 h-8 text-blue-400 group-hover:animate-spin" />
                     </div>
-                    <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">
+                    <div className="text-4xl font-black text-white group-hover:scale-110 transition-transform glow-text">
                       &lt;10ms
                     </div>
+                    <div className="text-sm text-slate-400 font-medium mt-2">Ultra-Low Latency</div>
                   </div>
-                  <div className="text-sm text-muted-foreground font-medium">Ultra-Low Latency</div>
                 </div>
                 <div className="text-center group cursor-pointer">
-                  <div className="flex items-center justify-center mb-3">
-                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-purple-500/20 transition-colors">
-                      <TrendingUp className="w-6 h-6 text-purple-500 group-hover:animate-bounce" />
+                  <div className="relative">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-600/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform border border-purple-500/20">
+                      <TrendingUp className="w-8 h-8 text-purple-400 group-hover:animate-bounce" />
                     </div>
-                    <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">
+                    <div className="text-4xl font-black text-white group-hover:scale-110 transition-transform glow-text">
                       1000+
                     </div>
+                    <div className="text-sm text-slate-400 font-medium mt-2">Global Deployments</div>
                   </div>
-                  <div className="text-sm text-muted-foreground font-medium">Global Deployments</div>
                 </div>
               </div>
             </div>
 
+            {/* Enhanced right side with 3D-style architecture display */}
             <div className="relative lg:pl-8">
-              <div className="relative bg-gradient-to-br from-muted/20 to-muted/5 rounded-3xl p-10 border border-border/30 overflow-hidden shadow-2xl">
-                {/* Improved animated background pattern */}
-                <div className="absolute inset-0 opacity-5">
+              <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/30 rounded-3xl p-10 border border-primary/20 overflow-hidden shadow-2xl backdrop-blur-sm">
+                {/* Enhanced animated background pattern */}
+                <div className="absolute inset-0 opacity-10">
                   <div className="absolute top-6 left-6 w-8 h-8 border-2 border-primary rounded-full animate-ping"></div>
                   <div
                     className="absolute top-16 right-10 w-6 h-6 border-2 border-secondary rounded-full animate-pulse"
@@ -324,6 +354,10 @@ export default function OPCUAWrapperPage() {
                     className="absolute top-1/2 right-6 w-4 h-4 border-2 border-primary rounded-full animate-pulse"
                     style={{ animationDelay: "1.5s" }}
                   ></div>
+
+                  {/* Circuit pattern */}
+                  <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+                  <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent"></div>
                 </div>
 
                 <img
@@ -332,34 +366,34 @@ export default function OPCUAWrapperPage() {
                   className="w-full h-auto rounded-xl relative z-10 hover:scale-105 transition-transform duration-700 shadow-lg"
                 />
 
-                {/* Enhanced floating badges with better positioning */}
+                {/* Enhanced floating badges with 3D effect */}
                 <div className="absolute top-6 right-6 z-20">
-                  <Badge className="bg-green-500/20 text-green-600 border-green-500/30 animate-pulse px-4 py-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-ping"></div>
+                  <Badge className="bg-gradient-to-r from-green-500/30 to-green-600/20 text-green-300 border border-green-500/40 animate-pulse px-4 py-2 backdrop-blur-sm">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-ping"></div>
                     Live Architecture
                   </Badge>
                 </div>
 
                 <div className="absolute -bottom-6 -left-6 z-20">
                   <div
-                    className="bg-background/95 backdrop-blur-sm border border-border rounded-xl p-4 shadow-xl animate-bounce"
+                    className="bg-slate-800/95 backdrop-blur-sm border border-primary/30 rounded-xl p-4 shadow-2xl animate-bounce"
                     style={{ animationDelay: "2s" }}
                   >
                     <div className="flex items-center space-x-3">
                       <Shield className="w-5 h-5 text-primary" />
-                      <span className="text-sm font-semibold">Enterprise Security</span>
+                      <span className="text-sm font-semibold text-white">Enterprise Security</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="absolute -top-6 -right-6 z-20">
                   <div
-                    className="bg-background/95 backdrop-blur-sm border border-border rounded-xl p-4 shadow-xl animate-bounce"
+                    className="bg-slate-800/95 backdrop-blur-sm border border-secondary/30 rounded-xl p-4 shadow-2xl animate-bounce"
                     style={{ animationDelay: "1.5s" }}
                   >
                     <div className="flex items-center space-x-3">
                       <Zap className="w-5 h-5 text-secondary" />
-                      <span className="text-sm font-semibold">High Performance</span>
+                      <span className="text-sm font-semibold text-white">High Performance</span>
                     </div>
                   </div>
                 </div>
@@ -369,13 +403,18 @@ export default function OPCUAWrapperPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-muted/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.02)_50%,transparent_75%)]"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <div className="space-y-6">
-              <h2 className="text-4xl lg:text-5xl font-bold text-foreground">Why Choose OPC UA Wrapper?</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto"></div>
-              <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              <h2 className="text-5xl lg:text-6xl font-black text-white">Why Choose OPC UA Wrapper?</h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-full mx-auto"></div>
+              <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
                 The most trusted solution for OPC Classic to OPC UA migration, deployed in over 1000 industrial
                 facilities worldwide with proven reliability and performance.
               </p>
@@ -383,49 +422,49 @@ export default function OPCUAWrapperPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="elegant-card text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <Card className="bg-gradient-to-br from-slate-800/50 to-slate-900/30 border border-primary/20 text-center group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm">
               <CardContent className="pt-10 pb-8">
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors group-hover:scale-110 transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform border border-primary/20">
                   <Clock className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-4">Zero Downtime</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-xl font-bold mb-4 text-white">Zero Downtime</h3>
+                <p className="text-slate-400 leading-relaxed">
                   Migrate without interrupting your production systems or affecting operations
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="elegant-card text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <Card className="bg-gradient-to-br from-slate-800/50 to-slate-900/30 border border-secondary/20 text-center group hover:shadow-2xl hover:shadow-secondary/10 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm">
               <CardContent className="pt-10 pb-8">
-                <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary/20 transition-colors group-hover:scale-110 transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform border border-secondary/20">
                   <Users className="w-10 h-10 text-secondary" />
                 </div>
-                <h3 className="text-xl font-bold mb-4">Expert Support</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-xl font-bold mb-4 text-white">Expert Support</h3>
+                <p className="text-slate-400 leading-relaxed">
                   24/7 technical support from certified OPC specialists and engineers
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="elegant-card text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <Card className="bg-gradient-to-br from-slate-800/50 to-slate-900/30 border border-accent/20 text-center group hover:shadow-2xl hover:shadow-accent/10 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm">
               <CardContent className="pt-10 pb-8">
-                <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 transition-colors group-hover:scale-110 transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform border border-accent/20">
                   <Award className="w-10 h-10 text-accent" />
                 </div>
-                <h3 className="text-xl font-bold mb-4">Industry Proven</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-xl font-bold mb-4 text-white">Industry Proven</h3>
+                <p className="text-slate-400 leading-relaxed">
                   Trusted by Fortune 500 companies across manufacturing and process industries
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="elegant-card text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <Card className="bg-gradient-to-br from-slate-800/50 to-slate-900/30 border border-primary/20 text-center group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm">
               <CardContent className="pt-10 pb-8">
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors group-hover:scale-110 transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform border border-primary/20">
                   <Globe className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-4">Universal Compatibility</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-xl font-bold mb-4 text-white">Universal Compatibility</h3>
+                <p className="text-slate-400 leading-relaxed">
                   Works seamlessly with any OPC Classic server from any vendor
                 </p>
               </CardContent>
@@ -518,62 +557,60 @@ export default function OPCUAWrapperPage() {
       </section>
 
       {/* Architecture Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+          <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">Architecture Overview</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">Architecture Overview</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto mb-6"></div>
+            <p className="text-lg text-slate-300 max-w-3xl mx-auto">
               Bidirectional bridge between OPC Classic and OPC UA technologies.
             </p>
           </div>
 
           <div className="space-y-12">
             <div className="relative">
-              <div className="bg-gradient-to-br from-background to-muted/50 rounded-2xl p-8 border border-border/50">
+              <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/30 rounded-3xl p-8 border border-primary/20 backdrop-blur-sm">
                 <div className="text-center mb-8">
                   <img
                     src="/images/opc-ua-wrapper-architecture.png"
                     alt="OPC UA Wrapper Architecture Diagram"
-                    className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+                    className="w-full max-w-4xl mx-auto rounded-lg shadow-2xl hover:scale-105 transition-transform duration-500"
                   />
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-8 mt-8">
                   <div className="space-y-4">
-                    <h3 className="text-lg font-bold text-foreground mb-4">Communication Flow</h3>
+                    <h3 className="text-lg font-bold text-white mb-4 flex items-center">
+                      <Network className="w-5 h-5 mr-2 text-primary" />
+                      Communication Flow
+                    </h3>
                     <div className="space-y-3">
                       <div className="flex items-start space-x-3">
-                        <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/30">
                           <ArrowRight className="w-3 h-3 text-primary" />
                         </div>
                         <div>
                           <h4 className="text-sm font-semibold mb-1 text-primary">OPC UA to OPC Proxy</h4>
-                          <p className="text-xs text-muted-foreground">
+                          <p className="text-xs text-slate-400">
                             Enables OPC Classic clients to connect to OPC UA servers.
                           </p>
                         </div>
                       </div>
 
                       <div className="flex items-start space-x-3">
-                        <div className="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-6 h-6 bg-secondary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border border-secondary/30">
                           <ArrowRight className="w-3 h-3 text-secondary" />
                         </div>
                         <div>
                           <h4 className="text-sm font-semibold mb-1 text-secondary">OPC to OPC UA Wrapper</h4>
-                          <p className="text-xs text-muted-foreground">
+                          <p className="text-xs text-slate-400">
                             Allows OPC UA clients to connect to OPC Classic servers.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start space-x-3">
-                        <div className="w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <Network className="w-3 h-3 text-accent" />
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-semibold mb-1 text-accent">HTTP/UA TCP Protocol</h4>
-                          <p className="text-xs text-muted-foreground">
-                            Secure communication with authentication and encryption.
                           </p>
                         </div>
                       </div>
@@ -581,31 +618,27 @@ export default function OPCUAWrapperPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <h3 className="text-lg font-bold text-foreground mb-4">Key Benefits</h3>
+                    <h3 className="text-lg font-bold text-white mb-4 flex items-center">
+                      <CheckCircle className="w-5 h-5 mr-2 text-accent" />
+                      Key Benefits
+                    </h3>
                     <div className="grid gap-2">
                       <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        <span className="text-sm">Bidirectional Communication</span>
+                        <CheckCircle className="w-4 h-4 text-green-400" />
+                        <span className="text-sm text-slate-300">Bidirectional Communication</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Gauge className="w-4 h-4 text-blue-500" />
-                        <span className="text-sm">Seamless Integration</span>
+                        <Gauge className="w-4 h-4 text-blue-400" />
+                        <span className="text-sm text-slate-300">Seamless Integration</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Shield className="w-4 h-4 text-purple-500" />
-                        <span className="text-sm">Enterprise Security</span>
+                        <Shield className="w-4 h-4 text-purple-400" />
+                        <span className="text-sm text-slate-300">Enterprise Security</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Settings className="w-4 h-4 text-orange-500" />
-                        <span className="text-sm">Easy Configuration</span>
+                        <Settings className="w-4 h-4 text-orange-400" />
+                        <span className="text-sm text-slate-300">Easy Configuration</span>
                       </div>
-                    </div>
-
-                    <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg p-4 border border-primary/10 mt-4">
-                      <h4 className="text-sm font-semibold text-primary mb-1">Migration Strategy</h4>
-                      <p className="text-xs text-muted-foreground">
-                        Deploy for gradual migration with flexible migration paths.
-                      </p>
                     </div>
                   </div>
                 </div>

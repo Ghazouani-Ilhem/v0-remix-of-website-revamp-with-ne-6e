@@ -718,7 +718,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(53, 37, 97, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -1044,4 +1044,240 @@
 .dark .elegant-glass {
   background: rgba(26, 26, 46, 0.95);
   border: 1px solid rgba(53, 37, 97, 0.15);
+}
+
+/* Futuristic glow text effect for OPC UA Wrapper */
+.glow-text {
+  text-shadow: 0 0 10px rgba(53, 37, 97, 0.3), 0 0 20px rgba(53, 37, 97, 0.2), 0 0 30px rgba(53, 37, 97, 0.1);
+}
+
+/* Enhanced button styles with futuristic effects */
+.elegant-btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #352561 0%, #4a3575 100%);
+  border: none;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.elegant-btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.elegant-btn-primary:hover::before {
+  left: 100%;
+}
+
+.elegant-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(53, 37, 97, 0.3);
+}
+
+.elegant-btn-secondary {
+  position: relative;
+  background: transparent;
+  border: 2px solid rgba(53, 37, 97, 0.3);
+  color: #352561;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.elegant-btn-secondary:hover {
+  background: rgba(53, 37, 97, 0.1);
+  border-color: #352561;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(53, 37, 97, 0.2);
+}
+
+/* Enhanced card styles with futuristic effects */
+.elegant-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(53, 37, 97, 0.08);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+.elegant-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(53, 37, 97, 0.05), transparent);
+  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.elegant-card:hover::before {
+  left: 100%;
+}
+
+.elegant-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -8px rgba(53, 37, 97, 0.15);
+  border-color: rgba(53, 37, 97, 0.2);
+}
+
+/* Dark mode card styles */
+.dark .elegant-card {
+  background: rgba(30, 30, 50, 0.95);
+  border-color: rgba(53, 37, 97, 0.2);
+}
+
+.dark .elegant-card:hover {
+  background: rgba(35, 35, 60, 0.98);
+  border-color: rgba(53, 37, 97, 0.4);
+}
+
+/* Futuristic background patterns */
+.tech-pattern {
+  background-image: radial-gradient(circle at 25% 25%, rgba(53, 37, 97, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(53, 37, 97, 0.05) 0%, transparent 50%);
+}
+
+.circuit-pattern {
+  background-image: linear-gradient(90deg, rgba(53, 37, 97, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(53, 37, 97, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Enhanced animations for futuristic effects */
+@keyframes tech-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes data-flow {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes hologram-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.9;
+  }
+}
+
+.animate-tech-pulse {
+  animation: tech-pulse 3s ease-in-out infinite;
+}
+
+.animate-data-flow {
+  animation: data-flow 2s linear infinite;
+}
+
+.animate-hologram-flicker {
+  animation: hologram-flicker 4s ease-in-out infinite;
+}
+
+/* Futuristic gradient overlays */
+.gradient-overlay-primary {
+  background: linear-gradient(135deg, rgba(53, 37, 97, 0.9) 0%, rgba(74, 53, 117, 0.8) 100%);
+}
+
+.gradient-overlay-dark {
+  background: linear-gradient(135deg, rgba(15, 15, 25, 0.95) 0%, rgba(25, 25, 45, 0.9) 100%);
+}
+
+/* Enhanced typography for futuristic theme */
+.tech-heading {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+
+.tech-subheading {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+/* Floating elements with enhanced physics */
+@keyframes float-complex {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-5px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-30px) translateX(8px) rotate(1deg);
+  }
+}
+
+.animate-float-complex {
+  animation: float-complex 8s ease-in-out infinite;
+}
+
+/* Enhanced backdrop blur effects */
+.backdrop-blur-futuristic {
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+}
+
+/* Responsive adjustments for futuristic elements */
+@media (max-width: 768px) {
+  .glow-text {
+    text-shadow: 0 0 5px rgba(53, 37, 97, 0.2), 0 0 10px rgba(53, 37, 97, 0.1);
+  }
+
+  .tech-heading {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+}
+
+/* Dark theme enhancements for futuristic design */
+.dark .glow-text {
+  text-shadow: 0 0 15px rgba(120, 100, 180, 0.4), 0 0 30px rgba(120, 100, 180, 0.2), 0 0 45px rgba(120, 100, 180, 0.1);
+}
+
+.dark .elegant-btn-primary {
+  background: linear-gradient(135deg, #4a3575 0%, #5d4689 100%);
+}
+
+.dark .elegant-btn-secondary {
+  border-color: rgba(120, 100, 180, 0.4);
+  color: #a78bfa;
+}
+
+.dark .elegant-btn-secondary:hover {
+  background: rgba(120, 100, 180, 0.15);
+  border-color: #a78bfa;
 }
