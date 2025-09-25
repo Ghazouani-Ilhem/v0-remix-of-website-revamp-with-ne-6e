@@ -193,148 +193,174 @@ export default function OPCUAWrapperPage() {
       {/* Header Component for Navigation */}
       <Header />
 
-      {/* Enhanced Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 bg-secondary/10 rounded-full blur-lg animate-bounce"></div>
+      <section className="relative pt-24 pb-32 overflow-hidden">
+        {/* Enhanced gradient background with better color transitions */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+        </div>
+
+        {/* Improved animated background elements with better positioning */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-primary/8 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-secondary/8 rounded-full blur-lg animate-bounce"></div>
           <div
-            className="absolute bottom-20 left-1/4 w-40 h-40 bg-accent/10 rounded-full blur-2xl animate-pulse"
+            className="absolute bottom-20 left-1/4 w-40 h-40 bg-accent/8 rounded-full blur-2xl animate-pulse"
             style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute top-1/2 right-1/3 w-16 h-16 bg-primary/6 rounded-full blur-md animate-pulse"
+            style={{ animationDelay: "2s" }}
           ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-6">
-                {/* Enhanced Badge with Animation */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-10">
+              <div className="space-y-8">
+                {/* Enhanced badge with better styling */}
                 <Badge
                   variant="secondary"
-                  className="px-6 py-3 text-sm font-medium animate-pulse bg-primary/10 text-primary border-primary/20"
+                  className="px-6 py-3 text-sm font-medium bg-primary/10 text-primary border-primary/20 hover:bg-primary/15 transition-colors"
                 >
-                  <div className="w-2 h-2 bg-primary rounded-full mr-2 animate-ping"></div>
-                  OPC Migration Solution
+                  <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-ping"></div>
+                  Industry-Leading OPC Migration Solution
                 </Badge>
 
-                {/* Enhanced Title with Gradient Text */}
-                <h1 className="text-4xl lg:text-7xl font-bold leading-tight">
-                  <span className="bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent">
-                    OPC UA
-                  </span>{" "}
-                  <span className="text-primary animate-pulse">Wrapper</span>
-                </h1>
+                {/* Improved title with better gradient and spacing */}
+                <div className="space-y-4">
+                  <h1 className="text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
+                    <span className="bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent">
+                      OPC UA
+                    </span>
+                    <br />
+                    <span className="text-primary">Wrapper</span>
+                  </h1>
 
-                {/* Enhanced Subtitle */}
-                <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl font-light">
-                  Bridge the gap between <span className="text-primary font-semibold">OPC Classic</span> and{" "}
-                  <span className="text-secondary font-semibold">OPC UA</span> with our seamless migration solution.
-                </p>
+                  <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                </div>
 
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                  Enable modern connectivity while preserving your existing infrastructure investments.
-                </p>
+                {/* Enhanced subtitle with better spacing */}
+                <div className="space-y-6">
+                  <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl font-light">
+                    Bridge the gap between <span className="text-primary font-semibold">OPC Classic</span> and{" "}
+                    <span className="text-secondary font-semibold">OPC UA</span> with our seamless migration solution.
+                  </p>
+
+                  <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                    Enable modern connectivity while preserving your existing infrastructure investments with zero
+                    downtime.
+                  </p>
+                </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="elegant-btn-primary px-8 py-4 text-lg group">
-                  <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+              <div className="flex flex-col sm:flex-row gap-6">
+                <Button
+                  size="lg"
+                  className="elegant-btn-primary px-10 py-5 text-lg font-semibold group shadow-lg hover:shadow-xl transition-all"
+                >
+                  <Download className="w-5 h-5 mr-3 group-hover:animate-bounce" />
                   Download Free Trial
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="elegant-btn-secondary px-8 py-4 text-lg bg-transparent group"
+                  className="elegant-btn-secondary px-10 py-5 text-lg font-semibold bg-transparent group border-2 hover:bg-primary/5"
                 >
-                  <Play className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                  <Play className="w-5 h-5 mr-3 group-hover:animate-pulse" />
                   Watch Demo
                 </Button>
               </div>
 
-              {/* Enhanced Stats with Animations and Icons */}
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border/50">
-                <div className="text-center group">
-                  <div className="flex items-center justify-center mb-2">
-                    <Activity className="w-6 h-6 text-green-500 mr-2 group-hover:animate-pulse" />
+              <div className="grid grid-cols-3 gap-8 pt-12 border-t border-border/30">
+                <div className="text-center group cursor-pointer">
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-green-500/20 transition-colors">
+                      <Activity className="w-6 h-6 text-green-500 group-hover:animate-pulse" />
+                    </div>
                     <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">
                       99.9%
                     </div>
                   </div>
-                  <div className="text-sm text-muted-foreground">Uptime Guarantee</div>
+                  <div className="text-sm text-muted-foreground font-medium">Uptime Guarantee</div>
                 </div>
-                <div className="text-center group">
-                  <div className="flex items-center justify-center mb-2">
-                    <Gauge className="w-6 h-6 text-blue-500 mr-2 group-hover:animate-spin" />
+                <div className="text-center group cursor-pointer">
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-500/20 transition-colors">
+                      <Gauge className="w-6 h-6 text-blue-500 group-hover:animate-spin" />
+                    </div>
                     <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">
                       &lt;10ms
                     </div>
                   </div>
-                  <div className="text-sm text-muted-foreground">Ultra-Low Latency</div>
+                  <div className="text-sm text-muted-foreground font-medium">Ultra-Low Latency</div>
                 </div>
-                <div className="text-center group">
-                  <div className="flex items-center justify-center mb-2">
-                    <TrendingUp className="w-6 h-6 text-purple-500 mr-2 group-hover:animate-bounce" />
+                <div className="text-center group cursor-pointer">
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-purple-500/20 transition-colors">
+                      <TrendingUp className="w-6 h-6 text-purple-500 group-hover:animate-bounce" />
+                    </div>
                     <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform">
                       1000+
                     </div>
                   </div>
-                  <div className="text-sm text-muted-foreground">Global Deployments</div>
+                  <div className="text-sm text-muted-foreground font-medium">Global Deployments</div>
                 </div>
               </div>
             </div>
 
-            <div className="relative">
-              {/* Enhanced Image Container with Multiple Layers */}
-              <div className="relative bg-gradient-to-br from-muted/30 to-muted/10 rounded-2xl p-8 border border-border/50 overflow-hidden">
-                {/* Animated Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-4 left-4 w-8 h-8 border-2 border-primary rounded-full animate-ping"></div>
+            <div className="relative lg:pl-8">
+              <div className="relative bg-gradient-to-br from-muted/20 to-muted/5 rounded-3xl p-10 border border-border/30 overflow-hidden shadow-2xl">
+                {/* Improved animated background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-6 left-6 w-8 h-8 border-2 border-primary rounded-full animate-ping"></div>
                   <div
-                    className="absolute top-12 right-8 w-6 h-6 border-2 border-secondary rounded-full animate-pulse"
+                    className="absolute top-16 right-10 w-6 h-6 border-2 border-secondary rounded-full animate-pulse"
                     style={{ animationDelay: "0.5s" }}
                   ></div>
                   <div
-                    className="absolute bottom-8 left-12 w-10 h-10 border-2 border-accent rounded-full animate-bounce"
+                    className="absolute bottom-12 left-16 w-10 h-10 border-2 border-accent rounded-full animate-bounce"
                     style={{ animationDelay: "1s" }}
+                  ></div>
+                  <div
+                    className="absolute top-1/2 right-6 w-4 h-4 border-2 border-primary rounded-full animate-pulse"
+                    style={{ animationDelay: "1.5s" }}
                   ></div>
                 </div>
 
                 <img
-                  src="/opc-ua-wrapper-architecture-diagram-showing-connec.jpg"
+                  src="/images/opc-ua-wrapper-architecture.png"
                   alt="OPC UA Wrapper Architecture"
-                  className="w-full h-auto rounded-lg relative z-10 hover:scale-105 transition-transform duration-500"
+                  className="w-full h-auto rounded-xl relative z-10 hover:scale-105 transition-transform duration-700 shadow-lg"
                 />
 
-                {/* Enhanced Live Demo Badge */}
-                <div className="absolute top-4 right-4 z-20">
-                  <Badge className="bg-green-500/20 text-green-600 border-green-500/30 animate-pulse">
+                {/* Enhanced floating badges with better positioning */}
+                <div className="absolute top-6 right-6 z-20">
+                  <Badge className="bg-green-500/20 text-green-600 border-green-500/30 animate-pulse px-4 py-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-ping"></div>
-                    Live Demo Available
+                    Live Architecture
                   </Badge>
                 </div>
 
-                {/* Added Floating Feature Badges */}
-                <div className="absolute -bottom-4 -left-4 z-20">
+                <div className="absolute -bottom-6 -left-6 z-20">
                   <div
-                    className="bg-background/90 backdrop-blur-sm border border-border rounded-lg p-3 shadow-lg animate-bounce"
+                    className="bg-background/95 backdrop-blur-sm border border-border rounded-xl p-4 shadow-xl animate-bounce"
                     style={{ animationDelay: "2s" }}
                   >
-                    <div className="flex items-center space-x-2">
-                      <Shield className="w-4 h-4 text-primary" />
-                      <span className="text-xs font-medium">Enterprise Security</span>
+                    <div className="flex items-center space-x-3">
+                      <Shield className="w-5 h-5 text-primary" />
+                      <span className="text-sm font-semibold">Enterprise Security</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute -top-4 -right-4 z-20">
+                <div className="absolute -top-6 -right-6 z-20">
                   <div
-                    className="bg-background/90 backdrop-blur-sm border border-border rounded-lg p-3 shadow-lg animate-bounce"
+                    className="bg-background/95 backdrop-blur-sm border border-border rounded-xl p-4 shadow-xl animate-bounce"
                     style={{ animationDelay: "1.5s" }}
                   >
-                    <div className="flex items-center space-x-2">
-                      <Zap className="w-4 h-4 text-secondary" />
-                      <span className="text-xs font-medium">High Performance</span>
+                    <div className="flex items-center space-x-3">
+                      <Zap className="w-5 h-5 text-secondary" />
+                      <span className="text-sm font-semibold">High Performance</span>
                     </div>
                   </div>
                 </div>
@@ -344,126 +370,142 @@ export default function OPCUAWrapperPage() {
         </div>
       </section>
 
-      {/* Overview Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-24 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">Why Choose OPC UA Wrapper?</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              The most trusted solution for OPC Classic to OPC UA migration, deployed in over 1000 industrial facilities
-              worldwide.
-            </p>
+          <div className="text-center mb-20">
+            <div className="space-y-6">
+              <h2 className="text-4xl lg:text-5xl font-bold text-foreground">Why Choose OPC UA Wrapper?</h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto"></div>
+              <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                The most trusted solution for OPC Classic to OPC UA migration, deployed in over 1000 industrial
+                facilities worldwide with proven reliability and performance.
+              </p>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="elegant-card text-center">
-              <CardContent className="pt-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-8 h-8 text-primary" />
+            <Card className="elegant-card text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <CardContent className="pt-10 pb-8">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors group-hover:scale-110 transform duration-300">
+                  <Clock className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Zero Downtime</h3>
-                <p className="text-muted-foreground">Migrate without interrupting your production systems</p>
+                <h3 className="text-xl font-bold mb-4">Zero Downtime</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Migrate without interrupting your production systems or affecting operations
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="elegant-card text-center">
-              <CardContent className="pt-8">
-                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-secondary" />
+            <Card className="elegant-card text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <CardContent className="pt-10 pb-8">
+                <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary/20 transition-colors group-hover:scale-110 transform duration-300">
+                  <Users className="w-10 h-10 text-secondary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Expert Support</h3>
-                <p className="text-muted-foreground">24/7 technical support from OPC specialists</p>
+                <h3 className="text-xl font-bold mb-4">Expert Support</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  24/7 technical support from certified OPC specialists and engineers
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="elegant-card text-center">
-              <CardContent className="pt-8">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-accent" />
+            <Card className="elegant-card text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <CardContent className="pt-10 pb-8">
+                <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 transition-colors group-hover:scale-110 transform duration-300">
+                  <Award className="w-10 h-10 text-accent" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Industry Proven</h3>
-                <p className="text-muted-foreground">Trusted by Fortune 500 companies globally</p>
+                <h3 className="text-xl font-bold mb-4">Industry Proven</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Trusted by Fortune 500 companies across manufacturing and process industries
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="elegant-card text-center">
-              <CardContent className="pt-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Globe className="w-8 h-8 text-primary" />
+            <Card className="elegant-card text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <CardContent className="pt-10 pb-8">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors group-hover:scale-110 transform duration-300">
+                  <Globe className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Universal</h3>
-                <p className="text-muted-foreground">Works with any OPC Classic server</p>
+                <h3 className="text-xl font-bold mb-4">Universal Compatibility</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Works seamlessly with any OPC Classic server from any vendor
+                </p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Features Section with Tags and Filters */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">Powerful Features</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive capabilities designed for enterprise-grade OPC migration and integration.
-            </p>
+          <div className="text-center mb-20">
+            <div className="space-y-6">
+              <h2 className="text-4xl lg:text-5xl font-bold text-foreground">Powerful Features</h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto"></div>
+              <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                Comprehensive capabilities designed for enterprise-grade OPC migration and seamless integration.
+              </p>
+            </div>
           </div>
 
-          {/* Filter Controls */}
-          <div className="mb-12 space-y-6">
-            <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
-              <div className="flex flex-wrap gap-2">
-                {categories.map((category) => (
-                  <Button
-                    key={category}
-                    variant={selectedCategory === category ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedCategory(category)}
-                    className="rounded-full"
-                  >
-                    <Filter className="w-4 h-4 mr-2" />
-                    {category}
-                  </Button>
-                ))}
-              </div>
+          <div className="mb-16">
+            <div className="bg-muted/30 rounded-2xl p-8 border border-border/30">
+              <div className="flex flex-col lg:flex-row gap-8 items-center justify-between">
+                <div className="flex flex-wrap gap-3">
+                  {categories.map((category) => (
+                    <Button
+                      key={category}
+                      variant={selectedCategory === category ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => setSelectedCategory(category)}
+                      className="rounded-full px-6 py-2 font-medium hover:scale-105 transition-transform"
+                    >
+                      <Filter className="w-4 h-4 mr-2" />
+                      {category}
+                    </Button>
+                  ))}
+                </div>
 
-              <div className="relative w-full lg:w-80">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                <Input
-                  placeholder="Search features..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10"
-                />
+                <div className="relative w-full lg:w-96">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    placeholder="Search features and capabilities..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-12 py-3 rounded-full border-2 focus:border-primary/50"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {filteredFeatures.map((feature) => {
               const IconComponent = feature.icon
               return (
                 <Card
                   key={feature.id}
-                  className="elegant-card group hover:elegant-shadow-lg transition-all duration-300"
+                  className="elegant-card group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 hover:border-primary/20"
                 >
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <IconComponent className="w-6 h-6 text-primary" />
+                  <CardHeader className="pb-4">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors group-hover:scale-110 transform duration-300">
+                        <IconComponent className="w-8 h-8 text-primary" />
                       </div>
-                      <Badge variant="secondary" className="text-xs">
+                      <Badge variant="secondary" className="text-xs px-3 py-1">
                         {feature.category}
                       </Badge>
                     </div>
-                    <CardTitle className="text-xl">{feature.title}</CardTitle>
-                    <CardDescription className="text-base">{feature.description}</CardDescription>
+                    <CardTitle className="text-xl mb-3">{feature.title}</CardTitle>
+                    <CardDescription className="text-base leading-relaxed">{feature.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {feature.tags.map((tag) => (
-                        <Badge key={tag} variant="outline" className="text-xs">
+                        <Badge
+                          key={tag}
+                          variant="outline"
+                          className="text-xs px-3 py-1 hover:bg-primary/10 transition-colors"
+                        >
                           {tag}
                         </Badge>
                       ))}
